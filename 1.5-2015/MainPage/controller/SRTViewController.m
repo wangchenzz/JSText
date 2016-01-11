@@ -24,6 +24,8 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     //下面的垃圾代码。。。。。
+    self.view.backgroundColor = [UIColor lightGrayColor];
+
     
     
     UIButton *but = [[UIButton alloc]init];
@@ -94,7 +96,6 @@
     
     self.srtview.centerY = JSFrame.size.height * .6;
     
-    self.view.backgroundColor = [UIColor lightGrayColor];
     
     self.srtview.delegate = self;
     
