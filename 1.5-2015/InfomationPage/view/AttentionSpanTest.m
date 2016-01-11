@@ -199,7 +199,7 @@
 
 -(void)dealloc{
 
-    JSLog(@"AttentionSpanTest--dealloc");
+    JSLog(@"AttentionSpanTest--dealloc");ssssss
 
 }
 @end
