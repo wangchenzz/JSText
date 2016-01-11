@@ -143,9 +143,8 @@
     static NSInteger count = 0;
     
     if (count == self.NewWordsAry.count-1) {
-        JSLog(@"fangwanle");
-        
         //[self.wordsLabel removeFromSuperview];
+        
         self.wordsLabel.text = [NSString stringWithFormat:@"浏览完毕，答对个数%ld",(long)self.personCount];
         
         BOOL isOk = [self.delegate respondsToSelector:@selector(wordDidFinishTest:)];

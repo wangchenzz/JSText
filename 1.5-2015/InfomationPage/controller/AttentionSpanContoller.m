@@ -9,7 +9,7 @@
 #import "AttentionSpanContoller.h"
 
 #import "AttentionSpanTest.h"
-@interface AttentionSpanContoller ()
+@interface AttentionSpanContoller ()<AttentionSpanTestDelegate>
 
 @property (nonatomic,retain) AttentionSpanTest *attentionTest;
 
@@ -26,8 +26,22 @@
     
     self.attentionTest = [[AttentionSpanTest alloc]initWithController:self];
     
+    self.attentionTest.delegate = self;
+    
     [self.attentionTest show];
     
 }
 
+-(void)AttentionSpanTestClick:(AttentionSpanTest *)test testTime:(double)time label:(UILabel *)label {
+
+    JSLog(@"%ld",label.tag);
+    JSLog(@"%@",label.text);
+
+}
+
+-(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest *)test{
+
+    [test showSecond];
+
+}
 @end

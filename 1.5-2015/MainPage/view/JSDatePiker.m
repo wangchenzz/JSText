@@ -23,7 +23,7 @@
 
 +(instancetype)piker{
 
-    return [[self alloc]init];
+    return [[self alloc] init];
     
 }
 
