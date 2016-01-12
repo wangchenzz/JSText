@@ -81,8 +81,6 @@
 
 //网页加载失败调用
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error{
-    JSContext *context = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-
 
 }
 

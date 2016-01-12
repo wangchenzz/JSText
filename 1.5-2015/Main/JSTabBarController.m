@@ -85,7 +85,7 @@
     //设置tabbar 的item的字体。
     
 
-    [childController.tabBarItem setTitleTextAttributes:selectAttri forState:UIControlStateHighlighted];
+    [childController.tabBarItem setTitleTextAttributes:selectAttri forState:UIControlStateSelected];
     [childController.tabBarItem setTitleTextAttributes:normalAttri forState:UIControlStateNormal];
     
     //还应设置选中状态下的字体颜色和大小。

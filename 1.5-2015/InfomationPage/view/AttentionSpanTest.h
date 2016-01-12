@@ -18,6 +18,9 @@
 
 -(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest*)test;
 
+-(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(double)time numAry:(NSMutableArray*)numary testCount:(NSInteger)count;
+
+-(void)AttentionSpanTestFinishSecondTest:(AttentionSpanTest*)test;
 
 @end
 

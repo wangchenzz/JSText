@@ -29,6 +29,8 @@
 
 #define JSFrame [UIScreen mainScreen].bounds
 
+#define JSNavigationBounds  self.navigationController.navigationBar.frame
+
 #define JSFont(s)  [UIFont systemFontOfSize:(s)]
 
 #define JSColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]

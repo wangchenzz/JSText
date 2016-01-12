@@ -22,6 +22,10 @@
 
     [super viewDidLoad];
     
+#warning  delete
+    self.tabBarController.tabBar.hidden = YES;
+    
+    
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     self.attentionTest = [[AttentionSpanTest alloc]initWithController:self];
@@ -32,6 +36,7 @@
     
 }
 
+//第一项测试时。 点击回调用
 -(void)AttentionSpanTestClick:(AttentionSpanTest *)test testTime:(double)time label:(UILabel *)label {
 
     JSLog(@"%ld",label.tag);
@@ -39,9 +44,18 @@
 
 }
 
+//第一项测试结束时候调用
 -(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest *)test{
 
     [test showSecond];
+}
+//第二项测试时。点击调用
+-(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(double)time numAry:(NSMutableArray *)numary testCount:(NSInteger)count{
+
+}
+//第二次测试结束时候调用
+-(void)AttentionSpanTestFinishSecondTest:(AttentionSpanTest *)test{
+
 
 }
 @end

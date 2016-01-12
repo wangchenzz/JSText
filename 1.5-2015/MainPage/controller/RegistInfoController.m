@@ -36,6 +36,7 @@
     
   //  self.tabBarController.tabBar.hidden = YES;
     
+   
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(showKeyBoard) name:UIKeyboardWillShowNotification object:nil];
 }
@@ -196,7 +197,9 @@
         [UIView animateWithDuration:1 animations:^{
             [self.genderPiker setFrame:CGRectMake(0, JSFrame.size.height, JSFrame.size.width, 300)];
         } completion:^(BOOL finished) {
+            
             [self.genderPiker removeFromSuperview];
+            
         }];
     }
 }

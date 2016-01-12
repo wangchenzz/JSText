@@ -35,13 +35,44 @@
 
 
 //重要属性
+@property (nonatomic,assign) NSInteger centrollx;
+@property (nonatomic,assign) NSInteger centrolly;
+@property (nonatomic,assign) NSInteger naviH;
+
+
+@property (nonatomic,assign) CGFloat labelcenterx;
+
+
+@property (nonatomic,assign) CGFloat labelcentery;
+
+
+
+@property (nonatomic,readonly,getter=isCD) BOOL CD;
+
 @property (nonatomic,assign) double timeCount;
 
 @property (nonatomic,weak) UIViewController *control;
 
 @property (nonatomic,retain) NSMutableArray *numberContainAry;
 
+@property (nonatomic,retain) NSMutableArray *sizeAty;
+
+@property (nonatomic,assign) NSInteger testCount;
+
 @end
+#define labelWidth JSFrame.size.width*.1
+//struct JSSize {
+//    CGFloat  centerx;
+//    CGFloat  centery;
+//};
+//typedef struct JSSize JSSize;
+
+//
+//JSSizeMake(CGFloat width, CGFloat height)
+//{
+//    JSSize size; size.centerx = width; size.centery = height; return size;
+//}
+
 
 @implementation AttentionSpanTest
 
@@ -51,8 +82,8 @@
         
         UILabel *label = [[UILabel alloc]init];
         
-        label.height = JSFrame.size.width *.1;
-        label.width = JSFrame.size.width *.1;
+        label.height = labelWidth;
+        label.width = labelWidth;
         label.centerX = JSFrame.size.width *.5;
         label.centerY = JSFrame.size.height *.5;
         [label setFont:JSFont(30)];
@@ -69,8 +100,8 @@
 
     if (!_label0) {
         UILabel *label = [[UILabel alloc]init];
-        label.width = JSFrame.size.width * .1;
-        label.height = JSFrame.size.width *.1;
+        label.width = labelWidth;
+        label.height = labelWidth;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
         [self.control.view addSubview:label];
@@ -82,8 +113,8 @@
     
     if (!_label1) {
         UILabel *label = [[UILabel alloc]init];
-        label.width = JSFrame.size.width * .1;
-        label.height = JSFrame.size.width *.1;
+        label.width = labelWidth;
+        label.height = labelWidth;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
         [self.control.view addSubview:label];
@@ -95,8 +126,8 @@
     
     if (!_label2) {
         UILabel *label = [[UILabel alloc]init];
-        label.width = JSFrame.size.width * .1;
-        label.height = JSFrame.size.width *.1;
+        label.width = labelWidth;
+        label.height = labelWidth;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
         [self.control.view addSubview:label];
@@ -108,8 +139,8 @@
     
     if (!_label3) {
         UILabel *label = [[UILabel alloc]init];
-        label.width = JSFrame.size.width * .1;
-        label.height = JSFrame.size.width *.1;
+        label.width = labelWidth;
+        label.height = labelWidth;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
         [self.control.view addSubview:label];
@@ -121,8 +152,8 @@
     
     if (!_label4) {
         UILabel *label = [[UILabel alloc]init];
-        label.width = JSFrame.size.width * .1;
-        label.height = JSFrame.size.width *.1;
+        label.width = labelWidth;
+        label.height = labelWidth;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
         [self.control.view addSubview:label];
@@ -134,8 +165,8 @@
     
     if (!_label5) {
         UILabel *label = [[UILabel alloc]init];
-        label.width = JSFrame.size.width * .1;
-        label.height = JSFrame.size.width *.1;
+        label.width = labelWidth;
+        label.height = labelWidth;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
         [self.control.view addSubview:label];
@@ -147,8 +178,8 @@
     
     if (!_label6) {
         UILabel *label = [[UILabel alloc]init];
-        label.width = JSFrame.size.width * .1;
-        label.height = JSFrame.size.width *.1;
+        label.width = labelWidth;
+        label.height = labelWidth;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
         [self.control.view addSubview:label];
@@ -160,10 +191,10 @@
     
     if (!_label7) {
         UILabel *label = [[UILabel alloc]init];
-        label.width = JSFrame.size.width * .1;
+        label.width = labelWidth;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
-        label.height = JSFrame.size.width *.1;
+        label.height = labelWidth;
         [self.control.view addSubview:label];
         self.label7 = label;
     }
@@ -173,8 +204,8 @@
     
     if (!_label8) {
         UILabel *label = [[UILabel alloc]init];
-        label.width = JSFrame.size.width * .1;
-        label.height = JSFrame.size.width *.1;
+        label.width = labelWidth;
+        label.height = labelWidth;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
         [self.control.view addSubview:label];
@@ -186,10 +217,10 @@
     
     if (!_label9) {
         UILabel *label = [[UILabel alloc]init];
-        label.width = JSFrame.size.width * .1;
+        label.width = labelWidth;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
-        label.height = JSFrame.size.width *.1;
+        label.height = labelWidth;
         [self.control.view addSubview:label];
         self.label9 = label;
     }
@@ -199,6 +230,24 @@
 
     if (self = [super init]) {
         self.control = control;
+        //屏幕宽高；
+        NSInteger wid = JSFrame.size.width;
+        NSInteger heig = JSFrame.size.height;
+        
+        //导航栏宽高；
+        CGRect rect = self.control.navigationController.navigationBar.frame;
+        //导航栏高度
+        NSInteger navigationY = rect.origin.y;
+        NSInteger navigationHeig = rect.size.height;
+        // 总高度；
+        NSInteger navigationH = navigationHeig + navigationY;
+        NSInteger labelw = labelWidth;
+        
+        //
+
+        self.naviH = navigationH;
+        self.centrollx = wid - labelw;
+        self.centrolly = heig - navigationH - labelw;
     }
     return self;
 }
@@ -216,6 +265,8 @@
     
     self.timeCount = 0;
     
+    self.testCount = 0;
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(firstTestClick:)];
     
     [self.control.view addGestureRecognizer:tap];
@@ -228,7 +279,7 @@
     
 }
 //每过一段时间就会赋值label
--(void)CaculateFirstTest:(UITapGestureRecognizer*)tap{
+-(void)CaculateFirstTest:(NSTimer*)timer{
 
     [self rollLabel];
     
@@ -265,6 +316,8 @@
     
     NSInteger arcnum = arc4random()%13;
     
+   // [self.labelFocus removeFromSuperview];
+    
     [self.labelFocus setTag:self.labelTag];
 
     self.labelTag ++;
@@ -290,12 +343,48 @@
 
     [self rollAllLabel];
     
+    self.timeCount = 0;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(secondTestClick:)];
+    
+    [self.control.view addGestureRecognizer:tap];
+    
+    self.tap = tap;
+
     self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(secondTestBegan:) userInfo:nil repeats:YES];
+    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(caculatSecondTest) userInfo:nil repeats:YES];
 }
 
--(void)secondTestBegan:(NSTimer*)timer{ 
+-(void)secondTestClick:(UITapGestureRecognizer*)tap{
 
+    if ([self.delegate respondsToSelector:@selector(AttentionSpanTestClick:secondTestTime:numAry:testCount:)]) {
+        [self.delegate AttentionSpanTestClick:self secondTestTime:self.timeCount numAry:self.numberContainAry testCount:self.testCount];
+    }
+
+}
+
+-(void)caculatSecondTest{
+
+    self.testCount ++;
+    [self rollAllLabel];
+
+}
+
+//计时第二次测试的时间
+-(void)secondTestBegan:(NSTimer*)timer{
     
+    self.timeCount = self.timeCount + 0.01;
+    
+    if (self.timeCount >= 10) {
+        [self.timeCountTimer invalidate];
+        [self.actionTimer invalidate];
+        [self.control.view removeGestureRecognizer:self.tap];
+        [self.labelFocus removeFromSuperview];
+        if ([self.delegate respondsToSelector:@selector(AttentionSpanTestFinishSecondTest:)]) {
+            [self.delegate AttentionSpanTestFinishSecondTest:self];
+        }
+
+    }
     
 }
 
@@ -306,11 +395,18 @@
     }
     return _numberContainAry;
 }
+-(NSMutableArray *)sizeAty{
+    if (!_sizeAty) {
+        self.sizeAty = [NSMutableArray new];
+    }
+    return _sizeAty;
+}
+
 
 //给所有的label 赋位置；
 -(void)rollAllLabel{
-
     self.numberContainAry = nil;
+    self.sizeAty = nil;
     [self setLabelFrame:self.label0];
     [self setLabelFrame:self.label1];
     [self setLabelFrame:self.label2];
@@ -323,19 +419,64 @@
     [self setLabelFrame:self.label9];
 }
 
+//随机位置 和数字
 -(void)setLabelFrame:(UILabel*)label{
-    NSInteger wid = JSFrame.size.width;
-    NSInteger heig = JSFrame.size.height;
-    NSInteger conterx = arc4random()%wid;
-    NSInteger centery = arc4random()%heig;
-    label.centerX = conterx;
-    label.centerY = centery;
+    
+//    (heig-labelWidth-navigationH)
+    
+    //判断位置是否占有;
+    
+    while (self.CD == NO) {
+      
+        
+    }
+    label.centerX = self.labelcenterx;
+    label.centerY = self.labelcentery;
+    
+    CGRect labelrect = CGRectMake(label.centerX, label.centerY, 0, 0);
+
+    NSValue *rect = [NSValue valueWithCGRect:labelrect];
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:rect forKey:@"size"];
+    
+    [self.sizeAty addObject:dic];
+
     [label setBackgroundColor:[UIColor redColor]];
+    
     NSString *labeltext = [NSString stringWithFormat:@"%u",(arc4random()%10)];
+    
     [label setText:labeltext];
+    
     [self.numberContainAry addObject:labeltext];
 }
 
+-(BOOL)isCD{
+    NSInteger conterx = arc4random()%(self.centrollx);
+    NSInteger centery = arc4random()%(self.centrolly);
+    CGFloat centerX = conterx+labelWidth*.5;
+    CGFloat centerY = centery+labelWidth*.5+self.naviH;
+    if (self.sizeAty.count == 0) {
+        self.labelcenterx = centerX;
+        self.labelcentery = centerY;
+        return YES;
+    }
+    
+    for (NSDictionary *objectDic in self.sizeAty) {
+        
+        NSValue *value = [objectDic objectForKey:@"size"];
+        CGRect obrect = [value CGRectValue];
+        
+        if (ABS(obrect.origin.x - centerX) < labelWidth) {
+            if (ABS(obrect.origin.y - centerY) < labelWidth) {
+                return NO;
+            }
+        
+        }
+        
+    }
+    self.labelcenterx = centerX;
+    self.labelcentery = centerY;
+    return YES;
+}
 
 -(void)dealloc{
 
