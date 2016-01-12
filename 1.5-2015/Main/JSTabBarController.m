@@ -29,9 +29,7 @@
 //    
 //     self.tabBar.tintColor = JSColor(255, 59, 70);
 
-    ChoseTestTypeController *sttc = [[ChoseTestTypeController alloc]init];
-    
-    [self addJSChildViewController:sttc];
+
     
     RegistInfoController *ric = [[RegistInfoController alloc]initWithStyle:UITableViewStyleGrouped];
     
@@ -57,20 +55,37 @@
     childController.title = @"竞思教育";
     
     //tabbar 主题；
+    
+    //设置tabbar item 的颜色；
+    self.tabBar.barTintColor = [UIColor redColor];
 
+    
     //设置普通状态下的tabbaritem字体；
+           //tintcolor 即是字体选中颜色；未设置情况下。
+   // self.tabBar.tintColor = [UIColor whiteColor];
+    
     NSMutableDictionary *normalAttri = [NSMutableDictionary new];
     
     normalAttri[NSFontAttributeName] = JSFont(18);
     
     normalAttri[NSForegroundColorAttributeName] = JSColor(1, 1, 1);
+    //设置选中状态下的tabbaritem的字体；
+    NSMutableDictionary *selectAttri = [NSMutableDictionary new];
     
+    normalAttri[NSFontAttributeName] = JSFont(18);
+    
+    normalAttri[NSForegroundColorAttributeName] = [UIColor greenColor];
+
     
     //此处预留的设置选中和普通状态的图片
 //    childController.tabBarItem.selectedImage =
 //    childController.tabBarItem.image =
     
+    
     //设置tabbar 的item的字体。
+    
+
+    [childController.tabBarItem setTitleTextAttributes:selectAttri forState:UIControlStateHighlighted];
     [childController.tabBarItem setTitleTextAttributes:normalAttri forState:UIControlStateNormal];
     
     //还应设置选中状态下的字体颜色和大小。

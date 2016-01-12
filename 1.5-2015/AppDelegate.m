@@ -46,10 +46,10 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
    UIBackgroundTaskIdentifier task = [application beginBackgroundTaskWithExpirationHandler:^{
-        [application endBackgroundTask:task];
-    }];
-   
     
+       [application endBackgroundTask:task];
+       
+    }];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -61,9 +61,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
 }
 
-
-
 -(void)applicationDidReceiveMemoryWarning:(UIApplication *)application{
-
 }
 @end

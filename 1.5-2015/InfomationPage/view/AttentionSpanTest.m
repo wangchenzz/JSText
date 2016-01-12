@@ -290,7 +290,13 @@
 
     [self rollAllLabel];
     
+    self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(secondTestBegan:) userInfo:nil repeats:YES];
+}
 
+-(void)secondTestBegan:(NSTimer*)timer{ 
+
+    
+    
 }
 
 -(NSMutableArray *)numberContainAry{

@@ -25,6 +25,8 @@
 
 #import "UIBarButtonItem+Extension.h"
 
+#import <UIKit/UIKit.h>
+
 #define JSFrame [UIScreen mainScreen].bounds
 
 #define JSFont(s)  [UIFont systemFontOfSize:(s)]
