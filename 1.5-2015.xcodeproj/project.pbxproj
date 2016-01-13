@@ -76,6 +76,10 @@
 		04932E9B1C3FA2300013631D /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04932E9A1C3FA2300013631D /* libstdc++.tbd */; };
 		04AD85DE1C3F4DC700B6098E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD85DD1C3F4DC700B6098E /* UIView+Frame.m */; settings = {ASSET_TAGS = (); }; };
 		04AD85E11C3F4E9F00B6098E /* UIImage+Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD85E01C3F4E9F00B6098E /* UIImage+Render.m */; settings = {ASSET_TAGS = (); }; };
+		04D3F68B1C45E46D00BFC3E3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D3F68A1C45E46D00BFC3E3 /* AudioToolbox.framework */; };
+		04D3F6AD1C46294300BFC3E3 /* 1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04D3F6AA1C46294300BFC3E3 /* 1.caf */; settings = {ASSET_TAGS = (); }; };
+		04D3F6AE1C46294300BFC3E3 /* 2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04D3F6AB1C46294300BFC3E3 /* 2.caf */; settings = {ASSET_TAGS = (); }; };
+		04D3F6AF1C46294300BFC3E3 /* 3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04D3F6AC1C46294300BFC3E3 /* 3.caf */; settings = {ASSET_TAGS = (); }; };
 		04E986111C3B574F002E8F7C /* ClickTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E986101C3B574F002E8F7C /* ClickTest.m */; settings = {ASSET_TAGS = (); }; };
 		04EBC26B1C3AB34000AB40F4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC26A1C3AB34000AB40F4 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
 		04EBC26E1C3AB36700AB40F4 /* JSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC26D1C3AB36700AB40F4 /* JSTabBarController.m */; settings = {ASSET_TAGS = (); }; };
@@ -238,6 +242,10 @@
 		04AD85DD1C3F4DC700B6098E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		04AD85DF1C3F4E9F00B6098E /* UIImage+Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Render.h"; sourceTree = "<group>"; };
 		04AD85E01C3F4E9F00B6098E /* UIImage+Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Render.m"; sourceTree = "<group>"; };
+		04D3F68A1C45E46D00BFC3E3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		04D3F6AA1C46294300BFC3E3 /* 1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 1.caf; path = ../../MainPage/model/1.caf; sourceTree = "<group>"; };
+		04D3F6AB1C46294300BFC3E3 /* 2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 2.caf; path = ../../MainPage/model/2.caf; sourceTree = "<group>"; };
+		04D3F6AC1C46294300BFC3E3 /* 3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 3.caf; path = ../../MainPage/model/3.caf; sourceTree = "<group>"; };
 		04E9860F1C3B574F002E8F7C /* ClickTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickTest.h; sourceTree = "<group>"; };
 		04E986101C3B574F002E8F7C /* ClickTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickTest.m; sourceTree = "<group>"; };
 		04EBC2691C3AB34000AB40F4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -259,6 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D3F68B1C45E46D00BFC3E3 /* AudioToolbox.framework in Frameworks */,
 				04932E9B1C3FA2300013631D /* libstdc++.tbd in Frameworks */,
 				04932E991C3FA21D0013631D /* JavaScriptCore.framework in Frameworks */,
 				04932E971C3FA20D0013631D /* MessageUI.framework in Frameworks */,
@@ -304,6 +313,7 @@
 		047A05331C3B16DE000C6821 = {
 			isa = PBXGroup;
 			children = (
+				04D3F68A1C45E46D00BFC3E3 /* AudioToolbox.framework */,
 				047A053E1C3B16DF000C6821 /* 1.5-2015 */,
 				047A05581C3B16DF000C6821 /* 1.5-2015Tests */,
 				047A05631C3B16DF000C6821 /* 1.5-2015UITests */,
@@ -404,6 +414,9 @@
 		047A057B1C3B1BE3000C6821 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				04D3F6AA1C46294300BFC3E3 /* 1.caf */,
+				04D3F6AB1C46294300BFC3E3 /* 2.caf */,
+				04D3F6AC1C46294300BFC3E3 /* 3.caf */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -784,6 +797,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D3F6AF1C46294300BFC3E3 /* 3.caf in Resources */,
+				04D3F6AE1C46294300BFC3E3 /* 2.caf in Resources */,
+				04D3F6AD1C46294300BFC3E3 /* 1.caf in Resources */,
 				047A054F1C3B16DF000C6821 /* LaunchScreen.storyboard in Resources */,
 				047A05F91C3B1C3B000C6821 /* MBProgressHUD.bundle in Resources */,
 				04932E8F1C3FA1C10013631D /* SMS_SDKLocalizable.strings in Resources */,

@@ -23,8 +23,8 @@
     [super viewDidLoad];
     
 #warning  delete
-    self.tabBarController.tabBar.hidden = YES;
     
+    self.tabBarController.tabBar.hidden = YES;
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
@@ -44,18 +44,22 @@
 
 }
 
-//第一项测试结束时候调用
--(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest *)test{
+//第一项测试结束时候调用    。。。 ary里面存放有单个词测试的所有数字；
+-(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest *)test testArray:(NSMutableArray *)ary{
 
+    JSLog(@"%@",ary);
     [test showSecond];
 }
 //第二项测试时。点击调用
 -(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(double)time numAry:(NSMutableArray *)numary testCount:(NSInteger)count{
 
+    
 }
 //第二次测试结束时候调用
--(void)AttentionSpanTestFinishSecondTest:(AttentionSpanTest *)test{
+-(void)AttentionSpanTestFinishSecondTest:(AttentionSpanTest *)test testArray:(NSMutableArray *)ary{
 
+    [test soundTest];
 
+    JSLog(@"%@",ary);
 }
 @end

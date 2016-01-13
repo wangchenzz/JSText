@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 @class AttentionSpanTest;
 
 @protocol AttentionSpanTestDelegate <NSObject>
@@ -16,11 +17,11 @@
 
 -(void)AttentionSpanTestClick:(AttentionSpanTest*)test testTime:(double)time label:(UILabel*)label;
 
--(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest*)test;
+-(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest*)test testArray:(NSMutableArray*)ary;
 
 -(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(double)time numAry:(NSMutableArray*)numary testCount:(NSInteger)count;
 
--(void)AttentionSpanTestFinishSecondTest:(AttentionSpanTest*)test;
+-(void)AttentionSpanTestFinishSecondTest:(AttentionSpanTest*)test testArray:(NSMutableArray*)ary;
 
 @end
 
@@ -34,5 +35,7 @@
 -(void)show;
 
 -(void)showSecond;
+
+-(void)soundTest;
 
 @end

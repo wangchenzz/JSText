@@ -26,6 +26,21 @@
 @property (nonatomic,weak) UILabel *label0;
 
 
+
+@property (nonatomic,assign) SystemSoundID avid0;
+@property (nonatomic,assign) SystemSoundID avid1;
+@property (nonatomic,assign) SystemSoundID avid2;
+@property (nonatomic,assign) SystemSoundID avid3;
+@property (nonatomic,assign) SystemSoundID avid4;
+@property (nonatomic,assign) SystemSoundID avid5;
+@property (nonatomic,assign) SystemSoundID avid6;
+@property (nonatomic,assign) SystemSoundID avid7;
+@property (nonatomic,assign) SystemSoundID avid8;
+@property (nonatomic,assign) SystemSoundID avid9;
+
+
+
+
 //定时器和手势；
 @property (nonatomic,retain) NSTimer *actionTimer;
 
@@ -36,7 +51,9 @@
 
 //重要属性
 @property (nonatomic,assign) NSInteger centrollx;
+
 @property (nonatomic,assign) NSInteger centrolly;
+
 @property (nonatomic,assign) NSInteger naviH;
 
 
@@ -56,6 +73,8 @@
 @property (nonatomic,retain) NSMutableArray *numberContainAry;
 
 @property (nonatomic,retain) NSMutableArray *sizeAty;
+
+@property (nonatomic,retain) NSMutableArray *testInfoAry;
 
 @property (nonatomic,assign) NSInteger testCount;
 
@@ -88,7 +107,7 @@
         label.centerY = JSFrame.size.height *.5;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
-        [label setBackgroundColor:[UIColor redColor]];
+        //[label setBackgroundColor:[UIColor redColor]];
         [self.control.view addSubview:label];
         self.labelFocus = label;
     }
@@ -226,6 +245,15 @@
     }
     return _label9;
 }
+
+-(NSMutableArray *)testInfoAry{
+
+    if (!_testInfoAry) {
+        self.testInfoAry = [NSMutableArray new];
+    }
+    return _testInfoAry;
+}
+
 -(instancetype)initWithController:(UIViewController*)control{
 
     if (self = [super init]) {
@@ -267,6 +295,8 @@
     
     self.testCount = 0;
     
+    self.testInfoAry = nil;
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(firstTestClick:)];
     
     [self.control.view addGestureRecognizer:tap];
@@ -280,9 +310,8 @@
 }
 //每过一段时间就会赋值label
 -(void)CaculateFirstTest:(NSTimer*)timer{
-
-    [self rollLabel];
     
+    [self rollLabel];
 }
 
 //点击屏幕的事件；
@@ -304,8 +333,8 @@
         [self.actionTimer invalidate];
         [self.control.view removeGestureRecognizer:self.tap];
         [self.labelFocus removeFromSuperview];
-        if ([self.delegate respondsToSelector:@selector(AttentionSpanTestFinishFirstTest:)]) {
-            [self.delegate AttentionSpanTestFinishFirstTest:self];
+        if ([self.delegate respondsToSelector:@selector(AttentionSpanTestFinishFirstTest:testArray:)]) {
+            [self.delegate AttentionSpanTestFinishFirstTest:self testArray:self.testInfoAry];
         }
     }
 }
@@ -327,6 +356,7 @@
     }else{
         [self.labelFocus setText:[NSString stringWithFormat:@"%ld",arcnum]];
     }
+    [self.testInfoAry addObject:self.labelFocus.text];
 }
 
 
@@ -342,6 +372,8 @@
 -(void)showSecond{
 
     [self rollAllLabel];
+    
+    self.testInfoAry = nil;
     
     self.timeCount = 0;
     
@@ -360,12 +392,12 @@
     if ([self.delegate respondsToSelector:@selector(AttentionSpanTestClick:secondTestTime:numAry:testCount:)]) {
         [self.delegate AttentionSpanTestClick:self secondTestTime:self.timeCount numAry:self.numberContainAry testCount:self.testCount];
     }
-
+    
 }
 
 -(void)caculatSecondTest{
-
     self.testCount ++;
+    
     [self rollAllLabel];
 
 }
@@ -380,12 +412,10 @@
         [self.actionTimer invalidate];
         [self.control.view removeGestureRecognizer:self.tap];
         [self.labelFocus removeFromSuperview];
-        if ([self.delegate respondsToSelector:@selector(AttentionSpanTestFinishSecondTest:)]) {
-            [self.delegate AttentionSpanTestFinishSecondTest:self];
+        if ([self.delegate respondsToSelector:@selector(AttentionSpanTestFinishSecondTest:testArray:)]) {
+            [self.delegate AttentionSpanTestFinishSecondTest:self testArray:self.testInfoAry];
         }
-
     }
-    
 }
 
 -(NSMutableArray *)numberContainAry{
@@ -417,6 +447,7 @@
     [self setLabelFrame:self.label7];
     [self setLabelFrame:self.label8];
     [self setLabelFrame:self.label9];
+    [self.testInfoAry addObject:self.numberContainAry];
 }
 
 //随机位置 和数字
@@ -449,6 +480,7 @@
     [self.numberContainAry addObject:labeltext];
 }
 
+//以此判断roll的值是否会和其他的重叠；
 -(BOOL)isCD{
     NSInteger conterx = arc4random()%(self.centrollx);
     NSInteger centery = arc4random()%(self.centrolly);
@@ -469,17 +501,96 @@
             if (ABS(obrect.origin.y - centerY) < labelWidth) {
                 return NO;
             }
-        
         }
-        
     }
     self.labelcenterx = centerX;
     self.labelcentery = centerY;
     return YES;
 }
 
--(void)dealloc{
 
+//这里将做语音测试。
+-(void)soundTest{
+    //这里先将所有语音全部进行注册；
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"1.caf"]), &_avid0);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"2.caf"]), &_avid1);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"3.caf"]), &_avid2);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"1.caf"]), &_avid3);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"2.caf"]), &_avid4);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"3.caf"]), &_avid5);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"1.caf"]), &_avid6);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"2.caf"]), &_avid7);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"3.caf"]), &_avid8);
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"1.caf"]), &_avid9);
+    self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(beginSoundTest) userInfo:nil repeats:YES];
+    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(caculateSoundTest) userInfo:nil repeats:YES];
+     UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(soundTestClick)];
+    
+    [self.control.view addGestureRecognizer:tap];
+    
+    self.tap = tap;
+    self.timeCount = 0;
+}
+
+-(void)soundTestClick{
+
+    
+
+}
+
+//注册语音的语音URL；
+-(NSURL *)regsoundForFile:(NSString*)filename{
+    NSString *path = [[NSBundle mainBundle]resourcePath];
+    path = [path stringByAppendingPathComponent:filename];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    return url;
+}
+//开始语音的计时。每0.01s
+-(void)beginSoundTest{
+    self.timeCount = self.timeCount + 0.01;
+}
+
+//开始循环进行语音的播放
+-(void)caculateSoundTest{
+    NSInteger rollNum = arc4random()%3;
+    switch (rollNum) {
+        case 0:
+            AudioServicesPlayAlertSound(self.avid0);
+            break;
+        case 1:
+            AudioServicesPlayAlertSound(self.avid1);
+            break;
+        case 2:
+            AudioServicesPlayAlertSound(self.avid2);
+            break;
+        case 3:
+            AudioServicesPlayAlertSound(self.avid3);
+            break;
+        case 4:
+            AudioServicesPlayAlertSound(self.avid4);
+            break;
+        case 5:
+            AudioServicesPlayAlertSound(self.avid5);
+            break;
+        case 6:
+            AudioServicesPlayAlertSound(self.avid6);
+            break;
+        case 7:
+            AudioServicesPlayAlertSound(self.avid7);
+            break;
+        case 8:
+            AudioServicesPlayAlertSound(self.avid8);
+            break;
+        case 9:
+            AudioServicesPlayAlertSound(self.avid9);
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)dealloc{
+    
     JSLog(@"AttentionSpanTest--dealloc");
 
 }
