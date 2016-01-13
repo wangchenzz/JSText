@@ -11,7 +11,15 @@
 @interface AttentionSpanTest ()
 
 //控件属性；
+
+/**
+ *  单独出现的label
+ */
 @property (nonatomic,weak) UILabel *labelFocus;
+
+/**
+ *  focuslabel 的tag值
+ */
 @property (nonatomic,assign) NSInteger labelTag;
 
 @property (nonatomic,weak) UILabel *label1;
@@ -50,32 +58,56 @@
 
 
 //重要属性
+
+/**
+ *  播放音乐标记;
+ */
+@property (nonatomic,assign) NSInteger soundCount;
+
+/** roll的x */
 @property (nonatomic,assign) NSInteger centrollx;
 
+
+/** roll的y */
 @property (nonatomic,assign) NSInteger centrolly;
 
+/** 导航栏的高度 */
 @property (nonatomic,assign) NSInteger naviH;
 
 
+/** label 的x */
 @property (nonatomic,assign) CGFloat labelcenterx;
 
 
+/** label 的y */
 @property (nonatomic,assign) CGFloat labelcentery;
 
 
-
+/** 是否重叠 */
 @property (nonatomic,readonly,getter=isCD) BOOL CD;
 
+/** 时间 */
 @property (nonatomic,assign) double timeCount;
 
+/** 持有控制器 */
 @property (nonatomic,weak) UIViewController *control;
 
+/** 10个数字的存放数组 */
 @property (nonatomic,retain) NSMutableArray *numberContainAry;
 
+/** 10个label 的位置 */
 @property (nonatomic,retain) NSMutableArray *sizeAty;
 
+/** 测试内容存放的数组 */
 @property (nonatomic,retain) NSMutableArray *testInfoAry;
 
+
+/**
+ *  混合测试内容的数组
+ */
+@property (nonatomic,retain) NSMutableArray *soundInfoAry;
+
+/** 测试的当前次数 */
 @property (nonatomic,assign) NSInteger testCount;
 
 @end
@@ -291,6 +323,8 @@
 
     //1.无干扰的出现0－9 10个数字随机出现， 出现4时触发；
     
+    [self rollLabel];
+    
     self.timeCount = 0;
     
     self.testCount = 0;
@@ -308,13 +342,21 @@
     self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(CaculateFirstTest:) userInfo:nil repeats:YES];
     
 }
-//每过一段时间就会赋值label
+/**
+ *  每过一段时间就会赋值label
+ *
+ *  @param timer 定时器
+ */
 -(void)CaculateFirstTest:(NSTimer*)timer{
     
     [self rollLabel];
 }
 
-//点击屏幕的事件；
+/**
+ *  点击屏幕的事件；
+ *
+ *  @param tap 手势
+ */
 -(void)firstTestClick:(UITapGestureRecognizer*)tap{
 
     if ([self.delegate respondsToSelector:@selector(AttentionSpanTestClick:testTime:label:)]) {
@@ -322,7 +364,11 @@
     }
 
 }
-//开始第一次的测试，计算时间。
+/**
+ *  开始第一次的测试，计算时间。
+ *
+ *  @param timer 定时器
+ */
 -(void)BeginFirstTest:(NSTimer*)timer{
     
    // JSLog(@"beginfirsttest run");
@@ -339,8 +385,9 @@
     }
 }
 
-
-//随机给label 赋值；
+/**
+ *  随机给label 赋值；
+ */
 -(void)rollLabel{
     
     NSInteger arcnum = arc4random()%13;
@@ -367,7 +414,9 @@
  */
 
 
-//显示第二阶段测试;
+/**
+ *  显示第二阶段测试;
+ */
 
 -(void)showSecond{
 
@@ -395,6 +444,10 @@
     
 }
 
+/**
+ *  循环的排布所有label的位置
+ */
+
 -(void)caculatSecondTest{
     self.testCount ++;
     
@@ -402,7 +455,12 @@
 
 }
 
-//计时第二次测试的时间
+/**
+ *  计时第二次测试的时间
+ *
+ *  @param timer 定时器
+ */
+
 -(void)secondTestBegan:(NSTimer*)timer{
     
     self.timeCount = self.timeCount + 0.01;
@@ -411,7 +469,6 @@
         [self.timeCountTimer invalidate];
         [self.actionTimer invalidate];
         [self.control.view removeGestureRecognizer:self.tap];
-        [self.labelFocus removeFromSuperview];
         if ([self.delegate respondsToSelector:@selector(AttentionSpanTestFinishSecondTest:testArray:)]) {
             [self.delegate AttentionSpanTestFinishSecondTest:self testArray:self.testInfoAry];
         }
@@ -433,7 +490,9 @@
 }
 
 
-//给所有的label 赋位置；
+/**
+ *  给所有的label 赋位置；
+ */
 -(void)rollAllLabel{
     self.numberContainAry = nil;
     self.sizeAty = nil;
@@ -450,7 +509,11 @@
     [self.testInfoAry addObject:self.numberContainAry];
 }
 
-//随机位置 和数字
+/**
+ *  随机位置 和数字
+ *
+ *  @param label
+ */
 -(void)setLabelFrame:(UILabel*)label{
     
 //    (heig-labelWidth-navigationH)
@@ -480,7 +543,11 @@
     [self.numberContainAry addObject:labeltext];
 }
 
-//以此判断roll的值是否会和其他的重叠；
+/**
+ *  以此判断roll的值是否会和其他的重叠；
+ *
+ *  @return panduan
+ */
 -(BOOL)isCD{
     NSInteger conterx = arc4random()%(self.centrollx);
     NSInteger centery = arc4random()%(self.centrolly);
@@ -508,10 +575,30 @@
     return YES;
 }
 
-
-//这里将做语音测试。
+/**
+ *  语音测试
+ *
+ *  @return ..
+ */
 -(void)soundTest{
     //这里先将所有语音全部进行注册；
+    [self letSoundOk];
+
+    self.timeCount = 0;
+    self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(beginSoundTest) userInfo:nil repeats:YES];
+    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(caculateSoundTest) userInfo:nil repeats:YES];
+     UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(soundTestClick)];
+    
+    [self.control.view addGestureRecognizer:tap];
+    self.tap = tap;
+}
+
+/**
+ *  准备所有音乐;
+ */
+
+-(void)letSoundOk{
+
     AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"1.caf"]), &_avid0);
     AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"2.caf"]), &_avid1);
     AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"3.caf"]), &_avid2);
@@ -522,37 +609,52 @@
     AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"2.caf"]), &_avid7);
     AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"3.caf"]), &_avid8);
     AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"1.caf"]), &_avid9);
-    self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(beginSoundTest) userInfo:nil repeats:YES];
-    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(caculateSoundTest) userInfo:nil repeats:YES];
-     UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(soundTestClick)];
     
-    [self.control.view addGestureRecognizer:tap];
-    
-    self.tap = tap;
-    self.timeCount = 0;
 }
 
+/**
+ *  声音测试中的点击事件；
+ */
 -(void)soundTestClick{
-
-    
 
 }
 
 //注册语音的语音URL；
+/**
+ *  得到注册音效的 URL
+ *
+ *  @param filename  文件名
+ *
+ *  @return 文件 URL
+ */
 -(NSURL *)regsoundForFile:(NSString*)filename{
     NSString *path = [[NSBundle mainBundle]resourcePath];
     path = [path stringByAppendingPathComponent:filename];
     NSURL *url = [NSURL fileURLWithPath:path];
     return url;
 }
-//开始语音的计时。每0.01s
+
+/**
+ *  开始语音的计时.每0.01s
+ */
 -(void)beginSoundTest{
     self.timeCount = self.timeCount + 0.01;
+    
+    if (self.timeCount >= 10) {
+    
+        [self.timeCountTimer invalidate];
+        [self.actionTimer invalidate];
+        [self.control.view removeGestureRecognizer:self.tap];
+
+    }
 }
 
-//开始循环进行语音的播放
+/**
+ *  开始循环进行语音的播放
+ */
 -(void)caculateSoundTest{
-    NSInteger rollNum = arc4random()%3;
+    NSInteger rollNum = arc4random()%10 - 1;
+    self.soundCount = rollNum;
     switch (rollNum) {
         case 0:
             AudioServicesPlayAlertSound(self.avid0);
@@ -589,6 +691,62 @@
     }
 }
 
+/**
+ *  视觉听觉混合测试;
+ */
+-(void)showSoundWatchTest{
+    [self letSoundOk];
+    
+    self.timeCount = 0;
+    
+    self.testCount = 0;
+    
+    self.testInfoAry = nil;
+
+    self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(superTimerCount) userInfo:nil repeats:YES];
+    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(superCaculatTest) userInfo:nil repeats:YES];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(superTestClick)];
+    self.tap = tap;
+}
+/**
+ *  混合测试时间计算
+ */
+-(void)superTimerCount{
+
+    self.timeCount = self.timeCount + 0.01;
+    
+}
+
+/**
+ *  混合测试事件安排
+ */
+-(void)superCaculatTest{
+
+    [self rollLabel];
+    [self caculateSoundTest];
+    
+    NSString *count = [NSString stringWithFormat:@"%ld",self.soundCount];
+    
+    if ([count isEqualToString:self.labelFocus.text]) {
+        [self.soundInfoAry addObject:@1];
+        
+    }else{
+        
+        [self.soundInfoAry addObject:@0];
+    }
+}
+
+/**
+ *  混合测试点击事件
+ */
+-(void)superTestClick{
+
+}
+
+
+/**
+ *  观察是否销毁。
+ */
 -(void)dealloc{
     
     JSLog(@"AttentionSpanTest--dealloc");

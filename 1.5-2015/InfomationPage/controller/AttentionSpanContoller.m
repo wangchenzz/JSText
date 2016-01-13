@@ -48,7 +48,8 @@
 -(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest *)test testArray:(NSMutableArray *)ary{
 
     JSLog(@"%@",ary);
-    [test showSecond];
+    //[test showSecond];
+    [test showSoundWatchTest];
 }
 //第二项测试时。点击调用
 -(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(double)time numAry:(NSMutableArray *)numary testCount:(NSInteger)count{
