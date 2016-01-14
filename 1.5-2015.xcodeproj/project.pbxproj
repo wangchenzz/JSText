@@ -85,6 +85,8 @@
 		04EBC26E1C3AB36700AB40F4 /* JSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBC26D1C3AB36700AB40F4 /* JSTabBarController.m */; settings = {ASSET_TAGS = (); }; };
 		04EC68A31C3A68EE00172DD0 /* testPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EC68A21C3A68EE00172DD0 /* testPerson.m */; settings = {ASSET_TAGS = (); }; };
 		04EC68A61C3A6CEE00172DD0 /* wordTestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EC68A51C3A6CEE00172DD0 /* wordTestObj.m */; settings = {ASSET_TAGS = (); }; };
+		04EECCB11C4743A400C690A5 /* AttentionSpanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EECCB01C4743A400C690A5 /* AttentionSpanModel.m */; settings = {ASSET_TAGS = (); }; };
+		04EECCB71C47743000C690A5 /* AttentionTransferTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EECCB61C47743000C690A5 /* AttentionTransferTest.m */; settings = {ASSET_TAGS = (); }; };
 		04EFD26A1C3B0ED200653B53 /* RegistInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFD2691C3B0ED200653B53 /* RegistInfoController.m */; settings = {ASSET_TAGS = (); }; };
 		04EFD26D1C3B0F3500653B53 /* RegistInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFD26C1C3B0F3500653B53 /* RegistInfoCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -256,6 +258,10 @@
 		04EC68A21C3A68EE00172DD0 /* testPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPerson.m; sourceTree = "<group>"; };
 		04EC68A41C3A6CEE00172DD0 /* wordTestObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wordTestObj.h; sourceTree = "<group>"; };
 		04EC68A51C3A6CEE00172DD0 /* wordTestObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wordTestObj.m; sourceTree = "<group>"; };
+		04EECCAF1C4743A400C690A5 /* AttentionSpanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionSpanModel.h; sourceTree = "<group>"; };
+		04EECCB01C4743A400C690A5 /* AttentionSpanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionSpanModel.m; sourceTree = "<group>"; };
+		04EECCB51C47743000C690A5 /* AttentionTransferTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionTransferTest.h; sourceTree = "<group>"; };
+		04EECCB61C47743000C690A5 /* AttentionTransferTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionTransferTest.m; sourceTree = "<group>"; };
 		04EFD2681C3B0ED200653B53 /* RegistInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistInfoController.h; sourceTree = "<group>"; };
 		04EFD2691C3B0ED200653B53 /* RegistInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistInfoController.m; sourceTree = "<group>"; };
 		04EFD26B1C3B0F3500653B53 /* RegistInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistInfoCell.h; sourceTree = "<group>"; };
@@ -417,6 +423,8 @@
 				04D3F6AA1C46294300BFC3E3 /* 1.caf */,
 				04D3F6AB1C46294300BFC3E3 /* 2.caf */,
 				04D3F6AC1C46294300BFC3E3 /* 3.caf */,
+				04EECCAF1C4743A400C690A5 /* AttentionSpanModel.h */,
+				04EECCB01C4743A400C690A5 /* AttentionSpanModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -426,6 +434,8 @@
 			children = (
 				0424BFCA1C435136007F24AB /* AttentionSpanTest.h */,
 				0424BFCB1C435136007F24AB /* AttentionSpanTest.m */,
+				04EECCB51C47743000C690A5 /* AttentionTransferTest.h */,
+				04EECCB61C47743000C690A5 /* AttentionTransferTest.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -842,6 +852,7 @@
 				043408751C3E29A800E4F1FA /* SRTViewController.m in Sources */,
 				047A05EB1C3B1C3B000C6821 /* AFSecurityPolicy.m in Sources */,
 				043408711C3E296F00E4F1FA /* SRTtest.m in Sources */,
+				04EECCB71C47743000C690A5 /* AttentionTransferTest.m in Sources */,
 				047A05E71C3B1C3B000C6821 /* AFHTTPRequestOperation.m in Sources */,
 				047A06081C3B1C3B000C6821 /* SDWebImageDownloaderOperation.m in Sources */,
 				047A060A1C3B1C3B000C6821 /* SDWebImagePrefetcher.m in Sources */,
@@ -887,6 +898,7 @@
 				047A060F1C3B1C3B000C6821 /* UIImageView+HighlightedWebCache.m in Sources */,
 				0434087B1C3E3EE200E4F1FA /* JSDatePiker.m in Sources */,
 				04E986111C3B574F002E8F7C /* ClickTest.m in Sources */,
+				04EECCB11C4743A400C690A5 /* AttentionSpanModel.m in Sources */,
 				0424BFC61C4344A7007F24AB /* NSDate+Extension.m in Sources */,
 				047A06031C3B1C3B000C6821 /* NSData+ImageContentType.m in Sources */,
 				047A05411C3B16DF000C6821 /* main.m in Sources */,

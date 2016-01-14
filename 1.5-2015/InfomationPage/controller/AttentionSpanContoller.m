@@ -9,6 +9,8 @@
 #import "AttentionSpanContoller.h"
 
 #import "AttentionSpanTest.h"
+
+#import "AttentionTransferTest.h"
 @interface AttentionSpanContoller ()<AttentionSpanTestDelegate>
 
 @property (nonatomic,retain) AttentionSpanTest *attentionTest;
@@ -32,8 +34,15 @@
     
     self.attentionTest.delegate = self;
     
-    [self.attentionTest show];
+   // [self.attentionTest show];
     
+    AttentionTransferTest *trans = [[AttentionTransferTest alloc]initWithFrame:CGRectMake(0, 100, 300, 300)];
+    
+    [self.view addSubview:trans];
+    
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    
+    [trans gameBegan];
 }
 
 //第一项测试时。 点击回调用
@@ -49,18 +58,28 @@
 
     JSLog(@"%@",ary);
     //[test showSecond];
-    [test showSoundWatchTest];
+    [test showSecond];
 }
 //第二项测试时。点击调用
 -(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(double)time numAry:(NSMutableArray *)numary testCount:(NSInteger)count{
 
-    
 }
 //第二次测试结束时候调用
--(void)AttentionSpanTestFinishSecondTest:(AttentionSpanTest *)test testArray:(NSMutableArray *)ary{
 
+/**
+ *  第二项测试会重复测试,如何解决,
+ *
+ *  @param test 自身
+ *  @param ary  测试数组 数组里面包含的数组是每次屏幕上显示的所有数字;
+ */
+-(void)AttentionSpanTestFinishSecondTest:(AttentionSpanTest *)test testArray:(NSMutableArray *)ary{
+    
     [test soundTest];
 
     JSLog(@"%@",ary);
+
+    
 }
+
+
 @end
