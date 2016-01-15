@@ -8,6 +8,10 @@
 
 #import "JSRoundGesture.h"
 
+/**
+ *  画线的手势
+ */
+
 @interface JSLineGesture : JSRoundGesture
 
 @end

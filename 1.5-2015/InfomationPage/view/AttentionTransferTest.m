@@ -298,9 +298,8 @@
  */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
-    
-    
 }
+
 /**
  *  只要移动就会一直调用
  *
@@ -309,9 +308,8 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
-
-    
 }
+
 /**
  *  移动offset就会调用
  *

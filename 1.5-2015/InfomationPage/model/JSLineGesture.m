@@ -13,6 +13,13 @@
 @implementation JSLineGesture
 
 
+/**
+ *  继承自画圆的类
+ *
+ *  @param touches ...
+ *  @param event   如果方向改变小于2 则视为
+ */
+
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
     if (self.changeDirctCount < 2) {

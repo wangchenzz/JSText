@@ -75,7 +75,6 @@
 		04932E931C3FA1F20013631D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04932E921C3FA1F20013631D /* libz.tbd */; };
 		04932E951C3FA2040013631D /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04932E941C3FA2040013631D /* libicucore.tbd */; };
 		04932E971C3FA20D0013631D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04932E961C3FA20D0013631D /* MessageUI.framework */; };
-		04932E991C3FA21D0013631D /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04932E981C3FA21D0013631D /* JavaScriptCore.framework */; };
 		04932E9B1C3FA2300013631D /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04932E9A1C3FA2300013631D /* libstdc++.tbd */; };
 		04AD85DE1C3F4DC700B6098E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD85DD1C3F4DC700B6098E /* UIView+Frame.m */; settings = {ASSET_TAGS = (); }; };
 		04AD85E11C3F4E9F00B6098E /* UIImage+Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD85E01C3F4E9F00B6098E /* UIImage+Render.m */; settings = {ASSET_TAGS = (); }; };
@@ -248,7 +247,6 @@
 		04932E921C3FA1F20013631D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		04932E941C3FA2040013631D /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		04932E961C3FA20D0013631D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		04932E981C3FA21D0013631D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		04932E9A1C3FA2300013631D /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		04AD85DC1C3F4DC700B6098E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		04AD85DD1C3F4DC700B6098E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 			files = (
 				04D3F68B1C45E46D00BFC3E3 /* AudioToolbox.framework in Frameworks */,
 				04932E9B1C3FA2300013631D /* libstdc++.tbd in Frameworks */,
-				04932E991C3FA21D0013631D /* JavaScriptCore.framework in Frameworks */,
 				04932E971C3FA20D0013631D /* MessageUI.framework in Frameworks */,
 				04932E951C3FA2040013631D /* libicucore.tbd in Frameworks */,
 				04932E931C3FA1F20013631D /* libz.tbd in Frameworks */,
@@ -397,7 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				04932E9A1C3FA2300013631D /* libstdc++.tbd */,
-				04932E981C3FA21D0013631D /* JavaScriptCore.framework */,
 				04932E961C3FA20D0013631D /* MessageUI.framework */,
 				04932E941C3FA2040013631D /* libicucore.tbd */,
 				04932E921C3FA1F20013631D /* libz.tbd */,

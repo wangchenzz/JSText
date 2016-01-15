@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  画圆的手势
+ */
+
 @interface JSRoundGesture : UIGestureRecognizer
 typedef NS_ENUM(NSInteger,JSDirct) {
     JSDirctUpRight  =  1,
