@@ -11,7 +11,10 @@
 #import "AttentionSpanTest.h"
 
 #import "AttentionTransferTest.h"
-@interface AttentionSpanContoller ()<AttentionSpanTestDelegate>
+
+#import "AttensionTransferModel.h"
+
+@interface AttentionSpanContoller ()<AttentionSpanTestDelegate,AttentionTransferTestDelegate>
 
 @property (nonatomic,retain) AttentionSpanTest *attentionTest;
 
@@ -26,23 +29,26 @@
     
 #warning  delete
     
-    self.tabBarController.tabBar.hidden = YES;
-    
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-    
     self.attentionTest = [[AttentionSpanTest alloc]initWithController:self];
     
     self.attentionTest.delegate = self;
     
    // [self.attentionTest show];
     
-    AttentionTransferTest *trans = [[AttentionTransferTest alloc]initWithFrame:CGRectMake(0, 100, 300, 300)];
+    AttentionTransferTest *trans = [[AttentionTransferTest alloc]initWithFrame:CGRectMake(50, 100, 300, 300)];
+    trans.delegate = self;
     
     [self.view addSubview:trans];
     
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
     [trans gameBegan];
+}
+
+-(void)dopa{
+
+    JSLog(@"dopa");
+
 }
 
 //第一项测试时。 点击回调用
@@ -79,6 +85,19 @@
     JSLog(@"%@",ary);
 
     
+}
+
+
+
+#pragma mark - AttentionTransferTestDelegate
+
+-(void)AttentionTransferTestDidFinish:(AttentionTransferTest *)test listArray:(NSMutableArray *)array{
+
+    for (AttensionTransferModel *model in array) {
+        JSLog(@"%d   -%f    =%@",model.isWriteX,model.time,model.iamge);
+    }
+    
+
 }
 
 

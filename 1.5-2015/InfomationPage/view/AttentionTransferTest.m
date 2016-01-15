@@ -7,11 +7,11 @@
 //
 
 #import "AttentionTransferTest.h"
-
+#import "AttensionTransferModel.h"
+#import "JSDrawView.h"
+#import "JSRoundGesture.h"
+#import "JSLineGesture.h"
 @interface AttentionTransferTest ()<UIScrollViewDelegate>
-
-
-
 /**
  *  前一张图片
  */
@@ -40,7 +40,9 @@
 /**
  *  手势
  */
-@property (nonatomic,retain) UITapGestureRecognizer *tap;
+@property (nonatomic,retain) JSRoundGesture *round;
+
+@property (nonatomic,retain) JSLineGesture *line;
 
 
 /**
@@ -49,6 +51,21 @@
 @property (nonatomic,retain) NSMutableArray *listArray;
 
 
+/**
+ *  所经过的时间;
+ */
+@property (nonatomic,assign) double timeCount;
+
+/**
+ *  画图板;
+ */
+
+@property (nonatomic,retain) JSDrawView *drawView;
+
+/**
+ *  用来存放每次测试结果;
+ */
+@property (nonatomic,retain) AttensionTransferModel *testModel;
 
 /**
  *  这里是六张图片 循环播放.
@@ -109,7 +126,6 @@
     [self addSubview:scrview];
     self.mainScrollView = scrview;
     self.mainScrollView.scrollEnabled = NO;
-    
 }
 
 -(void)setUpImage{
@@ -127,6 +143,11 @@
     self.beforeImageView = imageview;
     self.nextImageView = otherImageView;
     
+    self.drawView = [[JSDrawView alloc]initWithFrame:self.beforeImageView.bounds];
+    
+    [self.drawView setBackgroundColor:[UIColor clearColor]];
+    
+    [self.beforeImageView addSubview:self.drawView];
     
     self.firstImage = [UIImage imageNamed:@"AttentionTransferTest1"];
     self.secondImage = [UIImage imageNamed:@"AttentionTransferTest2"];
@@ -149,31 +170,95 @@
     
     self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(actionNow) userInfo:nil repeats:YES];
     
-    self.tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(click:)];
-    [self.beforeImageView addGestureRecognizer:self.tap];
+    self.round = [[JSRoundGesture alloc]initWithTarget:self action:@selector(writeRound)];
+    
+    self.line = [[JSLineGesture alloc]initWithTarget:self action:@selector(writeLine)];
+
+    [self.beforeImageView addGestureRecognizer:self.round];
+    
+    [self.beforeImageView addGestureRecognizer:self.line];
+}
+
+-(void)writeRound{
+
+    self.testModel.isWriteRound = YES;
+    
+    int time = (int)(self.timeCount *100) % 250;
+    
+    self.testModel.time = (double) time / 100.0;
+    
+}
+
+-(void)writeLine{
+    
+    self.testModel.isWriteX = YES;
+    
+    int time = (int)(self.timeCount *100) % 250;
+    
+    self.testModel.time = (double) time / 100.0;
 
 }
 
--(void)caculateTimeCount{
 
+-(void)caculateTimeCount{
+    self.timeCount = self.timeCount + 0.01;
+    
+    if (self.timeCount >9.5) {
+        
+        [self.timeCountTimer invalidate];
+        [self.actionTimer invalidate];
+        [self.beforeImageView removeGestureRecognizer:self.line];
+        [self.beforeImageView removeGestureRecognizer:self.round];
+        
+        if ([self.delegate respondsToSelector:@selector(AttentionTransferTestDidFinish:listArray:)]) {
+            [self.delegate AttentionTransferTestDidFinish:self listArray:self.listArray];
+        }
+    }
+    
+}
+/**
+ *  此处每过2.5s 会更新一次图片, 每个三十秒 则会播放语音,然用户画圈,
+ *  需要在某处,响应用户的手势事件,然后将每次点击的结果进行回调.
+ */
+-(AttensionTransferModel *)testModel{
+
+    if (!_testModel) {
+        self.testModel = [[AttensionTransferModel alloc]init];
+    }
+    return _testModel;
 }
 
 -(void)actionNow{
     
-//    - (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated;  // animate at constant velocity to new offset
-//    - (void)scrollRectToVisible:(CGRect)rect animated:(BOOL)animated;
-//    self.mainScrollView.contentOffset = CGPointMake(self.frame.size.width, 0);
+    self.testModel.iamge = self.beforeImageView.image;
+    [self.listArray addObject:self.testModel];
     [self.mainScrollView scrollRectToVisible:CGRectMake(self.mainScrollView.frame.size.width, 0,self.frame.size.width,self.frame.size.height) animated:YES];
 
     [self.mainScrollView setContentOffset:CGPointMake(self.mainScrollView.frame.size.width, 0) animated:YES];
-}
-
--(void)click:(UITapGestureRecognizer*)tap{
+    self.testModel = nil;
     
-    JSLog(@"123456789");
-
 }
 
+/**
+ *  ...
+ *
+ *  @param tap ...
+ */
+
+
+-(NSMutableArray *)listArray{
+
+    if (!_listArray) {
+        self.listArray = [NSMutableArray new];
+    }
+    return _listArray;
+}
+
+/**
+ *  roll 值以确定放出那张图片
+ *
+ *  @return roll 的图片
+ */
 -(UIImage *)rollImage{
 
     NSInteger rollNum = arc4random()%6;
@@ -201,21 +286,37 @@
         default:
             break;
     }
-    return self.firstImage;
-
+    return nil;
 }
 
 #pragma mark - UIScrollViewDelegate
 
-
+/**
+ *  减速移动完成会调用
+ *
+ *  @param scrollView  self
+ */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
+    
+    
 }
+/**
+ *  只要移动就会一直调用
+ *
+ *  @param scrollView  self
+ */
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
 
+    
 }
+/**
+ *  移动offset就会调用
+ *
+ *  @param scrollView self
+ */
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView;
 {
  
@@ -223,8 +324,14 @@
         self.mainScrollView.contentOffset = CGPointMake(0, 0);
         self.beforeImageView.image = self.nextImageView.image;
         self.nextImageView.image = [self rollImage];
-
-    }
+        self.drawView.pointAry = nil;
+        [self.drawView setNeedsDisplay];
+    }else{
     
+        [MBProgressHUD showError:@"出问题了"];
+        
+    }
 }
+
+
 @end
