@@ -18,6 +18,15 @@
 
 #import "AttentionSpanContoller.h"
 
+/**
+ *  测试的控制器
+ *
+ *  @param void ..
+ *
+ *  @return 0..
+ */
+#import "testcontroller.h"
+
 @interface JSTabBarController ()
 
 @end
@@ -47,6 +56,10 @@
     AttentionSpanContoller *asc = [[AttentionSpanContoller alloc]init];
     
     [self addJSChildViewController:asc];
+ 
+    testcontroller *das = [[testcontroller alloc]init];
+    
+    [self addJSChildViewController:das];
     
 }
 
@@ -57,7 +70,7 @@
     //tabbar 主题；
     
     //设置tabbar item 的颜色；
-    self.tabBar.barTintColor = [UIColor redColor];
+    self.tabBar.barTintColor = JSColor(255, 59, 70);
 
     
     //设置普通状态下的tabbaritem字体；
@@ -69,6 +82,7 @@
     normalAttri[NSFontAttributeName] = JSFont(18);
     
     normalAttri[NSForegroundColorAttributeName] = JSColor(1, 1, 1);
+    
     //设置选中状态下的tabbaritem的字体；
     NSMutableDictionary *selectAttri = [NSMutableDictionary new];
     

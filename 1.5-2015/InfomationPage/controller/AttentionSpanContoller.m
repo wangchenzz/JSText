@@ -21,7 +21,6 @@
 
 @end
 
-
 @implementation AttentionSpanContoller
 
 -(void)viewDidLoad{
@@ -30,11 +29,14 @@
     
 #warning  delete
     
+
     self.attentionTest = [[AttentionSpanTest alloc]initWithController:self];
     
     self.attentionTest.delegate = self;
     
    // [self.attentionTest show];
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     AttentionTransferTest *trans = [[AttentionTransferTest alloc]initWithFrame:CGRectMake(50, 100, 300, 300)];
     trans.delegate = self;
