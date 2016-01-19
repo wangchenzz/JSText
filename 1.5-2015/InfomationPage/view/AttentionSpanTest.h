@@ -23,7 +23,7 @@
  *  @param time  训练时间
  *  @param label 屏幕上的 label
  */
--(void)AttentionSpanTestClick:(AttentionSpanTest*)test testTime:(double)time label:(UILabel*)label;
+-(void)AttentionSpanTestClick:(AttentionSpanTest*)test testTime:(float)time label:(UILabel*)label;
 
 /**
  *  视觉测试完成后的回调
@@ -33,7 +33,7 @@
  */
 -(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest*)test testArray:(NSMutableArray*)ary;
 
--(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(double)time numAry:(NSMutableArray*)numary testCount:(NSInteger)count;
+-(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(float)time numAry:(NSMutableArray*)numary testCount:(NSInteger)count;
 
 -(void)AttentionSpanTestFinishSecondTest:(AttentionSpanTest*)test testArray:(NSMutableArray*)ary;
 

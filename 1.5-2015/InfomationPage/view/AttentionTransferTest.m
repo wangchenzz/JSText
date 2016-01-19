@@ -54,7 +54,7 @@
 /**
  *  所经过的时间;
  */
-@property (nonatomic,assign) double timeCount;
+@property (nonatomic,assign) float timeCount;
 
 /**
  *  画图板;
@@ -211,7 +211,7 @@
     
     int time = (int)(self.timeCount *100) % 250;
     
-    self.testModel.time = (double) time / 100.0;
+    self.testModel.time = (float) time / 100.0;
     
 }
 
@@ -221,7 +221,7 @@
     
     int time = (int)(self.timeCount *100) % 250;
     
-    self.testModel.time = (double) time / 100.0;
+    self.testModel.time = (float) time / 100.0;
 
 }
 

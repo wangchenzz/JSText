@@ -10,12 +10,29 @@
 
 @interface JSSideTestModel : NSObject
 
+/**
+ *  显示的图片
+ */
 @property (nonatomic,retain) UIImage *disImage;
 
+
+/**
+ *  是否被选中 过
+ */
 @property (nonatomic,assign) BOOL isSelect;
 
-@property (nonatomic,assign) double selectTime;
 
+/**
+ *  选中时的时间
+ */
+@property (nonatomic,assign) float selectTime;
+
+
+/**
+ *  初始化方法
+ *
+ *  @return ...
+ */
 +(instancetype)model;
 
 @end

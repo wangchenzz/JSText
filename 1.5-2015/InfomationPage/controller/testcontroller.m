@@ -12,6 +12,8 @@
 
 @interface testcontroller ()
 
+@property (nonatomic,retain) AttentionTransferSide *de;
+
 @end
 
 @implementation testcontroller
@@ -20,19 +22,9 @@
     [super viewDidLoad];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
-    AttentionTransferSide *seide = [[AttentionTransferSide alloc]initWithFrame:[self.view bounds]];
+    _de= [[AttentionTransferSide alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 680)];
     
-    [self.view addSubview:seide];
+    [self.view addSubview:_de];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

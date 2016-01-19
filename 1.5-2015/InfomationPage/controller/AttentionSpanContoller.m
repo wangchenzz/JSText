@@ -55,7 +55,7 @@
 }
 
 //第一项测试时。 点击回调用
--(void)AttentionSpanTestClick:(AttentionSpanTest *)test testTime:(double)time label:(UILabel *)label {
+-(void)AttentionSpanTestClick:(AttentionSpanTest *)test testTime:(float)time label:(UILabel *)label {
 
     JSLog(@"%ld",label.tag);
     JSLog(@"%@",label.text);
@@ -70,7 +70,7 @@
     [test showSecond];
 }
 //第二项测试时。点击调用
--(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(double)time numAry:(NSMutableArray *)numary testCount:(NSInteger)count{
+-(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(float)time numAry:(NSMutableArray *)numary testCount:(NSInteger)count{
 
 }
 //第二次测试结束时候调用

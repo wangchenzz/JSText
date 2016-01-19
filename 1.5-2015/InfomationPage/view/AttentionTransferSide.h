@@ -17,6 +17,22 @@
 
 #import <UIKit/UIKit.h>
 
+@class AttentionTransferSide;
+
+
+@protocol AttentionTransferSideDelegate <NSObject>
+
+@optional
+
+-(void)AttentionTransferSideDidFinish:(AttentionTransferSide*)test forDataArray:(NSMutableArray*)ary;
+
+
+@end
+
 @interface AttentionTransferSide : UIView
+
+@property (nonatomic,weak) id<AttentionTransferSideDelegate>delegate;
+
+-(void)test;
 
 @end
