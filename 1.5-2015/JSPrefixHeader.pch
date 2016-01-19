@@ -27,7 +27,7 @@
 
 #import "UIBarButtonItem+Extension.h"
 
-#import "NSTimer+Extension.h"
+#import "timerTool.h"
 
 #import <UIKit/UIKit.h>
 

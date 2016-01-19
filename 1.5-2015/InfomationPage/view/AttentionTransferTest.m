@@ -164,29 +164,37 @@
     self.nextImageView.userInteractionEnabled = YES;
 }
 
+
+/**
+ *  计时器开始运作;
+ */
+
 -(void)gameBegan{
-    //    self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(caculateTimeCount) userInfo:nil repeats:YES];
-    //
-    //    __weak __typeof(self)weakSelf = self;
-    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-    //        weakSelf.timeCountTimer=[NSTimer scheduledTimerWithTimeInterval:0.01
-    //                                                           target:weakSelf
-    //                                                         selector:@selector(caculateTimeCount)
-    //                                                         userInfo:nil
-    //                                                          repeats:YES] ;
-    //
-    //        [[NSRunLoop currentRunLoop] addTimer:weakSelf.timeCountTimer forMode:NSDefaultRunLoopMode];
-    //        [[NSRunLoop currentRunLoop] run];
-    //    });
-    //
-    //     __weak __typeof(self)weakSelf = self;
+//  self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(caculateTimeCount) userInfo:nil repeats:YES];
+//
+//        __weak __typeof(self)weakSelf = self;
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//       self.timeCountTimer=[NSTimer scheduledTimerWithTimeInterval:0.01
+//                                                               target:self
+//                                                             selector:@selector(caculateTimeCount)
+//                                                             userInfo:nil
+//                                                              repeats:YES] ;
+//    
+//            [[NSRunLoop currentRunLoop] addTimer:self.timeCountTimer forMode:NSDefaultRunLoopMode];
+//            [[NSRunLoop currentRunLoop] run];
+//        });
+    timerTool *tool = [timerTool tool];
+    self.timeCountTimer = [NSTimer timerWithTimeInterval:0.01 target:self selector:@selector(caculateTimeCount) userInfo:nil repeats:YES];
+    
+    [tool fireInTheHoll:self.timeCountTimer];
     
 
-    
-    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(actionNow) userInfo:nil repeats:YES];
-    
-//     [[NSRunLoop mainRunLoop]addTimer:self.timeCountTimer forMode:NSRunLoopCommonModes];
-     [[NSRunLoop mainRunLoop]addTimer:self.actionTimer forMode:NSRunLoopCommonModes];
+    self.actionTimer = [NSTimer timerWithTimeInterval:2.5 target:self selector:@selector(actionNow) userInfo:nil repeats:YES];
+    [tool fireInTheHoll:self.actionTimer];
+
+//   self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2.5 target:self selector:@selector(actionNow) userInfo:nil repeats:YES];
+//    
+//    [[NSRunLoop mainRunLoop]addTimer:self.actionTimer forMode:NSRunLoopCommonModes];
     
     self.round = [[JSRoundGesture alloc]initWithTarget:self action:@selector(writeRound)];
     
@@ -220,10 +228,12 @@
 
 -(void)caculateTimeCount{
     self.timeCount = self.timeCount + 0.01;
-    
+  //   JSLog(@"%@",[NSThread currentThread]);
     //JSLog(@"%f",self.timeCount);
     
     if (self.timeCount >9.9) {
+        
+    //    JSLog(@"%@",[NSThread currentThread]);
         
         [self.timeCountTimer invalidate];
         [self.actionTimer invalidate];
@@ -248,13 +258,16 @@
     return _testModel;
 }
 
+
+
 -(void)actionNow{
     
     self.testModel.iamge = self.beforeImageView.image;
     [self.listArray addObject:self.testModel];
     JSLog(@"addddddddddddddddd%f",self.timeCount);
      self.testModel = nil;
-    [self.mainScrollView scrollRectToVisible:CGRectMake(self.mainScrollView.frame.size.width, 0,self.frame.size.width,self.frame.size.height) animated:YES];
+   
+    //[self.mainScrollView scrollRectToVisible:CGRectMake(self.mainScrollView.frame.size.width, 0,self.frame.size.width,self.frame.size.height) animated:YES];
 
     [self.mainScrollView setContentOffset:CGPointMake(self.mainScrollView.frame.size.width, 0) animated:YES];
 }

@@ -42,7 +42,6 @@
 		0477580D1C4CC7F70095086D /* testcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477580C1C4CC7F70095086D /* testcontroller.m */; settings = {ASSET_TAGS = (); }; };
 		047758101C4CD0620095086D /* JSSideTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477580F1C4CD0620095086D /* JSSideTestCell.m */; settings = {ASSET_TAGS = (); }; };
 		047758131C4CD7130095086D /* JSSideTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 047758121C4CD7130095086D /* JSSideTestModel.m */; settings = {ASSET_TAGS = (); }; };
-		047758161C4CEAD00095086D /* NSTimer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 047758151C4CEAD00095086D /* NSTimer+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		047A05411C3B16DF000C6821 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A05401C3B16DF000C6821 /* main.m */; };
 		047A05441C3B16DF000C6821 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A05431C3B16DF000C6821 /* AppDelegate.m */; };
 		047A054C1C3B16DF000C6821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047A054B1C3B16DF000C6821 /* Assets.xcassets */; };
@@ -94,6 +93,7 @@
 		04932E9B1C3FA2300013631D /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04932E9A1C3FA2300013631D /* libstdc++.tbd */; };
 		04AD85DE1C3F4DC700B6098E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD85DD1C3F4DC700B6098E /* UIView+Frame.m */; settings = {ASSET_TAGS = (); }; };
 		04AD85E11C3F4E9F00B6098E /* UIImage+Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD85E01C3F4E9F00B6098E /* UIImage+Render.m */; settings = {ASSET_TAGS = (); }; };
+		04D38D681C4DCA780055F59A /* timerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D38D671C4DCA780055F59A /* timerTool.m */; settings = {ASSET_TAGS = (); }; };
 		04D3F68B1C45E46D00BFC3E3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D3F68A1C45E46D00BFC3E3 /* AudioToolbox.framework */; };
 		04D3F6AD1C46294300BFC3E3 /* 1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04D3F6AA1C46294300BFC3E3 /* 1.caf */; settings = {ASSET_TAGS = (); }; };
 		04D3F6AE1C46294300BFC3E3 /* 2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04D3F6AB1C46294300BFC3E3 /* 2.caf */; settings = {ASSET_TAGS = (); }; };
@@ -198,8 +198,6 @@
 		0477580F1C4CD0620095086D /* JSSideTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSideTestCell.m; sourceTree = "<group>"; };
 		047758111C4CD7130095086D /* JSSideTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSideTestModel.h; sourceTree = "<group>"; };
 		047758121C4CD7130095086D /* JSSideTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSideTestModel.m; sourceTree = "<group>"; };
-		047758141C4CEAD00095086D /* NSTimer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Extension.h"; sourceTree = "<group>"; };
-		047758151C4CEAD00095086D /* NSTimer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Extension.m"; sourceTree = "<group>"; };
 		047A053C1C3B16DF000C6821 /* 1.5-2015.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1.5-2015.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		047A05401C3B16DF000C6821 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		047A05421C3B16DF000C6821 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -300,6 +298,8 @@
 		04AD85DD1C3F4DC700B6098E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		04AD85DF1C3F4E9F00B6098E /* UIImage+Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Render.h"; sourceTree = "<group>"; };
 		04AD85E01C3F4E9F00B6098E /* UIImage+Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Render.m"; sourceTree = "<group>"; };
+		04D38D661C4DCA780055F59A /* timerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timerTool.h; sourceTree = "<group>"; };
+		04D38D671C4DCA780055F59A /* timerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timerTool.m; sourceTree = "<group>"; };
 		04D3F68A1C45E46D00BFC3E3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		04D3F6AA1C46294300BFC3E3 /* 1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 1.caf; path = ../../MainPage/model/1.caf; sourceTree = "<group>"; };
 		04D3F6AB1C46294300BFC3E3 /* 2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 2.caf; path = ../../MainPage/model/2.caf; sourceTree = "<group>"; };
@@ -361,8 +361,6 @@
 		043408BB1C3E722600E4F1FA /* category */ = {
 			isa = PBXGroup;
 			children = (
-				047758141C4CEAD00095086D /* NSTimer+Extension.h */,
-				047758151C4CEAD00095086D /* NSTimer+Extension.m */,
 				043408BC1C3E724800E4F1FA /* UIBarButtonItem+Extension.h */,
 				043408BD1C3E724800E4F1FA /* UIBarButtonItem+Extension.m */,
 				04AD85DC1C3F4DC700B6098E /* UIView+Frame.h */,
@@ -371,6 +369,8 @@
 				04AD85E01C3F4E9F00B6098E /* UIImage+Render.m */,
 				0424BFC41C4344A7007F24AB /* NSDate+Extension.h */,
 				0424BFC51C4344A7007F24AB /* NSDate+Extension.m */,
+				04D38D661C4DCA780055F59A /* timerTool.h */,
+				04D38D671C4DCA780055F59A /* timerTool.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -1016,6 +1016,7 @@
 				047A06001C3B1C3B000C6821 /* NSObject+MJIvar.m in Sources */,
 				04EC68A31C3A68EE00172DD0 /* testPerson.m in Sources */,
 				047758001C4CC7AE0095086D /* MJRefreshBackGifFooter.m in Sources */,
+				04D38D681C4DCA780055F59A /* timerTool.m in Sources */,
 				047A060D1C3B1C3B000C6821 /* UIImage+MultiFormat.m in Sources */,
 				0424BFC91C4350B4007F24AB /* AttentionSpanContoller.m in Sources */,
 				047A060B1C3B1C3B000C6821 /* UIButton+WebCache.m in Sources */,
@@ -1047,7 +1048,6 @@
 				047A05EA1C3B1C3B000C6821 /* AFNetworkReachabilityManager.m in Sources */,
 				047A06021C3B1C3B000C6821 /* MKAnnotationView+WebCache.m in Sources */,
 				047A05FD1C3B1C3B000C6821 /* MJIvar.m in Sources */,
-				047758161C4CEAD00095086D /* NSTimer+Extension.m in Sources */,
 				043408721C3E296F00E4F1FA /* SRTview.m in Sources */,
 				04AD85DE1C3F4DC700B6098E /* UIView+Frame.m in Sources */,
 				047758091C4CC7AE0095086D /* UIScrollView+MJRefresh.m in Sources */,
