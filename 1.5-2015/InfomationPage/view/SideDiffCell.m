@@ -123,8 +123,6 @@
     }else{
         [self.rightFiveImageView setHighlighted:NO];
     }
-    
-    
 }
 
 @end

@@ -93,6 +93,7 @@
 		04932E9B1C3FA2300013631D /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 04932E9A1C3FA2300013631D /* libstdc++.tbd */; };
 		04940DD91C4F5C8500CEFF3F /* nEWtESToNE.m in Sources */ = {isa = PBXBuildFile; fileRef = 04940DD81C4F5C8500CEFF3F /* nEWtESToNE.m */; settings = {ASSET_TAGS = (); }; };
 		04940DDC1C4F5D2400CEFF3F /* ErrorProofingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04940DDB1C4F5D2400CEFF3F /* ErrorProofingTest.m */; settings = {ASSET_TAGS = (); }; };
+		04940DE21C4F685600CEFF3F /* ErrorProfingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04940DE11C4F685600CEFF3F /* ErrorProfingModel.m */; settings = {ASSET_TAGS = (); }; };
 		04AD85DE1C3F4DC700B6098E /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD85DD1C3F4DC700B6098E /* UIView+Frame.m */; settings = {ASSET_TAGS = (); }; };
 		04AD85E11C3F4E9F00B6098E /* UIImage+Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AD85E01C3F4E9F00B6098E /* UIImage+Render.m */; settings = {ASSET_TAGS = (); }; };
 		04C99CB51C4E1F5100FFF3E6 /* AttensionTranSideDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C99CB41C4E1F5100FFF3E6 /* AttensionTranSideDiff.m */; settings = {ASSET_TAGS = (); }; };
@@ -303,6 +304,8 @@
 		04940DD81C4F5C8500CEFF3F /* nEWtESToNE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = nEWtESToNE.m; path = "1.5-2015/InfomationPage/model/nEWtESToNE.m"; sourceTree = SOURCE_ROOT; };
 		04940DDA1C4F5D2400CEFF3F /* ErrorProofingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorProofingTest.h; path = "1.5-2015/InfomationPage/model/ErrorProofingTest.h"; sourceTree = SOURCE_ROOT; };
 		04940DDB1C4F5D2400CEFF3F /* ErrorProofingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorProofingTest.m; path = "1.5-2015/InfomationPage/model/ErrorProofingTest.m"; sourceTree = SOURCE_ROOT; };
+		04940DE01C4F685600CEFF3F /* ErrorProfingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorProfingModel.h; path = "1.5-2015/InfomationPage/model/ErrorProfingModel.h"; sourceTree = SOURCE_ROOT; };
+		04940DE11C4F685600CEFF3F /* ErrorProfingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorProfingModel.m; path = "1.5-2015/InfomationPage/model/ErrorProfingModel.m"; sourceTree = SOURCE_ROOT; };
 		04AD85DC1C3F4DC700B6098E /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		04AD85DD1C3F4DC700B6098E /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		04AD85DF1C3F4E9F00B6098E /* UIImage+Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Render.h"; sourceTree = "<group>"; };
@@ -718,6 +721,8 @@
 		047A05841C3B1BE3000C6821 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				04940DE01C4F685600CEFF3F /* ErrorProfingModel.h */,
+				04940DE11C4F685600CEFF3F /* ErrorProfingModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1070,6 +1075,7 @@
 				047758071C4CC7AE0095086D /* MJRefreshConst.m in Sources */,
 				047A05FB1C3B1C3B000C6821 /* MJConst.m in Sources */,
 				047A05E81C3B1C3B000C6821 /* AFHTTPRequestOperationManager.m in Sources */,
+				04940DE21C4F685600CEFF3F /* ErrorProfingModel.m in Sources */,
 				047A06101C3B1C3B000C6821 /* UIImageView+WebCache.m in Sources */,
 				047758131C4CD7130095086D /* JSSideTestModel.m in Sources */,
 				047757FA1C4CC7AE0095086D /* MJRefreshComponent.m in Sources */,

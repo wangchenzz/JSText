@@ -7,7 +7,20 @@
 //
 
 #import "nEWtESToNE.h"
+#import "ErrorProofingTest.h"
 
 @implementation nEWtESToNE
+
+
+-(void)viewDidLoad{
+
+    [super viewDidLoad];
+    ErrorProofingTest *test = [[ErrorProofingTest alloc]initWithFrame:CGRectMake(0, 0, 10, 10)];
+    
+    
+    [self.view addSubview:test];
+    
+
+}
 
 @end

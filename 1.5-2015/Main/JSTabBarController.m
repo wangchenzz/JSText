@@ -18,6 +18,8 @@
 
 #import "AttentionSpanContoller.h"
 
+#import "nEWtESToNE.h"
+
 /**
  *  测试的控制器
  *
@@ -45,9 +47,9 @@
     
     [self addJSChildViewController:ric];
     //
-    MainViewController *mvc = [[MainViewController alloc]init];
-    
-    [self addJSChildViewController:mvc];
+//    MainViewController *mvc = [[MainViewController alloc]init];
+//    
+//    [self addJSChildViewController:mvc];
     
     SRTViewController *SRT = [[SRTViewController alloc]init];
     
@@ -60,6 +62,10 @@
     testcontroller *das = [[testcontroller alloc]init];
     
     [self addJSChildViewController:das];
+    
+    nEWtESToNE * ne = [[nEWtESToNE alloc]init];
+    
+    [self addJSChildViewController:ne];
     
 }
 

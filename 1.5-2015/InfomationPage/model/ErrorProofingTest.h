@@ -14,6 +14,6 @@
  *  Error proofing    校对改错.
  */
 
-
+-(void)testError;
 
 @end
