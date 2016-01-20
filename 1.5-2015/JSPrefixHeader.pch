@@ -43,7 +43,7 @@
 #define LOADIMAGE(file,ext) [UIImage imageWithContentsOfFile:［NSBundle mainBundle]pathForResource:file ofType:ext］
 
 //定义UIImage对象
-#define IMAGE(imageFileName) [UIImage imageWithContentsOfFile:［NSBundle mainBundle] pathForResource:imageFileName ofType:nil］
+#define IMAGE(imageFileName) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:imageFileName ofType:nil]]
 
 #ifdef DEBUG  // 调试状态
 // 打开LOG功能

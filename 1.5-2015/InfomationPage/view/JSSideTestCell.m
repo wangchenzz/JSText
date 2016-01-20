@@ -41,8 +41,10 @@
         self.DisplayImageView = [[UIImageView alloc]init];
         
         [self.contentView addSubview:self.DisplayImageView];
+        
         self.DisplayImageView.height = 100;
         self.DisplayImageView.width = 100;
+        
         self.DisplayImageView.y = 25;
         self.DisplayImageView.x = 30;
         
@@ -62,8 +64,6 @@
     }else{
         self.accessoryType = UITableViewCellAccessoryNone;
     }
- 
-//    self.textLabel.text = 
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

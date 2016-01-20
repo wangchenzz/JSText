@@ -32,6 +32,12 @@
 
 @property (nonatomic,retain) UIImageView *rightFiveImageView;
 
+@property (nonatomic,retain) UITapGestureRecognizer *tap1;
+@property (nonatomic,retain) UITapGestureRecognizer *tap2;
+@property (nonatomic,retain) UITapGestureRecognizer *tap3;
+@property (nonatomic,retain) UITapGestureRecognizer *tap4;
+@property (nonatomic,retain) UITapGestureRecognizer *tap5;
+
 
 +(instancetype)cellForTableview:(UITableView*)tableview;
 

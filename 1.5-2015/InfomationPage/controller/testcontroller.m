@@ -10,6 +10,8 @@
 
 #import "AttentionTransferSide.h"
 
+#import "AttensionTranSideDiff.h"
+
 @interface testcontroller ()
 
 @property (nonatomic,retain) AttentionTransferSide *de;
@@ -25,6 +27,10 @@
     _de= [[AttentionTransferSide alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 680)];
     
     [self.view addSubview:_de];
+    
+    AttensionTranSideDiff *deft = [[AttensionTranSideDiff alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 680)];
+
+    [self.view addSubview:deft];
 }
 
 @end
