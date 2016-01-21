@@ -15,7 +15,7 @@
 -(void)viewDidLoad{
 
     [super viewDidLoad];
-    ErrorProofingTest *test = [[ErrorProofingTest alloc]initWithFrame:CGRectMake(0, 0, 10, 10)];
+    ErrorProofingTest *test = [[ErrorProofingTest alloc]initWithFrame:CGRectMake(0, 0, self.view.width,self.view.height)];
     
     
     [self.view addSubview:test];

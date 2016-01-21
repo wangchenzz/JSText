@@ -19,8 +19,16 @@
 
 @property (nonatomic,assign) int voiceType;
 
+/**
+ *  是否被选中过
+ */
+
 @property (nonatomic,assign) BOOL selected;
 
+
+/**
+ *  是否是一组正确的数据.用以保证不会连续的出现错误
+ */
 @property (nonatomic,readonly,getter=isRight) BOOL right;
 
 @end

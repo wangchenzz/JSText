@@ -12,6 +12,8 @@
 #import "ErrorProofingTest.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "ErrorProfingModel.h"
+#import "ErrorProfingCell.h"
+#import "errorHeader.h"
 
 typedef NS_ENUM(NSInteger,JSSoundLevel){
     JSSoundLevelLow = 1,
@@ -49,29 +51,44 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
     if (self = [super initWithFrame:frame]) {
         [self setUpAudioAndImage];
         [self setUI];
-        [self setUpTestInfo:20];
+        [self setUpTestInfo:465];
         [self setUpTimer];
     }
     return self;
 }
 
+
+/**
+ *  计时器开始工作.
+ */
 -(void)testError{
 
     [[timerTool tool]fireInTheHoll:self.actionTimer];
 
 }
 
--(void)setUI{
+/**
+ *  设置 UI 控件
+ */
 
-    self.mainCollectonView = [[UICollectionView alloc]init];
+-(void)setUI{
+    UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    flowLayout.headerReferenceSize = CGSizeMake(self.width, 38);
     
-    self.mainCollectonView.width = self.width;
-    self.mainCollectonView.height = self.height;
-    self.mainCollectonView.x = 0;
-    self.mainCollectonView.y = 0;
+
+    self.mainCollectonView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height) collectionViewLayout:flowLayout];
     
     self.mainCollectonView.delegate = self;
     self.mainCollectonView.dataSource = self;
+    
+    [self.mainCollectonView setBackgroundColor:[UIColor whiteColor]];
+    
+    
+    [self.mainCollectonView registerClass:[ErrorProfingCell class] forCellWithReuseIdentifier:@"ErrorProfingCell"];
+    [self.mainCollectonView registerClass:[errorHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ReusableView"];
+    
+    [self addSubview:self.mainCollectonView];
 }
 
 /**
@@ -129,6 +146,13 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
     return _dataInfoArray;
 }
 
+
+/**
+ *  设置数据源数组
+ *
+ *  @param count 数组长度.即测试类容的多少
+ */
+
 -(void)setUpTestInfo:(NSInteger)count{
     for (int i = 0 ; i < count ; i ++ ) {
         ErrorProfingModel *model = [self.dataInfoArray lastObject];
@@ -145,6 +169,10 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
     }
 }
 
+
+/**
+ *  设置定时器
+ */
 -(void)setUpTimer{
     if (self.soundlevel == JSSoundLevelHight) {
         self.actionTimer = [NSTimer timerWithTimeInterval:2 target:self selector:@selector(readSound) userInfo:nil repeats:YES];
@@ -157,6 +185,10 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
     }
 }
 
+/**
+ *  按顺序播放语音
+ */
+
 -(void)readSound{
     static int i = 0;
     if (i < self.dataInfoArray.count) {
@@ -168,9 +200,14 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
             AudioServicesPlayAlertSound(_avid2);
         }
         i ++;
+    }else{
+        [self.actionTimer invalidate];
     }
-    [self.actionTimer invalidate];
 }
+
+/**
+ *  准备一个完全随机的题目
+ */
 
 -(void)rollOne{
     ErrorProfingModel *model = [[ErrorProfingModel alloc] init];
@@ -179,10 +216,92 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
     [self.dataInfoArray addObject:model];
 }
 
+/**
+ *  准备一个绝对正确的题目;
+ */
 -(void)loadOne{
     ErrorProfingModel *model = [[ErrorProfingModel alloc] init];
     model.imageType = arc4random()%2;
     model.voiceType = model.imageType;
     [self.dataInfoArray addObject:model];
 }
+
+
+#pragma mark - collectionDelegate
+
+//定义展示的UICollectionViewCell的个数
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 31;
+}
+//定义展示的Section的个数
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 15;
+}
+//每个UICollectionView展示的内容
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    ErrorProfingCell *cell = [ErrorProfingCell cellForCollectionView:self.mainCollectonView andIndexPath:indexPath];
+    
+    return cell;
+    
+}
+#pragma mark --UICollectionViewDelegateFlowLayout
+//定义每个UICollectionView 的大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(84, 84);
+}
+//定义每个UICollectionView 的 margin
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 5, 5, 5);
+}
+#pragma mark --UICollectionViewDelegate
+//UICollectionView被选中时调用的方法
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger currentCount = indexPath.section * 31 + indexPath.row;
+    
+    ErrorProfingModel *model = self.dataInfoArray[currentCount];
+    
+    model.selected = YES;
+    
+    [self.mainCollectonView reloadData];
+  
+}
+//返回这个UICollectionView是否可以被选择
+-(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ErrorProfingCell *cucell = (ErrorProfingCell*)cell;
+    
+    
+    
+    NSInteger counts = indexPath.section * 31 + indexPath.row;
+    
+    cucell.model = self.dataInfoArray[counts];
+    
+}
+
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    
+    errorHeader *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ReusableView" forIndexPath:indexPath];
+
+    [headerView.titleLabel setText:[NSString stringWithFormat:@"当前是第%ld组",indexPath.section+1]];
+    
+    return headerView;
+
+}
+
+
+
 @end
