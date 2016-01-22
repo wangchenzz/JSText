@@ -349,6 +349,11 @@
 -(void)clickButton:(UIButton*)sender{
     
     [self hideAllButton];
+    
+    /**
+     *  点击按钮的事件响应, 不知道什么时候
+     */
+    
     self.mainTableView.userInteractionEnabled = YES;
     
 }
@@ -367,7 +372,17 @@
     self.centrollx = wid - Buttonw;
     self.centrolly = heig - Buttonw;
     
+    /**
+     *  勿谓言之不预也
+     *
+     *  @param _Nonnull ...
+     *
+     *  @return 这段语音纯粹是未了提醒用户进行点击.
+     */
+    
     AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)([self regsoundForFile:@"1.caf"]), &_avid);
+    
+    
 }
 
 /**
@@ -451,7 +466,7 @@
 -(NSMutableArray *)sizeAty{
 
     if (!_sizeAty) {
-        self.sizeAty = [NSMutableArray new];
+        self.sizeAty = [NSMutableArray array];
     }
     return _sizeAty;
 }
@@ -560,7 +575,7 @@
 
     if (!_dataArray) {
         
-        self.dataArray = [NSMutableArray new];
+        self.dataArray = [NSMutableArray array];
     }
     return _dataArray;
 }

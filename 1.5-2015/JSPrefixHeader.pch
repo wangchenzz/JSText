@@ -56,5 +56,10 @@
 #endif
 
 
+/**
+ *  [self alphaNavController].barAlpha = MIN(1, delta);    这个可以修改导航栏透明度?
+ */
+
+
 
 #endif /* JSPrefixHeader_pch */

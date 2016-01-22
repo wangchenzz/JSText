@@ -36,6 +36,14 @@
         _rightFourImageView = [[UIImageView alloc]init];
         _rightFiveImageView = [[UIImageView alloc]init];
         
+        [self.leftOneImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
+        [self.leftTwoImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
+        [self.rightOneImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
+        [self.rightTwoImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
+        [self.rightThreeImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
+        [self.rightFourImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
+        [self.rightFiveImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
+        
         [self.contentView addSubview:self.leftOneImageView];
         [self.contentView addSubview:self.leftTwoImageView];
         [self.contentView addSubview:self.rightOneImageView];
@@ -89,14 +97,6 @@
     [self.rightThreeImageView setImage:[UIImage imageNamed:_model.rightThreeImage]];
     [self.rightFourImageView setImage:[UIImage imageNamed:_model.rightFourImage]];
     [self.rightFiveImageView setImage:[UIImage imageNamed:_model.rightFiveImage]];
-    
-    [self.leftOneImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-    [self.leftTwoImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-    [self.rightOneImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-    [self.rightTwoImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-    [self.rightThreeImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-    [self.rightFourImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-    [self.rightFiveImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
     
     if (_model.isRFirstSelect) {
         [self.rightOneImageView setHighlighted:YES];

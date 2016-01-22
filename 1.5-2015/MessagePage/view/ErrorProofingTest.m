@@ -141,7 +141,7 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
 -(NSMutableArray *)dataInfoArray{
 
     if (!_dataInfoArray) {
-        self.dataInfoArray = [NSMutableArray new];
+        self.dataInfoArray = [NSMutableArray array];
     }
     return _dataInfoArray;
 }
@@ -281,8 +281,6 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
 -(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
     
     ErrorProfingCell *cucell = (ErrorProfingCell*)cell;
-    
-    
     
     NSInteger counts = indexPath.section * 31 + indexPath.row;
     

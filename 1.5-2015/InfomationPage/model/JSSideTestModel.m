@@ -18,7 +18,7 @@
     model.selectTime = 0;
     model.isSelect = NO;
 
-    model.disImage = [UIImage new];
+//    model.disImage = [UIImage new];
     
     return model;
 }

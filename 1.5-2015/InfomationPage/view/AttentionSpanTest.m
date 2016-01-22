@@ -112,7 +112,7 @@
 -(NSMutableArray *)testInfoAry{
 
     if (!_testInfoAry) {
-        self.testInfoAry = [NSMutableArray new];
+        self.testInfoAry = [NSMutableArray array];
     }
     return _testInfoAry;
 }

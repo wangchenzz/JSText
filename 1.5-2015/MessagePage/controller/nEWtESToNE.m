@@ -17,10 +17,13 @@
     [super viewDidLoad];
     ErrorProofingTest *test = [[ErrorProofingTest alloc]initWithFrame:CGRectMake(0, 0, self.view.width,self.view.height)];
     
+//    [self.view setBackgroundColor:[UIColor whiteColor]];
+//    self.navigationController.navigationBar.translucent = YES;
+//    [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+//    self.navigationController.navigationBar.alpha = 0;
+//    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
     
     [self.view addSubview:test];
-    
-
 }
 
 @end

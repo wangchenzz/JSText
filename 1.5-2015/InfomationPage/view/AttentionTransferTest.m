@@ -282,7 +282,7 @@
 -(NSMutableArray *)listArray{
 
     if (!_listArray) {
-        self.listArray = [NSMutableArray new];
+        self.listArray = [NSMutableArray array];
     }
     return _listArray;
 }

@@ -10,4 +10,8 @@
 
 @interface UIImage (Render)
 
+
++(instancetype)imageWithRenderNamed:(NSString*)string;
+
++(UIImage *)imageWithBgColor:(UIColor *)color;
 @end

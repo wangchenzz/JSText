@@ -69,6 +69,12 @@
     
 }
 
+/**
+ *  添加试图控制器
+ *
+ *  @param childController 创建好的试图控制器
+ */
+
 -(void)addJSChildViewController:(UIViewController *)childController{
     
     childController.title = @"竞思教育";
@@ -83,14 +89,14 @@
            //tintcolor 即是字体选中颜色；未设置情况下。
    // self.tabBar.tintColor = [UIColor whiteColor];
     
-    NSMutableDictionary *normalAttri = [NSMutableDictionary new];
+    NSMutableDictionary *normalAttri = [NSMutableDictionary dictionary];
     
     normalAttri[NSFontAttributeName] = JSFont(18);
     
     normalAttri[NSForegroundColorAttributeName] = JSColor(1, 1, 1);
     
     //设置选中状态下的tabbaritem的字体；
-    NSMutableDictionary *selectAttri = [NSMutableDictionary new];
+    NSMutableDictionary *selectAttri = [NSMutableDictionary dictionary];
     
     normalAttri[NSFontAttributeName] = JSFont(18);
     
@@ -114,7 +120,7 @@
     //导航栏主题
     
     //设置导航栏title 字体颜色；
-    NSMutableDictionary *navigationTitle = [NSMutableDictionary new];
+    NSMutableDictionary *navigationTitle = [NSMutableDictionary dictionary];
     
     navigationTitle[NSFontAttributeName] = JSFont(23);
     
@@ -134,9 +140,10 @@
 }
 
 - (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
-}
 
+}
 
 
 @end

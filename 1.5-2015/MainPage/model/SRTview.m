@@ -39,7 +39,7 @@
 -(NSMutableArray *)indexArray{
 
     if (!_indexArray) {
-        self.indexArray = [NSMutableArray new];
+        self.indexArray = [NSMutableArray array];
     }
 
     return _indexArray;

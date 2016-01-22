@@ -18,6 +18,12 @@ static timerTool *timetool;
 
 @implementation timerTool
 
+/**
+ *  单例 创建
+ *
+ *  @return 单例
+ */
+
 +(instancetype)tool{
     
     static dispatch_once_t onceToken;
@@ -27,6 +33,11 @@ static timerTool *timetool;
     return timetool;
 }
 
+/**
+ *  在子线程中启动 定时器,能够更精确
+ *
+ *  @param timer 需要启动的定时器
+ */
 
 -(void)fireInTheHoll:(NSTimer*)timer{
 
@@ -41,10 +52,10 @@ static timerTool *timetool;
 
 }
 
--(void)dealloc{
-
-    JSLog(@"timeToolDealloc");
-
-}
+//-(void)dealloc{
+//
+//    JSLog(@"timeToolDealloc");
+//
+//}
 
 @end

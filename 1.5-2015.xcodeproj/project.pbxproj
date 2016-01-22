@@ -116,6 +116,9 @@
 		04EECCB71C47743000C690A5 /* AttentionTransferTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EECCB61C47743000C690A5 /* AttentionTransferTest.m */; settings = {ASSET_TAGS = (); }; };
 		04EFD26A1C3B0ED200653B53 /* RegistInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFD2691C3B0ED200653B53 /* RegistInfoController.m */; settings = {ASSET_TAGS = (); }; };
 		04EFD26D1C3B0F3500653B53 /* RegistInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFD26C1C3B0F3500653B53 /* RegistInfoCell.m */; settings = {ASSET_TAGS = (); }; };
+		04EFF8EA1C51D0BC00230A30 /* PictureAndPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFF8E91C51D0BC00230A30 /* PictureAndPointModel.m */; settings = {ASSET_TAGS = (); }; };
+		04EFF8ED1C51D0D500230A30 /* PictureAndPointTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFF8EC1C51D0D500230A30 /* PictureAndPointTest.m */; settings = {ASSET_TAGS = (); }; };
+		04EFF8FB1C52027B00230A30 /* pointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFF8FA1C52027B00230A30 /* pointView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +351,12 @@
 		04EFD2691C3B0ED200653B53 /* RegistInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistInfoController.m; sourceTree = "<group>"; };
 		04EFD26B1C3B0F3500653B53 /* RegistInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistInfoCell.h; sourceTree = "<group>"; };
 		04EFD26C1C3B0F3500653B53 /* RegistInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistInfoCell.m; sourceTree = "<group>"; };
+		04EFF8E81C51D0BC00230A30 /* PictureAndPointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureAndPointModel.h; sourceTree = "<group>"; };
+		04EFF8E91C51D0BC00230A30 /* PictureAndPointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureAndPointModel.m; sourceTree = "<group>"; };
+		04EFF8EB1C51D0D500230A30 /* PictureAndPointTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureAndPointTest.h; sourceTree = "<group>"; };
+		04EFF8EC1C51D0D500230A30 /* PictureAndPointTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureAndPointTest.m; sourceTree = "<group>"; };
+		04EFF8F91C52027B00230A30 /* pointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pointView.h; sourceTree = "<group>"; };
+		04EFF8FA1C52027B00230A30 /* pointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pointView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +432,8 @@
 			children = (
 				04361F461C50ACD500E5A9E8 /* ErrorProfingModel.h */,
 				04361F471C50ACD500E5A9E8 /* ErrorProfingModel.m */,
+				04EFF8E81C51D0BC00230A30 /* PictureAndPointModel.h */,
+				04EFF8E91C51D0BC00230A30 /* PictureAndPointModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -436,6 +447,10 @@
 				04361F4C1C50ACD500E5A9E8 /* ErrorProfingCell.m */,
 				04361F4D1C50ACD500E5A9E8 /* ErrorProofingTest.h */,
 				04361F4E1C50ACD500E5A9E8 /* ErrorProofingTest.m */,
+				04EFF8EB1C51D0D500230A30 /* PictureAndPointTest.h */,
+				04EFF8EC1C51D0D500230A30 /* PictureAndPointTest.m */,
+				04EFF8F91C52027B00230A30 /* pointView.h */,
+				04EFF8FA1C52027B00230A30 /* pointView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1042,6 +1057,7 @@
 				043408751C3E29A800E4F1FA /* SRTViewController.m in Sources */,
 				047A05EB1C3B1C3B000C6821 /* AFSecurityPolicy.m in Sources */,
 				043408711C3E296F00E4F1FA /* SRTtest.m in Sources */,
+				04EFF8ED1C51D0D500230A30 /* PictureAndPointTest.m in Sources */,
 				04361F4F1C50ACD500E5A9E8 /* nEWtESToNE.m in Sources */,
 				04EECCB71C47743000C690A5 /* AttentionTransferTest.m in Sources */,
 				047A05E71C3B1C3B000C6821 /* AFHTTPRequestOperation.m in Sources */,
@@ -1078,6 +1094,7 @@
 				047A06091C3B1C3B000C6821 /* SDWebImageManager.m in Sources */,
 				0477580D1C4CC7F70095086D /* testcontroller.m in Sources */,
 				04932E491C3F7B3A0013631D /* ChoseTestTypeController.m in Sources */,
+				04EFF8EA1C51D0BC00230A30 /* PictureAndPointModel.m in Sources */,
 				047A060E1C3B1C3B000C6821 /* UIImage+WebP.m in Sources */,
 				043408BE1C3E724800E4F1FA /* UIBarButtonItem+Extension.m in Sources */,
 				04EFD26A1C3B0ED200653B53 /* RegistInfoController.m in Sources */,
@@ -1103,6 +1120,7 @@
 				047758081C4CC7AE0095086D /* UIScrollView+MJExtension.m in Sources */,
 				04361F501C50ACD500E5A9E8 /* ErrorProfingModel.m in Sources */,
 				047757FE1C4CC7AE0095086D /* MJRefreshAutoNormalFooter.m in Sources */,
+				04EFF8FB1C52027B00230A30 /* pointView.m in Sources */,
 				047A06051C3B1C3B000C6821 /* SDWebImageCompat.m in Sources */,
 				047A060F1C3B1C3B000C6821 /* UIImageView+HighlightedWebCache.m in Sources */,
 				0477580A1C4CC7AE0095086D /* UIView+MJExtension.m in Sources */,

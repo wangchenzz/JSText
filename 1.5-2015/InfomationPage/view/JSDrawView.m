@@ -51,7 +51,7 @@
 -(NSMutableArray *)pointAry{
     
     if (!_pointAry) {
-        self.pointAry = [NSMutableArray new];
+        self.pointAry = [NSMutableArray array];
     }
     return _pointAry;
     
@@ -62,12 +62,15 @@
     CGPoint point = [touch locationInView:self];
     
     /**
-     *  点 变字符串
+     *  点 变字符串     点还可以变成 nsvalue;
      *
      *  @param MyBeganpoint 开始点击的点
      *
      *  @return 字符串
      */
+    
+//    NSValue *vpoint = [NSValue valueWithCGPoint:point];
+    
     NSString *sPoint = NSStringFromCGPoint(point);
     [self.pointAry addObject:sPoint];
     [self setNeedsDisplay];

@@ -63,7 +63,7 @@
 -(NSMutableArray *)dataContainArrayl{
 
     if (!_dataContainArrayl) {
-        self.dataContainArrayl = [NSMutableArray new];
+        self.dataContainArrayl = [NSMutableArray array];
     }
     return _dataContainArrayl;
 }
@@ -163,7 +163,7 @@
 -(NSMutableArray *)ImageNameArray{
 
     if (!_ImageNameArray) {
-        self.ImageNameArray = [NSMutableArray new];
+        self.ImageNameArray = [NSMutableArray array];
         self.ImageNameArray = [@[@"AttentionTransferTest1",@"AttentionTransferTest2",@"AttentionTransferTest3",@"AttentionTransferTest4",@"AttentionTransferTest5"] mutableCopy];
     }
     return _ImageNameArray;
