@@ -10,9 +10,16 @@
 
 @interface SideDiffModel : NSObject
 
+/**
+ *  左边两张图片名字;
+ */
 @property (nonatomic,copy) NSString *leftOneImage;
 
 @property (nonatomic,copy) NSString *leftTwoImage;
+
+/**
+ *  右边三张图片名字
+ */
 
 @property (nonatomic,copy) NSString *rightOneImage;
 

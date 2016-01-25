@@ -33,6 +33,13 @@
  */
 @property (nonatomic,retain) NSTimer *timeTimer;
 
+
+/**
+ *  当前测试的次数
+ */
+
+@property (nonatomic,assign) NSInteger currentCount;
+
 /**
  *  记录所用时间
  */
@@ -72,9 +79,9 @@
  */
 
 /**
- *  everyday tonight we honor the hero. - -
+ * tonight we honor the hero. - -
  *
- *  @return <#return value description#>
+ *  @return ...
  */
 
 -(NSMutableArray *)imageNameArray{
@@ -177,12 +184,12 @@
 
     [self.focusImageView setFrame:self.bounds];
 
-    [self.focusImageView setImage:[UIImage imageNamed:@""]];
+    [self.focusImageView setImage:[UIImage imageNamed:self.dataSourceArray[self.currentCount]]];
     
 }
 
 /**
- *  显示键盘
+ *  显示键盘?
  */
 
 -(void)showTextFiled{
