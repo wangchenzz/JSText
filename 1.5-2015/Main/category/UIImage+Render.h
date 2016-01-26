@@ -11,7 +11,31 @@
 @interface UIImage (Render)
 
 
+/**
+ *  返回渲染的图片;
+ *
+ *  @param string 图片名字
+ *
+ *  @return 渲染后的图片
+ */
 +(instancetype)imageWithRenderNamed:(NSString*)string;
 
+/**
+ *  返回固定颜色的图片
+ *
+ *  @param color 指定的颜色和透明度
+ *
+ *  @return 图片
+ */
+
 +(UIImage *)imageWithBgColor:(UIColor *)color;
+
+/**
+ *  返回图片的颜色
+ *
+ *  @return 可充当背景图片的颜色;
+ */
+
+-(UIColor*)colorForImage;
+
 @end

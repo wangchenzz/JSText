@@ -42,10 +42,10 @@
 
 
     
-    RegistInfoController *ric = [[RegistInfoController alloc]initWithStyle:UITableViewStyleGrouped];
-    
-    
-    [self addJSChildViewController:ric];
+//    RegistInfoController *ric = [[RegistInfoController alloc]initWithStyle:UITableViewStyleGrouped];
+//    
+//    
+//    [self addJSChildViewController:ric];
     //
 //    MainViewController *mvc = [[MainViewController alloc]init];
 //    

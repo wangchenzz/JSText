@@ -127,7 +127,7 @@
     
     [self.controller.view removeGestureRecognizer:tap];
     
-    UITapGestureRecognizer *tapcacu = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(caculaterYourCount:)];
+    UITapGestureRecognizer *tapcacu = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(calculaterYourCount:)];
     
     [self.controller.view addGestureRecognizer:tapcacu];
     
@@ -167,7 +167,7 @@
 }
 
 //计算点击正确的次数的方法
--(void)caculaterYourCount:(UITapGestureRecognizer*)tap{
+-(void)calculaterYourCount:(UITapGestureRecognizer*)tap{
     
     static NSString *lastString;
     

@@ -152,7 +152,7 @@
     
     self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(BeginFirstTest:) userInfo:nil repeats:YES];
     
-    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(CaculateFirstTest:) userInfo:nil repeats:YES];
+    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(calculateFirstTest:) userInfo:nil repeats:YES];
     
 }
 /**
@@ -160,7 +160,7 @@
  *
  *  @param timer 定时器
  */
--(void)CaculateFirstTest:(NSTimer*)timer{
+-(void)calculateFirstTest:(NSTimer*)timer{
     
     [self rollLabel];
 }
@@ -348,7 +348,7 @@
 
     self.timeCount = 0;
     self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(beginSoundTest) userInfo:nil repeats:YES];
-    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(caculateSoundTest) userInfo:nil repeats:YES];
+    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(calculateSoundTest) userInfo:nil repeats:YES];
      UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(soundTestClick)];
     
     [self.control.view addGestureRecognizer:tap];
@@ -414,7 +414,7 @@
 /**
  *  开始循环进行语音的播放
  */
--(void)caculateSoundTest{
+-(void)calculateSoundTest{
     NSInteger rollNum = arc4random()%10 - 1;
     self.soundCount = rollNum;
     switch (rollNum) {
@@ -485,7 +485,7 @@
 -(void)superCaculatTest{
 
     [self rollLabel];
-    [self caculateSoundTest];
+    [self calculateSoundTest];
     
     NSString *count = [NSString stringWithFormat:@"%ld",self.soundCount];
     

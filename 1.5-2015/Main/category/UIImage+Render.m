@@ -49,5 +49,13 @@
     
 }
 
+-(UIColor*)colorForImage{
+
+    UIColor *bgColor = [UIColor colorWithPatternImage: self];
+    
+
+    return bgColor;
+}
+
 
 @end

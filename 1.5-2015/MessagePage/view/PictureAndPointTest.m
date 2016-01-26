@@ -21,7 +21,7 @@
 /**
  *  画圆点的 view
  */
-@property (nonatomic,retain) UIView *pointView;
+@property (nonatomic,retain) pointView *pointView;
 
 /**
  *  装图片名字的数组;
@@ -55,10 +55,27 @@
     if (self = [super initWithFrame:frame]) {
         [self setUpUi];
         self.timeCount = 0;
+        
+        UIImage *imgae = [UIImage imageNamed:@"span1"];
+        
+        UIColor *color = [imgae colorForImage];
+        
+        self.backgroundColor = color;
+        
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideKeyBord)];
+    
+        [self addGestureRecognizer:tap];
+        
     }
     return self;
 }
 
+-(void)hideKeyBord{
+
+    [self endEditing:YES];
+    
+}
 
 /**
  *  外部接口 用来开始测试 并决定测试次数;
@@ -69,21 +86,18 @@
 
     self.testCount = count;
     
-    timerTool *tool = [timerTool tool];
-    [tool fireInTheHoll:self.timeTimer];
+    [self showImage];
+    
+    [self showTextFiled];
+    
+  //  [self showTextFiled];
 }
+
 /**
  *  图片名字数组的 get 方法;
  *
  *  @return 数组
  */
-
-/**
- * tonight we honor the hero. - -
- *
- *  @return ...
- */
-
 -(NSMutableArray *)imageNameArray{
 
     if (!_imageNameArray) {
@@ -120,56 +134,121 @@
     }
 }
 
-
-
-
 /**
  *  初始化 ui 控件 和定时器;
  */
 -(void)setUpUi{
 
-    self.focusImageView = [[UIImageView alloc]init];
-    
-    self.answerTextFile = [[UITextField alloc]init];
-    
-    self.answerTextFile.delegate = self;
-    
-    [self addSubview:self.focusImageView];
-    
-    [self addSubview:self.answerTextFile];
+    self.sureButton = ({
+        
+        self.sureButton = [[UIButton alloc]init];
+        
+        [self.sureButton addTarget:self action:@selector(clickSure) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.sureButton setBackgroundColor:JSColor(250, 11, 70)];
+        
+        [self.sureButton setTitle:@"确定" forState:UIControlStateNormal];
+        
+        [self addSubview:self.sureButton];
+        
+        self.sureButton;
+    });
+   
+    self.answerTextFile = ({
+        self.answerTextFile = [[UITextField alloc]init];
+        
+        self.answerTextFile.placeholder = @"在次输入看到的黑点数目";
+        
+        self.answerTextFile.borderStyle=UITextBorderStyleRoundedRect;
+        self.answerTextFile.delegate = self;
+        self.answerTextFile.returnKeyType =UIReturnKeyDone;
+        
+        self.answerTextFile.textAlignment = NSTextAlignmentCenter;
+        
+        
+        [self addSubview:self.answerTextFile];
+        
+        self.answerTextFile;
+    });
     
     self.pointView = ({
-        self.pointView = [[UIView alloc]init];
+        self.pointView = [[pointView alloc]init];
         
         [self.pointView setBackgroundColor:[UIColor clearColor]];
         
         self.pointView;
         
     });
+
     
-    self.timeTimer = ({
-        
-        self.timeTimer = [NSTimer timerWithTimeInterval:0.01 target:self selector:@selector(caculateTimeAndAction:) userInfo:nil repeats:YES];
-        
-        self.timeTimer;
-        
-    });
+    self.focusImageView = [[UIImageView alloc]init];
+    
+    [self.focusImageView addSubview:self.pointView];
+    
+    
+    [self addSubview:self.focusImageView];
 }
 
+/**
+ *  点击了确认按钮;
+ */
+
+-(void)clickSure{
+    
+    [self hideKeyBord];
+    
+    if (self.answerTextFile.text.length == 0) {
+        return;
+    }
+    
+
+    
+    PictureAndPointModel *model = self.dataSourceArray[self.currentCount];
+    
+    model.selectedCount = [self.answerTextFile.text intValue];
+    
+    if (self.currentCount == self.dataSourceArray.count - 1) {
+        /**
+         *  在这里点击的时候,所有图片都放完了. 所以 currentcount 不在添加,也不在展示图片;
+         */
+        
+        
+        return;
+    }
+    
+    self.currentCount ++;
+    
+    [self showImage];
+
+}
+
+-(NSTimer *)timeTimer{
+
+    if (!_timeTimer) {
+
+            self.timeTimer = [NSTimer timerWithTimeInterval:0.01 target:self selector:@selector(calculateTimeAndAction:) userInfo:nil repeats:YES];
+    }
+
+    return _timeTimer;
+}
 
 /**
  *  计时器的事件响应
  *
  *  @param timer 计时器 实例参数
  */
--(void)caculateTimeAndAction:(NSTimer*)timer{
+-(void)calculateTimeAndAction:(NSTimer*)timer{
 
     self.timeCount = self.timeCount + 0.01;
 
-    if (self.timeCount >= 0.25) {
-        [timer invalidate];
+    if (self.timeCount >= 2.5) {
+        [self.timeTimer invalidate];
+        self.timeTimer = nil;
+        self.timeCount = 0;
         
-        [self showTextFiled];
+        self.focusImageView.hidden = YES;
+        
+      //  [self showTextFiled];
     }
 }
 
@@ -178,32 +257,93 @@
  */
 -(void)showImage{
     
-    [self endEditing:YES];
+//    [self endEditing:YES];
+    
+    self.answerTextFile.text = nil;
+    
+    timerTool *tool = [timerTool tool];
+    
+    [tool fireInTheHoll:self.timeTimer];
     
     [self.focusImageView setHidden:NO];
 
-    [self.focusImageView setFrame:self.bounds];
-
-    [self.focusImageView setImage:[UIImage imageNamed:self.dataSourceArray[self.currentCount]]];
+    self.focusImageView.width = self.width *.92;
     
+    self.focusImageView.height = self.height * .5;
+    
+    self.focusImageView.centerX = self.centerX;
+    
+    self.focusImageView.y = 110;
+    
+    self.pointView.frame = self.focusImageView.bounds;
+    
+    
+    PictureAndPointModel *model = self.dataSourceArray[self.currentCount];
+    
+    self.pointView.drawCount = model.pointCount;
+    
+    
+    [self.focusImageView setImage:[UIImage imageNamed:model.imageName]];
+
 }
 
 /**
- *  显示键盘?
+ *  显示键盘?  是否需要这一步骤. .   还是直接显示出来, 直接显示会造成误操作..
  */
 
--(void)showTextFiled{
+-(void)showTextFiled
+{
     
-    self.focusImageView.hidden = YES;
+//    self.focusImageView.hidden = YES;
 
     self.answerTextFile.height = 50;
     
-    self.answerTextFile.width = 200;
+    self.answerTextFile.width = 211;
 
     self.answerTextFile.centerX = self.centerX;
     
-    self.answerTextFile.centerY = self.centerY;
+    self.answerTextFile.centerY = self.height*.30;
+    
+    self.sureButton.height = 50;
+    
+    self.sureButton.width = 211;
+    
+    self.sureButton.centerX = self.centerX;
+    
+    self.sureButton.centerY = self.height*.52;
+    
+    self.sureButton.layer.cornerRadius = 4;
 }
 
+
+#pragma mark - textfield Delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];    //主要是[receiver resignFirstResponder]在哪调用就能把receiver对应的键盘往下收
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    //设置输入文本长度为14,
+    NSString*currentext = textField.text;
+    
+    JSLog(@"%@",string);
+    
+    int a = [string intValue];
+    
+    
+    if (!a&&string.length!=0) {
+        return NO;
+    }
+    
+    if(currentext.length +string.length > 3){
+      
+        return NO;
+      
+    }else{
+      
+        return  YES;
+    }
+}
 
 @end

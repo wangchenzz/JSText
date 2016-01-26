@@ -18,9 +18,9 @@
 
 @property (nonatomic,retain) UIImageView *focusImageView;
 
-
 @property (nonatomic,retain) UITextField *answerTextFile;
 
+@property (nonatomic,retain) UIButton *sureButton;
 
 @property (nonatomic,assign) NSInteger testCount;
 

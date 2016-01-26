@@ -170,13 +170,13 @@
  */
 
 -(void)gameBegan{
-//  self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(caculateTimeCount) userInfo:nil repeats:YES];
+//  self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(calculateTimeCount) userInfo:nil repeats:YES];
 //
 //        __weak __typeof(self)weakSelf = self;
 //        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //       self.timeCountTimer=[NSTimer scheduledTimerWithTimeInterval:0.01
 //                                                               target:self
-//                                                             selector:@selector(caculateTimeCount)
+//                                                             selector:@selector(calculateTimeCount)
 //                                                             userInfo:nil
 //                                                              repeats:YES] ;
 //    
@@ -184,7 +184,7 @@
 //            [[NSRunLoop currentRunLoop] run];
 //        });
     timerTool *tool = [timerTool tool];
-    self.timeCountTimer = [NSTimer timerWithTimeInterval:0.01 target:self selector:@selector(caculateTimeCount) userInfo:nil repeats:YES];
+    self.timeCountTimer = [NSTimer timerWithTimeInterval:0.01 target:self selector:@selector(calculateTimeCount) userInfo:nil repeats:YES];
     
     [tool fireInTheHoll:self.timeCountTimer];
     
@@ -226,7 +226,7 @@
 }
 
 
--(void)caculateTimeCount{
+-(void)calculateTimeCount{
     self.timeCount = self.timeCount + 0.01;
   //   JSLog(@"%@",[NSThread currentThread]);
     //JSLog(@"%f",self.timeCount);
