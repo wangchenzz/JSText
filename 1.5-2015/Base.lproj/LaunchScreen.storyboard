@@ -15,8 +15,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dkaspjhsfsa'd.as" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-qn-YTl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="W6q-qn-YTl" secondAttribute="bottom" id="3eZ-mq-0zf"/>
+                            <constraint firstItem="W6q-qn-YTl" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="aLH-Wb-HoF"/>
+                            <constraint firstItem="W6q-qn-YTl" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="jl5-3z-adN"/>
+                            <constraint firstAttribute="trailing" secondItem="W6q-qn-YTl" secondAttribute="trailing" id="kTq-eu-i6X"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
@@ -25,4 +37,7 @@
             <point key="canvasLocation" x="500" y="444"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dkaspjhsfsa'd.as" width="469" height="718"/>
+    </resources>
 </document>
