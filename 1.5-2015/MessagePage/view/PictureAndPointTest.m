@@ -104,7 +104,7 @@
         /**
          *  这里以后可能使用 url 或者网络请求下来的名字;
          */
-        self.imageNameArray = [NSMutableArray arrayWithObjects:@"span1",@"span2",@"span3",@"span4",@"span5", nil];
+        self.imageNameArray = [NSMutableArray arrayWithObjects:@"span2",@"span3",@"span4",@"span5", nil];
     }
     return _imageNameArray;
 }
@@ -209,8 +209,9 @@
     
     if (self.currentCount == self.dataSourceArray.count - 1) {
         /**
-         *  在这里点击的时候,所有图片都放完了. 所以 currentcount 不在添加,也不在展示图片;
+         *  在这里点击的时候,所有图片都放完了. 所以 currentcount 不在添加,也不在展示图片;  这里还需要在做一些操作用来表示完成测试了.
          */
+        self.currentCount = 0;
         
         
         return;
@@ -228,7 +229,6 @@
 
             self.timeTimer = [NSTimer timerWithTimeInterval:0.01 target:self selector:@selector(calculateTimeAndAction:) userInfo:nil repeats:YES];
     }
-
     return _timeTimer;
 }
 
@@ -291,6 +291,7 @@
  *  显示键盘?  是否需要这一步骤. .   还是直接显示出来, 直接显示会造成误操作..
  */
 
+
 -(void)showTextFiled
 {
     
@@ -313,36 +314,44 @@
     self.sureButton.centerY = self.height*.52;
     
     self.sureButton.layer.cornerRadius = 4;
+    
 }
 
 
 #pragma mark - textfield Delegate
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
     [textField resignFirstResponder];    //主要是[receiver resignFirstResponder]在哪调用就能把receiver对应的键盘往下收
     return YES;
 }
 
+/**
+ *  代理
+ *
+ *  @param textField  textField
+ *  @param range     changdu
+ *  @param string     将要输入的字段
+ *
+ *  @return 是否允许
+ */
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    //设置输入文本长度为14,
+
     NSString*currentext = textField.text;
-    
-    JSLog(@"%@",string);
     
     int a = [string intValue];
     
+    if (a==0&&currentext.length!=0) {
+        return YES;
+    }
     
     if (!a&&string.length!=0) {
         return NO;
     }
     
-    if(currentext.length +string.length > 3){
-      
-        return NO;
-      
-    }else{
-      
-        return  YES;
+    if(currentext.length +string.length > 2){
+      return NO;
+      }else{
+      return  YES;
     }
 }
 

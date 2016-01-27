@@ -20,6 +20,9 @@
 
 #import "nEWtESToNE.h"
 
+
+#import "attentionDistributionTestController.h"
+
 /**
  *  测试的控制器
  *
@@ -66,6 +69,10 @@
     nEWtESToNE * ne = [[nEWtESToNE alloc]init];
     
     [self addJSChildViewController:ne];
+    
+    attentionDistributionTestController *adtc = [[attentionDistributionTestController alloc] init];
+    
+    [self addJSChildViewController:adtc];
     
 }
 

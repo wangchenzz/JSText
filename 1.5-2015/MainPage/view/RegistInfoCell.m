@@ -30,7 +30,7 @@
         
     self.writeFiled = [[UITextField alloc]init];
         
-        [self.writeFiled setReturnKeyType:UIReturnKeyDone];
+    [self.writeFiled setReturnKeyType:UIReturnKeyDone];
         
     self.writeFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
         

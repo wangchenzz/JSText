@@ -54,7 +54,7 @@
     NSString *imagestring = (_model.imageType > 0) ? @"AttentionTransferTest2":@"AttentionTransferTest1";
     
     self.viewImage.image = [UIImage imageNamed:imagestring];
-    
+                                                          //被选中的图片
     self.viewImage.highlightedImage = [UIImage imageNamed:@"AttentionTransferTest3"];
     
     self.viewImage.highlighted = _model.selected;

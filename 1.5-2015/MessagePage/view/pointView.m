@@ -20,10 +20,10 @@
     CGContextSetLineWidth(context, 2.0);
     
     for (int i = 0 ; i < self.drawCount; i ++) {
-        int maxX = (int)CGRectGetMaxX(self.frame);
-        int maxY = (int)CGRectGetMaxY(self.frame);
-        NSInteger x = arc4random()%maxX;
-        NSInteger y = arc4random()%maxY;
+        int maxX = (int)CGRectGetMaxX(self.frame)-20;
+        int maxY = (int)CGRectGetMaxY(self.frame)-20;
+        NSInteger x = arc4random()%maxX + 10;
+        NSInteger y = arc4random()%maxY + 10;
         
         CGContextAddEllipseInRect(context, CGRectMake(x, y, 10, 10));//在这个框中画圆
     }

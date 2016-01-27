@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0409B4DD1C58AA990037E744 /* AttentionDistributionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0409B4DC1C58AA990037E744 /* AttentionDistributionModel.m */; settings = {ASSET_TAGS = (); }; };
+		0409B4E01C58AAAD0037E744 /* attentionDistributionTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0409B4DF1C58AAAD0037E744 /* attentionDistributionTestController.m */; settings = {ASSET_TAGS = (); }; };
+		0409B4E31C58AAB80037E744 /* AttentionDistributionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0409B4E21C58AAB80037E744 /* AttentionDistributionTest.m */; settings = {ASSET_TAGS = (); }; };
 		0424BFC61C4344A7007F24AB /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424BFC51C4344A7007F24AB /* NSDate+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		0424BFC91C4350B4007F24AB /* AttentionSpanContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424BFC81C4350B4007F24AB /* AttentionSpanContoller.m */; settings = {ASSET_TAGS = (); }; };
 		0424BFCC1C435136007F24AB /* AttentionSpanTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424BFCB1C435136007F24AB /* AttentionSpanTest.m */; settings = {ASSET_TAGS = (); }; };
@@ -139,6 +142,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0409B4DB1C58AA990037E744 /* AttentionDistributionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDistributionModel.h; sourceTree = "<group>"; };
+		0409B4DC1C58AA990037E744 /* AttentionDistributionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDistributionModel.m; sourceTree = "<group>"; };
+		0409B4DE1C58AAAD0037E744 /* attentionDistributionTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = attentionDistributionTestController.h; sourceTree = "<group>"; };
+		0409B4DF1C58AAAD0037E744 /* attentionDistributionTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = attentionDistributionTestController.m; sourceTree = "<group>"; };
+		0409B4E11C58AAB80037E744 /* AttentionDistributionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDistributionTest.h; sourceTree = "<group>"; };
+		0409B4E21C58AAB80037E744 /* AttentionDistributionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDistributionTest.m; sourceTree = "<group>"; };
 		0424BFC41C4344A7007F24AB /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		0424BFC51C4344A7007F24AB /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		0424BFC71C4350B4007F24AB /* AttentionSpanContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionSpanContoller.h; sourceTree = "<group>"; };
@@ -455,6 +464,43 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		0453D7A01C575F7700CBC436 /* newViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				0453D7A11C575F7700CBC436 /* controller */,
+				0453D7A21C575F7700CBC436 /* model */,
+				0453D7A31C575F7700CBC436 /* view */,
+			);
+			path = newViewTest;
+			sourceTree = "<group>";
+		};
+		0453D7A11C575F7700CBC436 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				0409B4DE1C58AAAD0037E744 /* attentionDistributionTestController.h */,
+				0409B4DF1C58AAAD0037E744 /* attentionDistributionTestController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		0453D7A21C575F7700CBC436 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				0409B4DB1C58AA990037E744 /* AttentionDistributionModel.h */,
+				0409B4DC1C58AA990037E744 /* AttentionDistributionModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		0453D7A31C575F7700CBC436 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				0409B4E11C58AAB80037E744 /* AttentionDistributionTest.h */,
+				0409B4E21C58AAB80037E744 /* AttentionDistributionTest.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		047757CB1C4CC7AE0095086D /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,7 +597,6 @@
 		047A05331C3B16DE000C6821 = {
 			isa = PBXGroup;
 			children = (
-				04D3F68A1C45E46D00BFC3E3 /* AudioToolbox.framework */,
 				047A053E1C3B16DF000C6821 /* 1.5-2015 */,
 				047A05581C3B16DF000C6821 /* 1.5-2015Tests */,
 				047A05631C3B16DF000C6821 /* 1.5-2015UITests */,
@@ -576,7 +621,7 @@
 				047A057E1C3B1BE3000C6821 /* MainPage */,
 				047A05791C3B1BE3000C6821 /* InfomationPage */,
 				04361F411C50ACD500E5A9E8 /* MessagePage */,
-				047A05861C3B1BE3000C6821 /* ProfilePage */,
+				0453D7A01C575F7700CBC436 /* newViewTest */,
 				047A05781C3B1B65000C6821 /* 3rd */,
 				047A05741C3B17DE000C6821 /* JSPrefixHeader.pch */,
 				047A054B1C3B16DF000C6821 /* Assets.xcassets */,
@@ -617,6 +662,7 @@
 			isa = PBXGroup;
 			children = (
 				04932E9A1C3FA2300013631D /* libstdc++.tbd */,
+				04D3F68A1C45E46D00BFC3E3 /* AudioToolbox.framework */,
 				04932E961C3FA20D0013631D /* MessageUI.framework */,
 				04932E941C3FA2040013631D /* libicucore.tbd */,
 				04932E921C3FA1F20013631D /* libz.tbd */,
@@ -757,37 +803,6 @@
 				04E986101C3B574F002E8F7C /* ClickTest.m */,
 				04EFD26B1C3B0F3500653B53 /* RegistInfoCell.h */,
 				04EFD26C1C3B0F3500653B53 /* RegistInfoCell.m */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		047A05861C3B1BE3000C6821 /* ProfilePage */ = {
-			isa = PBXGroup;
-			children = (
-				047A05891C3B1BE3000C6821 /* view */,
-				047A05871C3B1BE3000C6821 /* controller */,
-				047A05881C3B1BE3000C6821 /* model */,
-			);
-			path = ProfilePage;
-			sourceTree = "<group>";
-		};
-		047A05871C3B1BE3000C6821 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		047A05881C3B1BE3000C6821 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		047A05891C3B1BE3000C6821 /* view */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1050,6 +1065,7 @@
 				04EBC26E1C3AB36700AB40F4 /* JSTabBarController.m in Sources */,
 				047A05F81C3B1C3B000C6821 /* MBProgressHUD+MJ.m in Sources */,
 				047A05ED1C3B1C3B000C6821 /* AFURLRequestSerialization.m in Sources */,
+				0409B4DD1C58AA990037E744 /* AttentionDistributionModel.m in Sources */,
 				047A05FE1C3B1C3B000C6821 /* MJType.m in Sources */,
 				0424BFCC1C435136007F24AB /* AttentionSpanTest.m in Sources */,
 				046A6B0D1C48CB7100DACD7C /* AttensionTransferModel.m in Sources */,
@@ -1085,6 +1101,7 @@
 				046A6B011C48C50700DACD7C /* JSRoundGesture.m in Sources */,
 				047A05EE1C3B1C3B000C6821 /* AFURLResponseSerialization.m in Sources */,
 				047757FD1C4CC7AE0095086D /* MJRefreshAutoGifFooter.m in Sources */,
+				0409B4E31C58AAB80037E744 /* AttentionDistributionTest.m in Sources */,
 				047A05FF1C3B1C3B000C6821 /* NSObject+MJCoding.m in Sources */,
 				04EFD26D1C3B0F3500653B53 /* RegistInfoCell.m in Sources */,
 				04C99CB81C4E331F00FFF3E6 /* SideDiffCell.m in Sources */,
@@ -1123,6 +1140,7 @@
 				04EFF8FB1C52027B00230A30 /* pointView.m in Sources */,
 				047A06051C3B1C3B000C6821 /* SDWebImageCompat.m in Sources */,
 				047A060F1C3B1C3B000C6821 /* UIImageView+HighlightedWebCache.m in Sources */,
+				0409B4E01C58AAAD0037E744 /* attentionDistributionTestController.m in Sources */,
 				0477580A1C4CC7AE0095086D /* UIView+MJExtension.m in Sources */,
 				0434087B1C3E3EE200E4F1FA /* JSDatePiker.m in Sources */,
 				04361F531C50ACD500E5A9E8 /* ErrorProofingTest.m in Sources */,
@@ -1284,6 +1302,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TALEGENES.JS.--5-2015";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1301,6 +1320,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TALEGENES.JS.--5-2015";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

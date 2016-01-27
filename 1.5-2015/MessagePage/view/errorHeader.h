@@ -6,6 +6,12 @@
 //  Copyright © 2016年 竟思. All rights reserved.
 //
 
+
+
+/**
+ *   collctionview 的 header view  属于错误修正功能;
+ */
+
 #import <UIKit/UIKit.h>
 
 @interface errorHeader : UICollectionReusableView

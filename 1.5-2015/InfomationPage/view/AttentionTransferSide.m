@@ -526,7 +526,6 @@
     return YES;
 }
 
-
 /**
  *  往数组中添加图片;
  *
@@ -542,7 +541,6 @@
         [self.dataArray addObject:model];
     }
 }
-
 
 -(UIImage*)rollImage{
     
@@ -570,7 +568,6 @@
     return nil;
 }
 
-
 -(NSMutableArray *)dataArray{
 
     if (!_dataArray) {
@@ -579,8 +576,6 @@
     }
     return _dataArray;
 }
-
-
 
 #pragma mark - tableviewdelegate
 
@@ -591,13 +586,11 @@
 
 }
 
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     return self.dataArray.count;
 
 }
-
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 

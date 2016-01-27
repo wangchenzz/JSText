@@ -108,6 +108,8 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
  *  准备好语音和图片.
  */
 
+
+#warning - 缺少 图片和语音, 
 -(void)setUpAudioAndImage{
 
 // 三角

@@ -34,27 +34,30 @@
     
     UIWebView *webview = [[UIWebView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-//    NSURLRequest *requser = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]];
-//    [webview loadRequest:requser];
-//        [webview loadHTMLString:@"index.htm" baseURL:nil];
+    //    NSURLRequest *requser = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]];
+    //    [webview loadRequest:requser];
+    //    NSString *path = [NSBundle mainBundle]pathForResource: ofType:
+    //    [webview loadHTMLString:@"index.htm" baseURL:nil];
     NSString *resourcePath = [ [NSBundle mainBundle] resourcePath];
-//    NSString *path = [NSBundle mainBundle]pathForResource: ofType:
     
     NSString *filePath  = [resourcePath stringByAppendingPathComponent:@"index.html"];
     NSString *htmlstring =[[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
+  
+    
+    [webview loadHTMLString:htmlstring  baseURL:[NSURL fileURLWithPath: [[NSBundle mainBundle]  bundlePath]]];
+    
+    
+//http://www.html5tricks.com/demo/html5-canvas-choujiang/index.html
+//    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
+//    NSURLRequest *rqy = [NSURLRequest requestWithURL:url];
+//    [webview loadRequest:rqy];
+    
     
     JSLog(@"%@",resourcePath);
     JSLog(@"%@",htmlstring);
     JSLog(@"%@",filePath);
     
-//    [webview loadHTMLString:htmlstring  baseURL:[NSURL fileURLWithPath: [[NSBundle mainBundle]  bundlePath]]];
-//    webview.delegate = self;
-    
-    
-    //http://www.html5tricks.com/demo/html5-canvas-choujiang/index.html
-    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
-    NSURLRequest *rqy = [NSURLRequest requestWithURL:url];
-    [webview loadRequest:rqy];
     webview.delegate = self;
     [self.view addSubview:webview];
 }
