@@ -228,12 +228,8 @@
 
 -(void)calculateTimeCount{
     self.timeCount = self.timeCount + 0.01;
-  //   JSLog(@"%@",[NSThread currentThread]);
-    //JSLog(@"%f",self.timeCount);
     
     if (self.timeCount >9.9) {
-        
-    //    JSLog(@"%@",[NSThread currentThread]);
         
         [self.timeCountTimer invalidate];
         [self.actionTimer invalidate];
@@ -259,14 +255,16 @@
 }
 
 
+/**
+ *  每经过2.5秒 调用这个方法;
+ */
 
 -(void)actionNow{
     
     self.testModel.iamge = self.beforeImageView.image;
     [self.listArray addObject:self.testModel];
-    JSLog(@"addddddddddddddddd%f",self.timeCount);
-     self.testModel = nil;
-   
+    self.testModel = nil;
+    
     //[self.mainScrollView scrollRectToVisible:CGRectMake(self.mainScrollView.frame.size.width, 0,self.frame.size.width,self.frame.size.height) animated:YES];
 
     [self.mainScrollView setContentOffset:CGPointMake(self.mainScrollView.frame.size.width, 0) animated:YES];

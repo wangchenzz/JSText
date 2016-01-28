@@ -29,60 +29,40 @@
 
 -(void)setUpMainButton{
     
-    UIButton *testButton= [[UIButton alloc] init];
+    self.testButon = [self buttonWithTarget:self action:@selector(beganTest:) title:@"测试" forControlEvents: UIControlEventTouchUpInside];
     
-    UIButton *trainButton = [[UIButton alloc]init];
+    self.testButon.centerX = self.view.centerX;
     
-    [testButton setBackgroundColor:JSColor(255, 59, 70)];
-    
-    [trainButton setBackgroundColor:JSColor(255, 59, 70)];
-    
-    testButton.titleLabel.font = JSFont(25);
-    
-    trainButton.titleLabel.font = JSFont(25);
-    
-    [testButton setTitle:@"测试" forState:UIControlStateNormal];
-    
-    [trainButton setTitle:@"训练" forState:UIControlStateNormal];
-    
-    testButton.height = JSFrame.size.height * .1;
-    
-    testButton.width = JSFrame.size.width * .6 ;
-    
-    trainButton.height = JSFrame.size.height * .1;
-    
-    trainButton.width = JSFrame.size.width * .6 ;
-    
-    testButton.centerX = JSFrame.size.width * .5;
-    
-    testButton.y = JSFrame.size.height *.3;
-    
-    trainButton.centerX = JSFrame.size.width * .5;
-    
-    trainButton.y = JSFrame.size.height *.6;
-    
-    trainButton.layer.cornerRadius = 14;
-    
-    testButton.layer.cornerRadius = 14;
-    
-    trainButton.clipsToBounds = YES;
-    
-    testButton.clipsToBounds = YES;
-    
-    [trainButton addTarget:self action:@selector(beganTrain:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [testButton addTarget:self action:@selector(beganTest:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.trainButon = trainButton;
-    
-    self.testButon = testButton;
-    
-    [self.view addSubview:testButton];
-    
-    [self.view addSubview:trainButton];
+    self.testButon.y = self.view.height * .2;
 
     
 }
+
+-(UIButton *)buttonWithTarget:(nullable id)target action:(SEL)action title:(NSString*)title forControlEvents:(UIControlEvents)controlEvents{
+
+    UIButton *button = [[UIButton alloc]init];
+    
+    [button setBackgroundColor:JSCOLOR];
+    
+    button.titleLabel.font = JSFont(25);
+    
+    [button setTitle:title forState:UIControlStateNormal];
+    
+    button.height = JSFrame.size.height * .08;
+    
+    button.width = JSFrame.size.width * .6 ;
+    
+    button.layer.cornerRadius = 14;
+    
+    button.clipsToBounds = YES;
+    
+    [button addTarget:target action:action forControlEvents:controlEvents];
+    
+    [self.view addSubview:button];
+    
+    return  button;
+}
+
 
 -(void)beganTrain:(UIButton *)sender{
     

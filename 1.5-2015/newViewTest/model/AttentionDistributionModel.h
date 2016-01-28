@@ -14,13 +14,6 @@ typedef NS_ENUM(NSInteger,soundType) {
     soundTypeLow
 };
 
-typedef NS_ENUM(NSInteger,colorType) {
-    red = 0,
-    green ,
-    blue
-};
-
-
 @interface AttentionDistributionModel : NSObject
 
 @property (nonatomic,assign) soundType soundType;

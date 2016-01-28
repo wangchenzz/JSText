@@ -194,6 +194,11 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
 -(void)readSound{
     static int i = 0;
     if (i < self.dataInfoArray.count) {
+        if ((i + 1) % 31 == 0) {
+            [NSThread sleepForTimeInterval:2];
+        }
+        
+        
         ErrorProfingModel *model = self.dataInfoArray[i];
         int type = model.voiceType;
         if (type == 0) {

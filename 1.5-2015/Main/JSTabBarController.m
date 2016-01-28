@@ -44,6 +44,10 @@
 //     self.tabBar.tintColor = JSColor(255, 59, 70);
 
 
+    ChoseTestTypeController *test = [[ChoseTestTypeController alloc] init];
+    
+    [self addJSChildViewController:test];
+    
     
 //    RegistInfoController *ric = [[RegistInfoController alloc]initWithStyle:UITableViewStyleGrouped];
 //    
@@ -54,9 +58,9 @@
 //    
 //    [self addJSChildViewController:mvc];
     
-    SRTViewController *SRT = [[SRTViewController alloc]init];
-    
-    [self addJSChildViewController:SRT];
+//    SRTViewController *SRT = [[SRTViewController alloc]init];
+//    
+//    [self addJSChildViewController:SRT];
     
     AttentionSpanContoller *asc = [[AttentionSpanContoller alloc]init];
     
@@ -89,7 +93,7 @@
     //tabbar 主题；
     
     //设置tabbar item 的颜色；
-    self.tabBar.barTintColor = JSColor(57, 104, 55);
+    self.tabBar.barTintColor = JSCOLOR;
 
     
     //设置普通状态下的tabbaritem字体；
@@ -98,16 +102,16 @@
     
     NSMutableDictionary *normalAttri = [NSMutableDictionary dictionary];
     
-    normalAttri[NSFontAttributeName] = JSFont(18);
+    normalAttri[NSFontAttributeName] = JSFont(10);
     
-    normalAttri[NSForegroundColorAttributeName] = JSColor(1, 1, 1);
+    normalAttri[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
     
     //设置选中状态下的tabbaritem的字体；
     NSMutableDictionary *selectAttri = [NSMutableDictionary dictionary];
     
-    normalAttri[NSFontAttributeName] = JSFont(18);
+    selectAttri[NSFontAttributeName] = JSFont(10);
     
-    normalAttri[NSForegroundColorAttributeName] = [UIColor greenColor];
+    selectAttri[NSForegroundColorAttributeName] = [UIColor whiteColor];
 
     
     //此处预留的设置选中和普通状态的图片
@@ -118,10 +122,11 @@
     //设置tabbar 的item的字体。
     
 
-    [childController.tabBarItem setTitleTextAttributes:selectAttri forState:UIControlStateSelected];
-    [childController.tabBarItem setTitleTextAttributes:normalAttri forState:UIControlStateNormal];
-    
-    //还应设置选中状态下的字体颜色和大小。
+//    [childController.tabBarItem setTitleTextAttributes:selectAttri forState:UIControlStateSelected];
+//    [childController.tabBarItem setTitleTextAttributes:normalAttri forState:UIControlStateNormal];
+
+    [[UITabBarItem appearance] setTitleTextAttributes:selectAttri forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:normalAttri forState:UIControlStateNormal];
     
     
     //导航栏主题
@@ -138,7 +143,7 @@
     
     
     //设置导航栏颜色；
-    [navi.navigationBar setBarTintColor:JSColor(57, 104, 55)];
+    [navi.navigationBar setBarTintColor:JSCOLOR];
     
     //修改状态栏主题
     [navi.navigationBar setBarStyle:UIBarStyleBlackOpaque];
