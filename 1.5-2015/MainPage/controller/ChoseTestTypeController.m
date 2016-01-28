@@ -8,11 +8,32 @@
 
 #import "ChoseTestTypeController.h"
 
+#import "AttentionSpanContoller.h"
+
+#import "AttentionTransferController.h"
+
+#import "AttentionTransferSideController.h"
+
+#import "AttensionTranSideDiffController.h"
+
+#import "ErrorProofingTestController.h"
+
+#import "PictureAndPointController.h"
+
 @interface ChoseTestTypeController ()
 
-@property (nonatomic,weak) UIButton *testButon;
+@property (nonatomic,retain) UIButton *attSpanButton;
 
-@property (nonatomic,weak) UIButton *trainButon;
+@property (nonatomic,retain) UIButton *attTransButton;
+
+@property (nonatomic,retain) UIButton *attTranSideButton;
+
+@property (nonatomic,retain) UIButton *attRranSideDiffButton;
+
+@property (nonatomic,retain) UIButton *errProButton; 
+
+@property (nonatomic,retain) UIButton *picAndPoinButton;
+
 
 @end
 
@@ -29,11 +50,33 @@
 
 -(void)setUpMainButton{
     
-    self.testButon = [self buttonWithTarget:self action:@selector(beganTest:) title:@"测试" forControlEvents: UIControlEventTouchUpInside];
+    self.attSpanButton = [self buttonWithTarget:self action:@selector(attSpan:) title:@"视听觉测试" forControlEvents: UIControlEventTouchUpInside];
+    self.attSpanButton.y = self.view.height * .2;
     
-    self.testButon.centerX = self.view.centerX;
     
-    self.testButon.y = self.view.height * .2;
+    
+    self.attTransButton = [self buttonWithTarget:self action:@selector(attTrans:) title:@"看图画图测试" forControlEvents: UIControlEventTouchUpInside];
+    self.attTransButton.y = self.view.height * .3;
+    
+    
+    self.attTranSideButton = [self buttonWithTarget:self action:@selector(attTranSide:) title:@"两边测试" forControlEvents: UIControlEventTouchUpInside];
+    self.attTranSideButton.y = self.view.height * .4;
+    
+    
+    self.attRranSideDiffButton = [self buttonWithTarget:self action:@selector(attRranSideDiff:) title:@"找相同图测试" forControlEvents: UIControlEventTouchUpInside];
+    self.attRranSideDiffButton.y = self.view.height * .5;
+    
+    
+    self.errProButton = [self buttonWithTarget:self action:@selector(errPro:) title:@"语音找错测试" forControlEvents: UIControlEventTouchUpInside];
+    self.errProButton.y = self.view.height * .6;
+    
+    
+    self.picAndPoinButton = [self buttonWithTarget:self action:@selector(picAndPoin:) title:@"数点测试" forControlEvents: UIControlEventTouchUpInside];
+    self.picAndPoinButton.y = self.view.height * .7;
+    
+    
+ 
+    
 
     
 }
@@ -52,6 +95,8 @@
     
     button.width = JSFrame.size.width * .6 ;
     
+    button.centerX = self.view.centerX;
+    
     button.layer.cornerRadius = 14;
     
     button.clipsToBounds = YES;
@@ -64,13 +109,48 @@
 }
 
 
--(void)beganTrain:(UIButton *)sender{
+-(void)attSpan:(UIButton *)sender{
     
+    AttentionSpanContoller *asc = [[AttentionSpanContoller alloc] init];
+    
+    [self.navigationController pushViewController:asc animated:YES];
 
 }
--(void)beganTest:(UIButton *)sender{
+-(void)attTrans:(UIButton *)sender{
     
+    AttentionTransferController *atc = [[AttentionTransferController alloc] init];
+    
+    [self.navigationController pushViewController:atc animated:YES];
 
+}
+
+-(void)attTranSide:(UIButton *)sender{
+
+    AttentionTransferSideController *atsc = [[AttentionTransferSideController alloc] init];
+    
+    [self.navigationController pushViewController:atsc animated:YES];
+    
+}
+
+-(void)attRranSideDiff:(UIButton *)sender{
+
+    AttensionTranSideDiffController *diff = [[AttensionTranSideDiffController alloc] init];
+    
+    [self.navigationController pushViewController:diff animated:YES];
+
+}
+
+-(void)errPro:(UIButton *)sender{
+    ErrorProofingTestController *ept = [[ErrorProofingTestController alloc] init];
+    
+    [self.navigationController pushViewController:ept animated:YES];
+}
+
+-(void)picAndPoin:(UIButton *)sender{
+
+    PictureAndPointController *ppc = [[PictureAndPointController alloc] init];
+    
+    [self.navigationController pushViewController:ppc animated:YES];\
 }
 
 @end

@@ -72,18 +72,7 @@
 @property (nonatomic,assign) NSInteger testCount;
 
 @end
-#define labelWidth JSFrame.size.width*.4
-//struct JSSize {
-//    CGFloat  centerx;
-//    CGFloat  centery;
-//};
-//typedef struct JSSize JSSize;
-
-//
-//JSSizeMake(CGFloat width, CGFloat height)
-//{
-//    JSSize size; size.centerx = width; size.centery = height; return size;
-//}
+#define labelWidth JSFrame.size.width*.5
 
 
 @implementation AttentionSpanTest
@@ -93,19 +82,21 @@
     if (!_labelFocus) {
         
         UILabel *label = [[UILabel alloc]init];
-        
         label.height = labelWidth;
         label.width = labelWidth;
         label.centerX = JSFrame.size.width *.5;
         label.centerY = JSFrame.size.height *.5;
         [label setFont:JSFont(30)];
         label.textAlignment = NSTextAlignmentCenter;
-        [label setBackgroundColor:[UIColor redColor]];
+        [label setBackgroundColor:JSCOLOR];
+        
+        label.layer.cornerRadius = label.width * .5;
+        
+        label.layer.masksToBounds = YES;
         [self.control.view addSubview:label];
         self.labelFocus = label;
     }
     return _labelFocus;
-
 }
 
 
@@ -136,7 +127,7 @@
 
     //1.无干扰的出现0－9 10个数字随机出现， 出现4时触发；
     
-    [self rollLabel];
+//    [self rollLabel];
     
     self.timeCount = 0;
     
@@ -150,10 +141,15 @@
     
     self.tap = tap;
     
-    self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(BeginFirstTest:) userInfo:nil repeats:YES];
+    self.timeCountTimer = [NSTimer timerWithTimeInterval:0.01 target:self selector:@selector(BeginFirstTest:) userInfo:nil repeats:YES];
     
-    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(calculateFirstTest:) userInfo:nil repeats:YES];
+    self.actionTimer = [NSTimer timerWithTimeInterval:2 target:self selector:@selector(calculateFirstTest:) userInfo:nil repeats:YES];
     
+    timerTool *tool = [timerTool tool];
+    
+    [tool fireInTheHoll:self.timeCountTimer];
+    
+    [tool fireInTheHoll:self.actionTimer];
 }
 /**
  *  每过一段时间就会赋值label
@@ -163,6 +159,7 @@
 -(void)calculateFirstTest:(NSTimer*)timer{
     
     [self rollLabel];
+    [self.testInfoAry addObject:self.labelFocus.text];
 }
 
 /**
@@ -183,8 +180,6 @@
  *  @param timer 定时器
  */
 -(void)BeginFirstTest:(NSTimer*)timer{
-    
-   // JSLog(@"beginfirsttest run");
     self.timeCount = self.timeCount + 0.01;
     
     if (self.timeCount >= 10){
@@ -202,21 +197,17 @@
  *  随机给label 赋值；
  */
 -(void)rollLabel{
-    
     NSInteger arcnum = arc4random()%13;
-    
-   // [self.labelFocus removeFromSuperview];
-    
+
     [self.labelFocus setTag:self.labelTag];
 
     self.labelTag ++;
 
     if (arcnum > 9) {
-        [self.labelFocus setText:@"4"];
+        [self setLabelTitle:@"4"];
     }else{
-        [self.labelFocus setText:[NSString stringWithFormat:@"%ld",arcnum]];
+        [self setLabelTitle:[NSString stringWithFormat:@"%ld",arcnum]];
     }
-    [self.testInfoAry addObject:self.labelFocus.text];
 }
 
 
@@ -233,7 +224,7 @@
 
 -(void)showSecond{
 
-    [self rollNighgNum];
+//    [self rollNighgNum];
     
     self.testInfoAry = nil;
     
@@ -251,8 +242,8 @@
 
 -(void)secondTestClick:(UITapGestureRecognizer*)tap{
 
-    if ([self.delegate respondsToSelector:@selector(AttentionSpanTestClick:secondTestTime:numAry:testCount:)]) {
-//        [self.delegate AttentionSpanTestClick:self secondTestTime:self.timeCount numAry:self.numberContainAry testCount:self.testCount];
+    if ([self.delegate respondsToSelector:@selector(AttentionSpanTestClick:secondTestTime:numAry:testCount:)]&&self.testCount >= 1) {
+        [self.delegate AttentionSpanTestClick:self secondTestTime:self.timeCount numAry:self.testInfoAry[self.testCount-1] testCount:self.testCount];
     }
     
 }
@@ -262,9 +253,15 @@
  */
 
 -(void)caculatSecondTest{
-    self.testCount ++;
+    
     
     [self rollNighgNum];
+    
+    
+    [self.testInfoAry addObject:self.labelFocus.text];
+    
+    
+    self.testCount ++;
 
 }
 
@@ -308,7 +305,6 @@
  *  给所有的label 赋位置；
  */
 -(void)rollNighgNum{
-
     NSString *labelString = [NSString string];
     NSInteger isThereNum =  arc4random()%10;
     if (isThereNum >4) {
@@ -331,9 +327,8 @@
         labelString = [labelString stringByAppendingString:[NSString stringWithFormat:@"%ld",otherNum]];
         }
     }
-    [self.labelFocus setText:labelString];
-    [self.labelFocus sizeToFit];
-    [self.testInfoAry addObject:labelString];
+    
+    [self setLabelTitle:labelString];
 }
 
 
@@ -345,10 +340,21 @@
 -(void)soundTest{
     //这里先将所有语音全部进行注册；
     [self letSoundOk];
-
+    
+    self.timeCount = 0;
+    self.testCount = 0;
+    self.testInfoAry = nil;
+    
+    UIImage *image =[UIImage imageNamed:@"music"];
+    
+    UIColor *color = [image colorForImage];
+    
+    [self.control.view setBackgroundColor:color];
+    
+    self.testCount = 0;
     self.timeCount = 0;
     self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(beginSoundTest) userInfo:nil repeats:YES];
-    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(calculateSoundTest) userInfo:nil repeats:YES];
+    self.actionTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(soundTestAction) userInfo:nil repeats:YES];
      UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(soundTestClick)];
     
     [self.control.view addGestureRecognizer:tap];
@@ -378,7 +384,10 @@
  *  声音测试中的点击事件；
  */
 -(void)soundTestClick{
-
+    
+    if ([self.delegate respondsToSelector:@selector(AttentionSpanTestClick:soundTestTime:soundCount:testCount:)]&&self.testCount >= 1) {
+        [self.delegate AttentionSpanTestClick:self soundTestTime:self.timeCount soundCount:self.soundCount testCount:self.testCount];
+    }
 }
 
 //注册语音的语音URL；
@@ -406,9 +415,23 @@
     
         [self.timeCountTimer invalidate];
         [self.actionTimer invalidate];
+        
+        self.timeCountTimer = nil;
+        self.actionTimer = nil;
         [self.control.view removeGestureRecognizer:self.tap];
-
+        if ([self.delegate respondsToSelector:@selector(AttentionSpanTestFinishSoundTest:testArray:)]) {
+            [self.delegate AttentionSpanTestFinishSoundTest:self testArray:self.testInfoAry];
+        }
     }
+}
+
+-(void)soundTestAction{
+
+    [self calculateSoundTest];
+    [self.testInfoAry addObject:@(self.soundCount)];
+    
+    self.testCount ++;
+
 }
 
 /**
@@ -454,7 +477,7 @@
 }
 
 /**
- *  视觉听觉混合测试;
+ *  视觉听觉混合测试;           333333333333333333
  */
 -(void)showSoundWatchTest{
     [self letSoundOk];
@@ -503,7 +526,24 @@
  */
 -(void)superTestClick{
     
+    
+    
 }
+
+-(void)setLabelTitle:(NSString *)string{
+    self.labelFocus.text = string;
+    self.labelFocus.hidden = NO;
+    [UIView animateWithDuration:1.5 animations:^{
+        self.labelFocus.transform = CGAffineTransformMakeScale(1.3, 1.3);
+        ;}
+                     completion:^(BOOL finished){
+                         
+                         self.labelFocus.transform = CGAffineTransformIdentity;
+                         
+                         [self.labelFocus setHidden:YES];
+                     }];
+}
+
 /**
  *  观察是否销毁。
  */

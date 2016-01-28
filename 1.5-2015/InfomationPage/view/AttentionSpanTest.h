@@ -33,10 +33,41 @@
  */
 -(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest*)test testArray:(NSMutableArray*)ary;
 
+/**
+ *  词组测试的点击回调
+ *
+ *  @param test   自身
+ *  @param time   当前经过的时间
+ *  @param numary 当前展示的字符
+ *  @param count  当前测试次数
+ */
 -(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(float)time numAry:(NSMutableArray*)numary testCount:(NSInteger)count;
 
+/**
+ *  词组测试结束的回调
+ *
+ *  @param test 自身
+ *  @param ary  测试内容的容器
+ */
 -(void)AttentionSpanTestFinishSecondTest:(AttentionSpanTest*)test testArray:(NSMutableArray*)ary;
 
+/**
+ *  声音测试 点击回调
+ *
+ *  @param test  自身
+ *  @param time  当前时间
+ *  @param sound 当前播放音乐
+ *  @param count 当前测试次数
+ */
+-(void)AttentionSpanTestClick:(AttentionSpanTest *)test soundTestTime:(float)time soundCount:(NSInteger )sound testCount:(NSInteger)count;
+
+/**
+ *  声音测试结束的回调
+ *
+ *  @param test 自身
+ *  @param ary  播放数组
+ */
+-(void)AttentionSpanTestFinishSoundTest:(AttentionSpanTest*)test testArray:(NSMutableArray*)ary;
 @end
 
 

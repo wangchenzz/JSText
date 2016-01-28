@@ -26,33 +26,15 @@
 -(void)viewDidLoad{
 
     [super viewDidLoad];
-    
-#warning  delete
-    
-
-    self.attentionTest = [[AttentionSpanTest alloc]initWithController:self];
-    
-    self.attentionTest.delegate = self;
-    
-   // [self.attentionTest show];
-    
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-    
-    AttentionTransferTest *trans = [[AttentionTransferTest alloc]initWithFrame:CGRectMake(50, 100, 300, 300)];
-    trans.delegate = self;
-    
-    [self.view addSubview:trans];
-    
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    
-    [trans gameBegan];
+    self.attentionTest = [[AttentionSpanTest alloc]initWithController:self];
+    self.attentionTest.delegate = self;
+    [self.attentionTest show];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+
+    self.tabBarController.tabBar.hidden = YES;
 }
 
--(void)dopa{
-
-    JSLog(@"dopa");
-
-}
 
 //第一项测试时。 点击回调用
 -(void)AttentionSpanTestClick:(AttentionSpanTest *)test testTime:(float)time label:(UILabel *)label {
@@ -66,12 +48,15 @@
 -(void)AttentionSpanTestFinishFirstTest:(AttentionSpanTest *)test testArray:(NSMutableArray *)ary{
 
     JSLog(@"%@",ary);
-    //[test showSecond];
+    
     [test showSecond];
 }
 //第二项测试时。点击调用
--(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(float)time numAry:(NSMutableArray *)numary testCount:(NSInteger)count{
-
+-(void)AttentionSpanTestClick:(AttentionSpanTest *)test secondTestTime:(float)time numAry:(NSString *)numary testCount:(NSInteger)count{
+    
+    JSLog(@"%@",numary);
+    
+    
 }
 //第二次测试结束时候调用
 
@@ -86,22 +71,31 @@
     [test soundTest];
 
     JSLog(@"%@",ary);
-
-    
 }
 
+-(void)AttentionSpanTestClick:(AttentionSpanTest *)test soundTestTime:(float)time soundCount:(NSInteger)sound testCount:(NSInteger)count{
 
-
-#pragma mark - AttentionTransferTestDelegate
-
--(void)AttentionTransferTestDidFinish:(AttentionTransferTest *)test listArray:(NSMutableArray *)array{
-
-    for (AttensionTransferModel *model in array) {
-        JSLog(@"%d   -%f    =%@",model.isWriteX,model.time,model.iamge);
-    }
-    
+    JSLog(@"%ld",sound);
 
 }
+
+-(void)AttentionSpanTestFinishSoundTest:(AttentionSpanTest *)test testArray:(NSMutableArray *)ary{
+
+    JSLog(@"%@",ary);
+    [test showSoundWatchTest];
+
+}
+
+//#pragma mark - AttentionTransferTestDelegate
+//
+//-(void)AttentionTransferTestDidFinish:(AttentionTransferTest *)test listArray:(NSMutableArray *)array{
+//
+//    for (AttensionTransferModel *model in array) {
+//        JSLog(@"%d   -%f    =%@",model.isWriteX,model.time,model.iamge);
+//    }
+//    
+//
+//}
 
 
 @end

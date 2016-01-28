@@ -45,6 +45,7 @@
             self.MainTableView.delegate = self;
             self.MainTableView.dataSource = self;
             [self addSubview:self.MainTableView];
+            
             self.MainTableView;
         });
              [self addDataToDataArray:42];
@@ -116,6 +117,7 @@
     SideDiffModel *model = self.dataContainArrayl[indexPath.section];
     if (cell.tap1 == tap) {
         model.isRFirstSelect = YES;
+        NSLog(@"%@",self.MainTableView.tableHeaderView.subviews);
     }
     if (cell.tap2 == tap) {
         model.isRTwoSelect = YES;
@@ -132,6 +134,8 @@
     [self.MainTableView reloadData];
 }
 
+
+#pragma mark - tableview delegate;
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -152,6 +156,19 @@
     SideDiffCell *newcell = (SideDiffCell *)cell;
     newcell.model = self.dataContainArrayl[indexPath.section];
     
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+
+    return [NSString stringWithFormat:@"第%ld组",section+1];
+
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+
+    return 20;
+
 }
 
 /**

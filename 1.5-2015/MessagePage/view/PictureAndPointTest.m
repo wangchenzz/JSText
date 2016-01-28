@@ -145,7 +145,7 @@
         
         [self.sureButton addTarget:self action:@selector(clickSure) forControlEvents:UIControlEventTouchUpInside];
         
-        [self.sureButton setBackgroundColor:JSColor(250, 11, 70)];
+        [self.sureButton setBackgroundColor:JSCOLOR];
         
         [self.sureButton setTitle:@"确定" forState:UIControlStateNormal];
         
@@ -156,6 +156,8 @@
    
     self.answerTextFile = ({
         self.answerTextFile = [[UITextField alloc]init];
+        
+        self.answerTextFile.backgroundColor = JSCOLOR;
         
         self.answerTextFile.placeholder = @"在次输入看到的黑点数目";
         
@@ -211,7 +213,8 @@
         /**
          *  在这里点击的时候,所有图片都放完了. 所以 currentcount 不在添加,也不在展示图片;  这里还需要在做一些操作用来表示完成测试了.
          */
-        self.currentCount = 0;
+        
+//        self.currentCount = 0;
         
         
         return;

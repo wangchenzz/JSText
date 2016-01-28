@@ -8,17 +8,13 @@
 
 #import "JSTabBarController.h"
 
-#import "MainViewController.h"
 
-#import "RegistInfoController.h"
-
-#import "SRTViewController.h"
 
 #import "ChoseTestTypeController.h"
 
 #import "AttentionSpanContoller.h"
 
-#import "nEWtESToNE.h"
+#import "ErrorProofingTestController.h"
 
 
 #import "attentionDistributionTestController.h"
@@ -30,7 +26,7 @@
  *
  *  @return 0..
  */
-#import "testcontroller.h"
+#import "AttensionTranSideDiffController.h"
 
 @interface JSTabBarController ()
 
@@ -47,30 +43,9 @@
     ChoseTestTypeController *test = [[ChoseTestTypeController alloc] init];
     
     [self addJSChildViewController:test];
+
     
-    
-//    RegistInfoController *ric = [[RegistInfoController alloc]initWithStyle:UITableViewStyleGrouped];
-//    
-//    
-//    [self addJSChildViewController:ric];
-    //
-//    MainViewController *mvc = [[MainViewController alloc]init];
-//    
-//    [self addJSChildViewController:mvc];
-    
-//    SRTViewController *SRT = [[SRTViewController alloc]init];
-//    
-//    [self addJSChildViewController:SRT];
-    
-    AttentionSpanContoller *asc = [[AttentionSpanContoller alloc]init];
-    
-    [self addJSChildViewController:asc];
- 
-    testcontroller *das = [[testcontroller alloc]init];
-    
-    [self addJSChildViewController:das];
-    
-    nEWtESToNE * ne = [[nEWtESToNE alloc]init];
+    ErrorProofingTestController * ne = [[ErrorProofingTestController alloc]init];
     
     [self addJSChildViewController:ne];
     
@@ -129,7 +104,9 @@
     [[UITabBarItem appearance] setTitleTextAttributes:normalAttri forState:UIControlStateNormal];
     
     
-    //导航栏主题
+    /**
+     *  导航栏主题
+     */
     
     //设置导航栏title 字体颜色；
     NSMutableDictionary *navigationTitle = [NSMutableDictionary dictionary];
@@ -141,12 +118,18 @@
     
     [navi.navigationBar setTitleTextAttributes:navigationTitle];
     
+    /**
+     *  导航栏返回键颜色
+     */
     
-    //设置导航栏颜色；
+    [navi.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    //设置导航栏 主体颜色；
     [navi.navigationBar setBarTintColor:JSCOLOR];
     
     //修改状态栏主题
     [navi.navigationBar setBarStyle:UIBarStyleBlackOpaque];
+    
     
     [self addChildViewController:navi];
 }

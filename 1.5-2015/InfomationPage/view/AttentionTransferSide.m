@@ -114,6 +114,13 @@
         [Button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
           [Button setTitle:@"0" forState:UIControlStateNormal];
         [self.rightView addSubview:Button];
+        
+        [Button setBackgroundColor:JSCOLOR];
+        
+        Button.layer.cornerRadius = ButtonWidth *.5;
+        
+        Button.layer.masksToBounds = YES;
+        
         self.Button0 = Button;
     }
     return _Button0;
@@ -127,6 +134,12 @@
         [Button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
         [Button setTitle:@"1" forState:UIControlStateNormal];
         [self.rightView addSubview:Button];
+        
+        [Button setBackgroundColor:JSCOLOR];
+        
+        Button.layer.cornerRadius = ButtonWidth *.5;
+        
+        Button.layer.masksToBounds = YES;
         self.Button1 = Button;
     }
     return _Button1;
@@ -140,6 +153,12 @@
         [Button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
           [Button setTitle:@"2" forState:UIControlStateNormal];
         [self.rightView addSubview:Button];
+        
+        [Button setBackgroundColor:JSCOLOR];
+        
+        Button.layer.cornerRadius = ButtonWidth *.5;
+        
+        Button.layer.masksToBounds = YES;
         self.Button2 = Button;
     }
     return _Button2;
@@ -153,6 +172,12 @@
         [Button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
           [Button setTitle:@"3" forState:UIControlStateNormal];
         [self.rightView addSubview:Button];
+        
+        [Button setBackgroundColor:JSCOLOR];
+        
+        Button.layer.cornerRadius = ButtonWidth *.5;
+        
+        Button.layer.masksToBounds = YES;
         self.Button3 = Button;
     }
     return _Button3;
@@ -166,6 +191,12 @@
         [Button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
           [Button setTitle:@"4" forState:UIControlStateNormal];
         [self.rightView addSubview:Button];
+        
+        [Button setBackgroundColor:JSCOLOR];
+        
+        Button.layer.cornerRadius = ButtonWidth *.5;
+        
+        Button.layer.masksToBounds = YES;
         self.Button4 = Button;
     }
     return _Button4;
@@ -179,6 +210,12 @@
         [Button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
           [Button setTitle:@"5" forState:UIControlStateNormal];
         [self.rightView addSubview:Button];
+        
+        [Button setBackgroundColor:JSCOLOR];
+        
+        Button.layer.cornerRadius = ButtonWidth *.5;
+        
+        Button.layer.masksToBounds = YES;
         self.Button5 = Button;
     }
     return _Button5;
@@ -192,6 +229,12 @@
         [Button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
           [Button setTitle:@"6" forState:UIControlStateNormal];
         [self.rightView addSubview:Button];
+        
+        [Button setBackgroundColor:JSCOLOR];
+        
+        Button.layer.cornerRadius = ButtonWidth *.5;
+        
+        Button.layer.masksToBounds = YES;
         self.Button6 = Button;
     }
     return _Button6;
@@ -205,6 +248,12 @@
           [Button setTitle:@"7" forState:UIControlStateNormal];
         Button.height = ButtonWidth;
         [self.rightView addSubview:Button];
+        
+        [Button setBackgroundColor:JSCOLOR];
+        
+        Button.layer.cornerRadius = ButtonWidth *.5;
+        
+        Button.layer.masksToBounds = YES;
         self.Button7 = Button;
     }
     return _Button7;
@@ -218,6 +267,12 @@
         [Button addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
           [Button setTitle:@"8" forState:UIControlStateNormal];
         [self.rightView addSubview:Button];
+        
+        [Button setBackgroundColor:JSCOLOR];
+        
+        Button.layer.cornerRadius = ButtonWidth *.5;
+        
+        Button.layer.masksToBounds = YES;
         self.Button8 = Button;
     }
     return _Button8;
@@ -231,6 +286,12 @@
           [Button setTitle:@"9" forState:UIControlStateNormal];
         Button.height = ButtonWidth;
         [self.rightView addSubview:Button];
+        
+        [Button setBackgroundColor:JSCOLOR];
+        
+        Button.layer.cornerRadius = ButtonWidth *.5;
+        
+        Button.layer.masksToBounds = YES;
         
         
         self.Button9 = Button;
@@ -415,7 +476,7 @@
     
         
     self.rightView = [[UIView alloc]initWithFrame:CGRectMake(self.frame.size.width*.5, 0, self.frame.size.width*.5, self.frame.size.height)];
-    [self.rightView setBackgroundColor:[UIColor blackColor]];
+    [self.rightView setBackgroundColor:[UIColor grayColor]];
         
     [self addSubview:self.rightView];
         
@@ -491,7 +552,6 @@
 
     [self.sizeAty addObject:dic];
 
-    [Button setBackgroundColor:[UIColor redColor]];
 }
 
 /**

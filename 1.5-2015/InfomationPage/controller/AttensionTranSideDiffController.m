@@ -6,19 +6,19 @@
 //  Copyright © 2016年 竟思. All rights reserved.
 //
 
-#import "testcontroller.h"
+#import "AttensionTranSideDiffController.h"
 
 #import "AttentionTransferSide.h"
 
 #import "AttensionTranSideDiff.h"
 
-@interface testcontroller ()
+@interface AttensionTranSideDiffController ()
 
 @property (nonatomic,retain) AttentionTransferSide *de;
 
 @end
 
-@implementation testcontroller
+@implementation AttensionTranSideDiffController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
