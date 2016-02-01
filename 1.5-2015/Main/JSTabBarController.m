@@ -8,16 +8,11 @@
 
 #import "JSTabBarController.h"
 
-
-
 #import "ChoseTestTypeController.h"
 
-#import "AttentionSpanContoller.h"
-
-#import "ErrorProofingTestController.h"
-
-
 #import "attentionDistributionTestController.h"
+
+#import "StroopTestController.h"
 
 /**
  *  测试的控制器
@@ -36,22 +31,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//     57 104 55
-//     self.tabBar.tintColor = JSColor(255, 59, 70);
-
-
+    
     ChoseTestTypeController *test = [[ChoseTestTypeController alloc] init];
     
-    [self addJSChildViewController:test];
-
-    
-    ErrorProofingTestController * ne = [[ErrorProofingTestController alloc]init];
-    
-    [self addJSChildViewController:ne];
+    [self addJSChildViewController:test withNormalImage:@"page1" selectImage:@"page1"  title:@"测评"];
     
     attentionDistributionTestController *adtc = [[attentionDistributionTestController alloc] init];
     
-    [self addJSChildViewController:adtc];
+    [self addJSChildViewController:adtc withNormalImage:@"page2" selectImage:@"page2"  title:@"试验"];
+    
+    StroopTestController *tt= [[StroopTestController alloc] init];
+    
+    [self addJSChildViewController:tt withNormalImage:nil selectImage:nil title:@"pa"];
     
 }
 
@@ -61,9 +52,9 @@
  *  @param childController 创建好的试图控制器
  */
 
--(void)addJSChildViewController:(UIViewController *)childController{
+-(void)addJSChildViewController:(UIViewController *)childController withNormalImage:(NSString *)nname selectImage:(NSString *)sname title:(NSString *)title{
     
-    childController.title = @"竞思教育";
+    childController.title = title;
     
     //tabbar 主题；
     
@@ -73,32 +64,31 @@
     
     //设置普通状态下的tabbaritem字体；
            //tintcolor 即是字体选中颜色；未设置情况下。
-   // self.tabBar.tintColor = [UIColor whiteColor];
+   self.tabBar.tintColor = [UIColor whiteColor];
     
     NSMutableDictionary *normalAttri = [NSMutableDictionary dictionary];
     
-    normalAttri[NSFontAttributeName] = JSFont(10);
+    normalAttri[NSFontAttributeName] = JSFont(11);
     
-    normalAttri[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
+    normalAttri[NSForegroundColorAttributeName] = [UIColor grayColor];
     
     //设置选中状态下的tabbaritem的字体；
     NSMutableDictionary *selectAttri = [NSMutableDictionary dictionary];
     
-    selectAttri[NSFontAttributeName] = JSFont(10);
+    selectAttri[NSFontAttributeName] = JSFont(11);
     
     selectAttri[NSForegroundColorAttributeName] = [UIColor whiteColor];
 
     
     //此处预留的设置选中和普通状态的图片
-//    childController.tabBarItem.selectedImage =
-//    childController.tabBarItem.image =
+  
+    childController.tabBarItem.image = [UIImage imageNamed:nname];
     
-    
+    childController.tabBarItem.selectedImage = [UIImage imageWithRenderNamed:sname];
+  
     //设置tabbar 的item的字体。
     
 
-//    [childController.tabBarItem setTitleTextAttributes:selectAttri forState:UIControlStateSelected];
-//    [childController.tabBarItem setTitleTextAttributes:normalAttri forState:UIControlStateNormal];
 
     [[UITabBarItem appearance] setTitleTextAttributes:selectAttri forState:UIControlStateSelected];
     [[UITabBarItem appearance] setTitleTextAttributes:normalAttri forState:UIControlStateNormal];
@@ -130,14 +120,7 @@
     //修改状态栏主题
     [navi.navigationBar setBarStyle:UIBarStyleBlackOpaque];
     
-    
     [self addChildViewController:navi];
-}
-
-- (void)didReceiveMemoryWarning {
-    
-    [super didReceiveMemoryWarning];
-
 }
 
 

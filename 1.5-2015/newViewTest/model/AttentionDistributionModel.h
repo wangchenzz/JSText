@@ -11,18 +11,33 @@
 typedef NS_ENUM(NSInteger,soundType) {
     soundTypeHight = 0,
     soundTypeMid ,
-    soundTypeLow
+    soundTypeLow,
+    soundtypeNone
 };
 
 @interface AttentionDistributionModel : NSObject
 
+/**
+ *  播放声音类型
+ */
 @property (nonatomic,assign) soundType soundType;
 
+/**
+ *  播出的颜色
+ */
 @property (nonatomic,retain) UIColor *color;
 
+/**
+ *  选择声音类型
+ */
 @property (nonatomic,assign) soundType selectedSound;
 
+/**
+ *  选择的颜色
+ */
 @property (nonatomic,retain) UIColor *selectedColor;
 
+
++(instancetype)modelWithType:(soundType)type andColor:(UIColor*)color;
 
 @end

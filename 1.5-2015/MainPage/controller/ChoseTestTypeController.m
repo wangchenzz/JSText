@@ -48,6 +48,10 @@
     [self setUpMainButton];
 }
 
+/**
+ *  添加所有按钮
+ */
+
 -(void)setUpMainButton{
     
     self.attSpanButton = [self buttonWithTarget:self action:@selector(attSpan:) title:@"视听觉测试" forControlEvents: UIControlEventTouchUpInside];
@@ -74,12 +78,18 @@
     self.picAndPoinButton = [self buttonWithTarget:self action:@selector(picAndPoin:) title:@"数点测试" forControlEvents: UIControlEventTouchUpInside];
     self.picAndPoinButton.y = self.view.height * .7;
     
-    
- 
-    
-
-    
 }
+
+
+-(void)viewWillAppear:(BOOL)animated{
+
+
+    [super viewWillAppear:animated];
+    
+    self.tabBarController.tabBar.hidden = NO;
+
+}
+
 
 -(UIButton *)buttonWithTarget:(nullable id)target action:(SEL)action title:(NSString*)title forControlEvents:(UIControlEvents)controlEvents{
 
@@ -108,6 +118,13 @@
     return  button;
 }
 
+
+
+/**
+ *  所有按钮的响应事件
+ *
+ *  @param sender 按钮
+ */
 
 -(void)attSpan:(UIButton *)sender{
     
@@ -150,7 +167,7 @@
 
     PictureAndPointController *ppc = [[PictureAndPointController alloc] init];
     
-    [self.navigationController pushViewController:ppc animated:YES];\
+    [self.navigationController pushViewController:ppc animated:YES];
 }
 
 @end

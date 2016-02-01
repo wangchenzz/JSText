@@ -240,7 +240,10 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return 31;
+
 }
+
+/*禅与摩托车修理艺术  1984 **/
 //定义展示的Section的个数
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -251,6 +254,8 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
 {
 
     ErrorProfingCell *cell = [ErrorProfingCell cellForCollectionView:self.mainCollectonView andIndexPath:indexPath];
+    
+    
     
     return cell;
     
@@ -299,14 +304,23 @@ typedef NS_ENUM(NSInteger,JSSoundLevel){
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     
-    errorHeader *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ReusableView" forIndexPath:indexPath];
-
-    [headerView.titleLabel setText:[NSString stringWithFormat:@"当前是第%ld组",indexPath.section+1]];
+    UICollectionReusableView *reusableview = nil;
     
-    return headerView;
-
+    if (kind == UICollectionElementKindSectionHeader){
+        
+        errorHeader *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"ReusableView" forIndexPath:indexPath];
+        
+        [headerView.titleLabel setText:[NSString stringWithFormat:@"当前是第%ld组",indexPath.section+1]];
+        
+        reusableview = headerView;
+    }else{
+    
+  //  if (kind == UICollectionElementKindSectionFooter){
+ 
+    }
+    
+    return reusableview;
 }
-
 
 
 @end

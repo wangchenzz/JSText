@@ -11,7 +11,10 @@
 
 #import "AttentionDistributionTest.h"
 
-@interface attentionDistributionTestController ()
+#import "AttentionDistributionModel.h"
+
+
+@interface attentionDistributionTestController () <AttentionDistributionDelegate>
 
 @end
 
@@ -19,13 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    AttentionDistributionTest *test = [[AttentionDistributionTest alloc]initWithFrame:self.view.bounds];
+    [self setUpTest];
+
     
-    [self.view addSubview:test];
-    
-    self.tabBarController.tabBar.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +33,39 @@
     [super didReceiveMemoryWarning];
     
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+
+}
+
+
+/**
+ *  创建测试
+ */
+-(void)setUpTest{
+    AttentionDistributionTest *test = [[AttentionDistributionTest alloc]initWithFrame:self.view.bounds];
+    
+    test.delegate = self;
+    
+    [self.view addSubview:test];
+    
+    [test beginTest:2];
+}
+
+/**
+ *  测试完成后的回调
+ *
+ *  @param test  自身
+ *  @param array 数据数组
+ */
+
+
+-(void)AttentionDistributionDidFinish:(AttentionDistributionTest *)test andArray:(NSMutableArray *)array{
+    JSLog(@"312");
+}
+
+
+
+
 
 @end

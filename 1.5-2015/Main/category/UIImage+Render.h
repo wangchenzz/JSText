@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (Render)
-
-
 /**
  *  返回渲染的图片;
  *
@@ -18,8 +16,8 @@
  *
  *  @return 渲染后的图片
  */
-+(instancetype)imageWithRenderNamed:(NSString*)string;
 
++(instancetype)imageWithRenderNamed:(NSString*)string;
 /**
  *  返回固定颜色的图片
  *
@@ -36,6 +34,16 @@
  *  @return 可充当背景图片的颜色;
  */
 
--(UIColor*)colorForImage;
+-(UIColor*)imageToColor;
+
+/**
+ *  将图片进行缩放
+ *
+ *  @param size  缩放后的 size
+ *
+ *  @return 图片
+ */
+- (UIImage *)scaleSize:(CGSize)size;
+
 
 @end

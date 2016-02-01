@@ -10,9 +10,11 @@
 		0409B4DD1C58AA990037E744 /* AttentionDistributionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0409B4DC1C58AA990037E744 /* AttentionDistributionModel.m */; settings = {ASSET_TAGS = (); }; };
 		0409B4E01C58AAAD0037E744 /* attentionDistributionTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0409B4DF1C58AAAD0037E744 /* attentionDistributionTestController.m */; settings = {ASSET_TAGS = (); }; };
 		0409B4E31C58AAB80037E744 /* AttentionDistributionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0409B4E21C58AAB80037E744 /* AttentionDistributionTest.m */; settings = {ASSET_TAGS = (); }; };
+		0412C9091C5B6CA30071E5A0 /* UIView+Animated.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412C9081C5B6CA30071E5A0 /* UIView+Animated.m */; settings = {ASSET_TAGS = (); }; };
 		0424BFC61C4344A7007F24AB /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424BFC51C4344A7007F24AB /* NSDate+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		0424BFC91C4350B4007F24AB /* AttentionSpanContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424BFC81C4350B4007F24AB /* AttentionSpanContoller.m */; settings = {ASSET_TAGS = (); }; };
 		0424BFCC1C435136007F24AB /* AttentionSpanTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424BFCB1C435136007F24AB /* AttentionSpanTest.m */; settings = {ASSET_TAGS = (); }; };
+		04315F5F1C5F580A004FA20F /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04315F5E1C5F580A004FA20F /* UIButton+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		043408711C3E296F00E4F1FA /* SRTtest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0434086E1C3E296F00E4F1FA /* SRTtest.m */; settings = {ASSET_TAGS = (); }; };
 		043408721C3E296F00E4F1FA /* SRTview.m in Sources */ = {isa = PBXBuildFile; fileRef = 043408701C3E296F00E4F1FA /* SRTview.m */; settings = {ASSET_TAGS = (); }; };
 		043408751C3E29A800E4F1FA /* SRTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043408741C3E29A800E4F1FA /* SRTViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -24,6 +26,8 @@
 		04361F511C50ACD500E5A9E8 /* errorHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04361F4A1C50ACD500E5A9E8 /* errorHeader.m */; settings = {ASSET_TAGS = (); }; };
 		04361F521C50ACD500E5A9E8 /* ErrorProfingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04361F4C1C50ACD500E5A9E8 /* ErrorProfingCell.m */; settings = {ASSET_TAGS = (); }; };
 		04361F531C50ACD500E5A9E8 /* ErrorProofingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04361F4E1C50ACD500E5A9E8 /* ErrorProofingTest.m */; settings = {ASSET_TAGS = (); }; };
+		0460B64B1C5F39A3008FD98D /* StroopTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460B64A1C5F39A3008FD98D /* StroopTestController.m */; settings = {ASSET_TAGS = (); }; };
+		0460B64E1C5F3AD1008FD98D /* StroopTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460B64D1C5F3AD1008FD98D /* StroopTest.m */; settings = {ASSET_TAGS = (); }; };
 		046A6B011C48C50700DACD7C /* JSRoundGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A6B001C48C50700DACD7C /* JSRoundGesture.m */; settings = {ASSET_TAGS = (); }; };
 		046A6B071C48C71300DACD7C /* JSLineGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A6B061C48C71300DACD7C /* JSLineGesture.m */; settings = {ASSET_TAGS = (); }; };
 		046A6B0D1C48CB7100DACD7C /* AttensionTransferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A6B0C1C48CB7100DACD7C /* AttensionTransferModel.m */; settings = {ASSET_TAGS = (); }; };
@@ -151,12 +155,16 @@
 		0409B4DF1C58AAAD0037E744 /* attentionDistributionTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = attentionDistributionTestController.m; sourceTree = "<group>"; };
 		0409B4E11C58AAB80037E744 /* AttentionDistributionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDistributionTest.h; sourceTree = "<group>"; };
 		0409B4E21C58AAB80037E744 /* AttentionDistributionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDistributionTest.m; sourceTree = "<group>"; };
+		0412C9071C5B6CA30071E5A0 /* UIView+Animated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animated.h"; sourceTree = "<group>"; };
+		0412C9081C5B6CA30071E5A0 /* UIView+Animated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animated.m"; sourceTree = "<group>"; };
 		0424BFC41C4344A7007F24AB /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		0424BFC51C4344A7007F24AB /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		0424BFC71C4350B4007F24AB /* AttentionSpanContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionSpanContoller.h; sourceTree = "<group>"; };
 		0424BFC81C4350B4007F24AB /* AttentionSpanContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionSpanContoller.m; sourceTree = "<group>"; };
 		0424BFCA1C435136007F24AB /* AttentionSpanTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionSpanTest.h; sourceTree = "<group>"; };
 		0424BFCB1C435136007F24AB /* AttentionSpanTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionSpanTest.m; sourceTree = "<group>"; };
+		04315F5D1C5F580A004FA20F /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		04315F5E1C5F580A004FA20F /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		0434086D1C3E296F00E4F1FA /* SRTtest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTtest.h; sourceTree = "<group>"; };
 		0434086E1C3E296F00E4F1FA /* SRTtest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRTtest.m; sourceTree = "<group>"; };
 		0434086F1C3E296F00E4F1FA /* SRTview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRTview.h; sourceTree = "<group>"; };
@@ -179,6 +187,10 @@
 		04361F4C1C50ACD500E5A9E8 /* ErrorProfingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorProfingCell.m; sourceTree = "<group>"; };
 		04361F4D1C50ACD500E5A9E8 /* ErrorProofingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorProofingTest.h; sourceTree = "<group>"; };
 		04361F4E1C50ACD500E5A9E8 /* ErrorProofingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorProofingTest.m; sourceTree = "<group>"; };
+		0460B6491C5F39A3008FD98D /* StroopTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StroopTestController.h; sourceTree = "<group>"; };
+		0460B64A1C5F39A3008FD98D /* StroopTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StroopTestController.m; sourceTree = "<group>"; };
+		0460B64C1C5F3AD1008FD98D /* StroopTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StroopTest.h; sourceTree = "<group>"; };
+		0460B64D1C5F3AD1008FD98D /* StroopTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StroopTest.m; sourceTree = "<group>"; };
 		046A6AFF1C48C50700DACD7C /* JSRoundGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSRoundGesture.h; sourceTree = "<group>"; };
 		046A6B001C48C50700DACD7C /* JSRoundGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSRoundGesture.m; sourceTree = "<group>"; };
 		046A6B051C48C71300DACD7C /* JSLineGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSLineGesture.h; sourceTree = "<group>"; };
@@ -337,8 +349,8 @@
 		04C99CB71C4E331F00FFF3E6 /* SideDiffCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDiffCell.m; sourceTree = "<group>"; };
 		04C99CB91C4E339100FFF3E6 /* SideDiffModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideDiffModel.h; sourceTree = "<group>"; };
 		04C99CBA1C4E339100FFF3E6 /* SideDiffModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideDiffModel.m; sourceTree = "<group>"; };
-		04D38D661C4DCA780055F59A /* timerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timerTool.h; sourceTree = "<group>"; };
-		04D38D671C4DCA780055F59A /* timerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timerTool.m; sourceTree = "<group>"; };
+		04D38D661C4DCA780055F59A /* timerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = timerTool.h; path = category/timerTool.h; sourceTree = "<group>"; };
+		04D38D671C4DCA780055F59A /* timerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = timerTool.m; path = category/timerTool.m; sourceTree = "<group>"; };
 		04D3F68A1C45E46D00BFC3E3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		04D3F6AA1C46294300BFC3E3 /* 1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 1.caf; path = ../../MainPage/model/1.caf; sourceTree = "<group>"; };
 		04D3F6AB1C46294300BFC3E3 /* 2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 2.caf; path = ../../MainPage/model/2.caf; sourceTree = "<group>"; };
@@ -420,8 +432,10 @@
 				04AD85E01C3F4E9F00B6098E /* UIImage+Render.m */,
 				0424BFC41C4344A7007F24AB /* NSDate+Extension.h */,
 				0424BFC51C4344A7007F24AB /* NSDate+Extension.m */,
-				04D38D661C4DCA780055F59A /* timerTool.h */,
-				04D38D671C4DCA780055F59A /* timerTool.m */,
+				0412C9071C5B6CA30071E5A0 /* UIView+Animated.h */,
+				0412C9081C5B6CA30071E5A0 /* UIView+Animated.m */,
+				04315F5D1C5F580A004FA20F /* UIButton+Extension.h */,
+				04315F5E1C5F580A004FA20F /* UIButton+Extension.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -490,6 +504,8 @@
 			children = (
 				0409B4DE1C58AAAD0037E744 /* attentionDistributionTestController.h */,
 				0409B4DF1C58AAAD0037E744 /* attentionDistributionTestController.m */,
+				0460B6491C5F39A3008FD98D /* StroopTestController.h */,
+				0460B64A1C5F39A3008FD98D /* StroopTestController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -508,6 +524,8 @@
 			children = (
 				0409B4E11C58AAB80037E744 /* AttentionDistributionTest.h */,
 				0409B4E21C58AAB80037E744 /* AttentionDistributionTest.m */,
+				0460B64C1C5F3AD1008FD98D /* StroopTest.h */,
+				0460B64D1C5F3AD1008FD98D /* StroopTest.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -761,6 +779,8 @@
 				043408BB1C3E722600E4F1FA /* category */,
 				043408761C3E2A6D00E4F1FA /* INetworking.h */,
 				043408771C3E2A6D00E4F1FA /* INetworking.m */,
+				04D38D661C4DCA780055F59A /* timerTool.h */,
+				04D38D671C4DCA780055F59A /* timerTool.m */,
 				047A05421C3B16DF000C6821 /* AppDelegate.h */,
 				047A05431C3B16DF000C6821 /* AppDelegate.m */,
 				04EBC26C1C3AB36700AB40F4 /* JSTabBarController.h */,
@@ -1083,6 +1103,7 @@
 				047A05F81C3B1C3B000C6821 /* MBProgressHUD+MJ.m in Sources */,
 				047A05ED1C3B1C3B000C6821 /* AFURLRequestSerialization.m in Sources */,
 				0409B4DD1C58AA990037E744 /* AttentionDistributionModel.m in Sources */,
+				0460B64B1C5F39A3008FD98D /* StroopTestController.m in Sources */,
 				047A05FE1C3B1C3B000C6821 /* MJType.m in Sources */,
 				0424BFCC1C435136007F24AB /* AttentionSpanTest.m in Sources */,
 				046A6B0D1C48CB7100DACD7C /* AttensionTransferModel.m in Sources */,
@@ -1099,6 +1120,7 @@
 				047A060A1C3B1C3B000C6821 /* SDWebImagePrefetcher.m in Sources */,
 				04EBC26B1C3AB34000AB40F4 /* MainViewController.m in Sources */,
 				04D86E5E1C4897DC00FEDC63 /* JSDrawView.m in Sources */,
+				0412C9091C5B6CA30071E5A0 /* UIView+Animated.m in Sources */,
 				047757FC1C4CC7AE0095086D /* MJRefreshHeader.m in Sources */,
 				047A05EF1C3B1C3B000C6821 /* AFURLSessionManager.m in Sources */,
 				04361F521C50ACD500E5A9E8 /* ErrorProfingCell.m in Sources */,
@@ -1166,8 +1188,10 @@
 				04EECCB11C4743A400C690A5 /* AttentionSpanModel.m in Sources */,
 				0424BFC61C4344A7007F24AB /* NSDate+Extension.m in Sources */,
 				047A06031C3B1C3B000C6821 /* NSData+ImageContentType.m in Sources */,
+				04315F5F1C5F580A004FA20F /* UIButton+Extension.m in Sources */,
 				047758011C4CC7AE0095086D /* MJRefreshBackNormalFooter.m in Sources */,
 				047A05411C3B16DF000C6821 /* main.m in Sources */,
+				0460B64E1C5F3AD1008FD98D /* StroopTest.m in Sources */,
 				04EC68A61C3A6CEE00172DD0 /* wordTestObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

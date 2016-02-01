@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class AttentionDistributionTest;
+
+@protocol AttentionDistributionDelegate <NSObject>
+
+@optional
+
+-(void)AttentionDistributionDidFinish:(AttentionDistributionTest *)test andArray:(NSMutableArray *)array;
+
+@end
+
 @interface AttentionDistributionTest : UIView
+
+@property (nonatomic,weak) id <AttentionDistributionDelegate> delegate;
 
 /**
  *（1）单独呈现不同颜色圆。

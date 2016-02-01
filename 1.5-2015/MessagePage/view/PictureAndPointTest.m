@@ -58,7 +58,7 @@
         
         UIImage *imgae = [UIImage imageNamed:@"span1"];
         
-        UIColor *color = [imgae colorForImage];
+        UIColor *color = [imgae imageToColor];
         
         self.backgroundColor = color;
         

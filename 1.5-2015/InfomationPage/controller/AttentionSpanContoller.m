@@ -30,10 +30,13 @@
     self.attentionTest = [[AttentionSpanTest alloc]initWithController:self];
     self.attentionTest.delegate = self;
     [self.attentionTest show];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
 
     self.tabBarController.tabBar.hidden = YES;
 }
+
+
+#pragma mark - AttentionSpanTestDelegate
+
 
 
 //第一项测试时。 点击回调用
@@ -86,16 +89,6 @@
 
 }
 
-//#pragma mark - AttentionTransferTestDelegate
-//
-//-(void)AttentionTransferTestDidFinish:(AttentionTransferTest *)test listArray:(NSMutableArray *)array{
-//
-//    for (AttensionTransferModel *model in array) {
-//        JSLog(@"%d   -%f    =%@",model.isWriteX,model.time,model.iamge);
-//    }
-//    
-//
-//}
 
 
 @end

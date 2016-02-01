@@ -117,7 +117,6 @@
     SideDiffModel *model = self.dataContainArrayl[indexPath.section];
     if (cell.tap1 == tap) {
         model.isRFirstSelect = YES;
-        NSLog(@"%@",self.MainTableView.tableHeaderView.subviews);
     }
     if (cell.tap2 == tap) {
         model.isRTwoSelect = YES;

@@ -36,13 +36,13 @@
         _rightFourImageView = [[UIImageView alloc]init];
         _rightFiveImageView = [[UIImageView alloc]init];
         
-        [self.leftOneImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-        [self.leftTwoImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-        [self.rightOneImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-        [self.rightTwoImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-        [self.rightThreeImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-        [self.rightFourImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
-        [self.rightFiveImageView setHighlightedImage:[UIImage imageNamed:@"Selected"]];
+        [self.leftOneImageView setHighlightedImage:[UIImage imageNamed:@"selected"]];
+        [self.leftTwoImageView setHighlightedImage:[UIImage imageNamed:@"selected"]];
+        [self.rightOneImageView setHighlightedImage:[UIImage imageNamed:@"selected"]];
+        [self.rightTwoImageView setHighlightedImage:[UIImage imageNamed:@"selected"]];
+        [self.rightThreeImageView setHighlightedImage:[UIImage imageNamed:@"selected"]];
+        [self.rightFourImageView setHighlightedImage:[UIImage imageNamed:@"selected"]];
+        [self.rightFiveImageView setHighlightedImage:[UIImage imageNamed:@"selected"]];
         
         [self.contentView addSubview:self.leftOneImageView];
         [self.contentView addSubview:self.leftTwoImageView];

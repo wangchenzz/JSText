@@ -8,13 +8,10 @@
 
 #import "AttensionTranSideDiffController.h"
 
-#import "AttentionTransferSide.h"
-
 #import "AttensionTranSideDiff.h"
 
 @interface AttensionTranSideDiffController ()
 
-@property (nonatomic,retain) AttentionTransferSide *de;
 
 @end
 
@@ -24,13 +21,19 @@
     [super viewDidLoad];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
-    _de= [[AttentionTransferSide alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 680)];
-    
-    [self.view addSubview:_de];
-    
-    AttensionTranSideDiff *deft = [[AttensionTranSideDiff alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 680)];
+    [self.tabBarController.tabBar setHidden:YES];
 
-    [self.view addSubview:deft];
+    [self setUpTest];
 }
 
+-(void)setUpTest{
+    
+    CGFloat navih = CGRectGetMaxY(JSNavigationBounds);
+    
+
+    AttensionTranSideDiff *deft = [[AttensionTranSideDiff alloc]initWithFrame:CGRectMake(0, navih, self.view.width, self.view.height - navih)];
+    
+    [self.view addSubview:deft];
+
+}
 @end

@@ -17,6 +17,7 @@
         self.titleLabel = [[UILabel alloc]init];
         
         self.titleLabel.width = 150;
+        
         self.titleLabel.height = 38;
         
         self.titleLabel.centerX = self.centerX;
@@ -25,11 +26,10 @@
         
         [self setBackgroundColor:[UIColor lightGrayColor]];
         
-//        [self.titleLabel setBackgroundColor:[UIColor blueColor]];
-        
         [self.titleLabel setTextAlignment:NSTextAlignmentCenter];
         
         [self.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
+        
         [self addSubview:self.titleLabel];
         
     }

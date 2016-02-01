@@ -72,7 +72,7 @@
 @property (nonatomic,assign) NSInteger testCount;
 
 @end
-#define labelWidth JSFrame.size.width*.5
+#define labelWidth JSFrame.size.width*.4
 
 
 @implementation AttentionSpanTest
@@ -86,13 +86,9 @@
         label.width = labelWidth;
         label.centerX = JSFrame.size.width *.5;
         label.centerY = JSFrame.size.height *.5;
-        [label setFont:JSFont(30)];
+        [label setFont:[UIFont boldSystemFontOfSize:38]];
         label.textAlignment = NSTextAlignmentCenter;
-        [label setBackgroundColor:JSCOLOR];
-        
-        label.layer.cornerRadius = label.width * .5;
-        
-        label.layer.masksToBounds = YES;
+        [label setBackgroundColor:[UIColor clearColor]];
         [self.control.view addSubview:label];
         self.labelFocus = label;
     }
@@ -135,6 +131,13 @@
     
     self.testInfoAry = nil;
     
+    
+    UIImage *image1 =[UIImage imageNamed:@"span1"];
+    
+    UIColor *color1 = [image1 imageToColor];
+    
+    [self.control.view setBackgroundColor:color1];
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(firstTestClick:)];
     
     [self.control.view addGestureRecognizer:tap];
@@ -150,6 +153,9 @@
     [tool fireInTheHoll:self.timeCountTimer];
     
     [tool fireInTheHoll:self.actionTimer];
+    
+    
+    [self.labelFocus setTextColor:[UIColor whiteColor]];
 }
 /**
  *  每过一段时间就会赋值label
@@ -159,7 +165,9 @@
 -(void)calculateFirstTest:(NSTimer*)timer{
     
     [self rollLabel];
+    
     [self.testInfoAry addObject:self.labelFocus.text];
+
 }
 
 /**
@@ -172,7 +180,6 @@
     if ([self.delegate respondsToSelector:@selector(AttentionSpanTestClick:testTime:label:)]) {
         [self.delegate AttentionSpanTestClick:self testTime:self.timeCount label:self.labelFocus];
     }
-
 }
 /**
  *  开始第一次的测试，计算时间。
@@ -183,8 +190,8 @@
     self.timeCount = self.timeCount + 0.01;
     
     if (self.timeCount >= 10){
-        [self.timeCountTimer invalidate];
         [self.actionTimer invalidate];
+        [self.timeCountTimer invalidate];
         [self.control.view removeGestureRecognizer:self.tap];
         [self.labelFocus removeFromSuperview];
         if ([self.delegate respondsToSelector:@selector(AttentionSpanTestFinishFirstTest:testArray:)]) {
@@ -224,8 +231,6 @@
 
 -(void)showSecond{
 
-//    [self rollNighgNum];
-    
     self.testInfoAry = nil;
     
     self.timeCount = 0;
@@ -233,6 +238,8 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(secondTestClick:)];
     
     [self.control.view addGestureRecognizer:tap];
+    
+    [self.labelFocus setTextColor:[UIColor whiteColor]];
     
     self.tap = tap;
 
@@ -276,8 +283,8 @@
     self.timeCount = self.timeCount + 0.01;
     
     if (self.timeCount >= 12) {
-        [self.timeCountTimer invalidate];
         [self.actionTimer invalidate];
+        [self.timeCountTimer invalidate];
         [self.labelFocus removeFromSuperview];
         [self.control.view removeGestureRecognizer:self.tap];
         if ([self.delegate respondsToSelector:@selector(AttentionSpanTestFinishSecondTest:testArray:)]) {
@@ -286,19 +293,6 @@
     }
 }
 
-//-(NSMutableArray *)numberContainAry{
-//
-//    if (!_numberContainAry) {
-//        self.numberContainAry = [NSMutableArray new];
-//    }
-//    return _numberContainAry;
-//}
-//-(NSMutableArray *)sizeAty{
-//    if (!_sizeAty) {
-//        self.sizeAty = [NSMutableArray new];
-//    }
-//    return _sizeAty;
-//}
 
 
 /**
@@ -315,7 +309,7 @@
     }
 
     NSString *firstString = [labelString substringToIndex:1];
-    for (int i = 0; i < 10; i ++) {
+    for (int i = 0; i < 9; i ++) {
         NSInteger otherNum = arc4random()%10;
         if ([firstString isEqualToString:@"3"]) {
             if (otherNum == 3) {
@@ -347,9 +341,12 @@
     
     UIImage *image =[UIImage imageNamed:@"music"];
     
-    UIColor *color = [image colorForImage];
+    UIColor *color = [image imageToColor];
     
     [self.control.view setBackgroundColor:color];
+    
+    
+    [self.labelFocus setTextColor:[UIColor blackColor]];
     
     self.testCount = 0;
     self.timeCount = 0;
@@ -412,10 +409,8 @@
     self.timeCount = self.timeCount + 0.01;
     
     if (self.timeCount >= 10) {
-    
-        [self.timeCountTimer invalidate];
         [self.actionTimer invalidate];
-        
+        [self.timeCountTimer invalidate];
         self.timeCountTimer = nil;
         self.actionTimer = nil;
         [self.control.view removeGestureRecognizer:self.tap];
@@ -438,7 +433,7 @@
  *  开始循环进行语音的播放
  */
 -(void)calculateSoundTest{
-    NSInteger rollNum = arc4random()%10 - 1;
+    NSInteger rollNum = arc4random()%10;
     self.soundCount = rollNum;
     switch (rollNum) {
         case 0:
@@ -531,17 +526,19 @@
 }
 
 -(void)setLabelTitle:(NSString *)string{
-    self.labelFocus.text = string;
-    self.labelFocus.hidden = NO;
-    [UIView animateWithDuration:1.5 animations:^{
-        self.labelFocus.transform = CGAffineTransformMakeScale(1.3, 1.3);
-        ;}
-                     completion:^(BOOL finished){
-                         
-                         self.labelFocus.transform = CGAffineTransformIdentity;
-                         
-                         [self.labelFocus setHidden:YES];
-                     }];
+//    self.labelFocus.text = string;
+//    self.labelFocus.hidden = NO;
+//    [UIView animateWithDuration:1.5 animations:^{
+//        self.labelFocus.transform = CGAffineTransformMakeScale(1.3, 1.3);
+//        ;}
+//                     completion:^(BOOL finished){
+//                         
+//                         self.labelFocus.transform = CGAffineTransformIdentity;
+//                         
+//                         [self.labelFocus setHidden:YES];
+//                     }];
+    
+    [self.labelFocus jsLabel_AnimatgionRollDirctionToText:string];
 }
 
 /**

@@ -30,13 +30,10 @@
 
 -(void)setUpTest{
     
-    
     CGFloat navih = CGRectGetMaxY(JSNavigationBounds);
-    
     
     ErrorProofingTest *test = [[ErrorProofingTest alloc]initWithFrame:CGRectMake(0, navih, self.view.width, self.view.height - navih)];
     [self.view addSubview:test];
-
 }
 
 @end
