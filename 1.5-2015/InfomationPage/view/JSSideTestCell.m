@@ -54,10 +54,15 @@
     return self;
 }
 
--(void)setModel:(JSSideTestModel *)model{
 
+/**
+ *  通过 set 方法处理数据
+ *
+ *  @param model 数据模型
+ */
+
+-(void)setModel:(JSSideTestModel *)model{
     _model = model;
-    
     self.DisplayImageView.image = _model.disImage;
     if (_model.isSelect) {
         self.accessoryType = UITableViewCellAccessoryCheckmark;

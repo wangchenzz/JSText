@@ -18,6 +18,9 @@
 
 @implementation StroopTestController
 
+/**
+ *  这个控制器 用来控制 干扰训练的测试过程, 以及对结果的处理;
+ */
 -(void)viewDidLoad{
 
     [super viewDidLoad];
@@ -26,7 +29,8 @@
     
     [self.view addSubview:test];
     
+    [test setClipsToBounds:YES];
     
 }
-
+                                     
 @end

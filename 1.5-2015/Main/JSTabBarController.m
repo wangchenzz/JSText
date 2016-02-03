@@ -14,6 +14,9 @@
 
 #import "StroopTestController.h"
 
+#import "JSPersonFileController.h"
+
+
 /**
  *  测试的控制器
  *
@@ -21,7 +24,6 @@
  *
  *  @return 0..
  */
-#import "AttensionTranSideDiffController.h"
 
 @interface JSTabBarController ()
 
@@ -44,6 +46,11 @@
     
     [self addJSChildViewController:tt withNormalImage:nil selectImage:nil title:@"pa"];
     
+
+    JSPersonFileController *per = [[ JSPersonFileController alloc] init ];
+    
+    [self addJSChildViewController:per withNormalImage:nil selectImage:nil title:@"我"];
+  
 }
 
 /**

@@ -44,8 +44,6 @@
         self.backgroundColor = color;
 
         [self setUpButton];
-    
-        
     }
     return self;
 }
@@ -131,13 +129,12 @@
                                      titleForNoraml:nil
                                          titleColor:nil
                                              whsize:self.height * .1];
-    
+        
         self.blueButton.centerX = self.width * .7;
         
         self.blueButton.centerY = self.height * .65;
         
         [self addSubview:self.blueButton];
-        
         
         self.blueButton;
     });

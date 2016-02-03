@@ -35,12 +35,12 @@ static void * JSFakeLabelAnimationIsAnimatingKey = &JSFakeLabelAnimationIsAnimat
     }
         
     UILabel *selfLabel = (UILabel *)self;
-//
+
         if (!(selfLabel.text)) {
             
             selfLabel.text = toText;
             
-            [selfLabel sizeToFit];
+//            [selfLabel sizeToFit];
             
             return;
         }
@@ -57,13 +57,13 @@ static void * JSFakeLabelAnimationIsAnimatingKey = &JSFakeLabelAnimationIsAnimat
     fakeLabel.layer.masksToBounds = YES;
     fakeLabel.font = selfLabel.font;
     fakeLabel.textColor = selfLabel.textColor;
-        
+    fakeLabel.adjustsFontSizeToFitWidth = selfLabel.adjustsFontSizeToFitWidth;
     fakeLabel.text = selfLabel.text;
         
     selfLabel.text = toText;
         
         
-    [selfLabel sizeToFit];
+//    [selfLabel sizeToFit];
 
     fakeLabel.backgroundColor = self.backgroundColor;
 
@@ -228,5 +228,32 @@ static void * JSFakeLabelAnimationIsAnimatingKey = &JSFakeLabelAnimationIsAnimat
     objc_setAssociatedObject(self, JSFakeLabelAnimationIsAnimatingKey, @(st_isAnimating), OBJC_ASSOCIATION_ASSIGN);
 }
 
+-(void)addEffectView{
+
+    UIVisualEffectView *backVisual = [[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+    //将模糊视图的大小等同于自身
+    backVisual.frame = self.bounds;
+    //设置模糊视图的透明度
+    backVisual.alpha = 1;
+    
+    //非常模糊的效果
+    [self addSubview:backVisual];
+    
+    /**
+     *  把模糊视图调到最底层, 不影响别的子视图;
+     */
+    [self sendSubviewToBack:backVisual];
+}
+
+-(void)startImageViewAnimationImage:(UIImage*)image{
+    
+    CABasicAnimation *contentsAnimation = [CABasicAnimation animationWithKeyPath:@"contents"];
+    contentsAnimation.duration = 1.0f;
+    contentsAnimation.removedOnCompletion = YES;
+    contentsAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    [self.layer addAnimation:contentsAnimation forKey:nil];
+    UIImageView *imageSelf = (UIImageView *)self;
+    imageSelf.image = image;
+}
 
 @end

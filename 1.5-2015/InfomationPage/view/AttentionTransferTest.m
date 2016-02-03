@@ -178,7 +178,7 @@
 //                                                               target:self
 //                                                             selector:@selector(calculateTimeCount)
 //                                                             userInfo:nil
-//                                                              repeats:YES] ;
+//                                                              repeats:YES];
 //    
 //            [[NSRunLoop currentRunLoop] addTimer:self.timeCountTimer forMode:NSDefaultRunLoopMode];
 //            [[NSRunLoop currentRunLoop] run];
@@ -338,7 +338,9 @@
  */
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-
+    
+    
+    
 }
 
 /**

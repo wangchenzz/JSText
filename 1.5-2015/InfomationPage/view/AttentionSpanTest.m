@@ -72,7 +72,7 @@
 @property (nonatomic,assign) NSInteger testCount;
 
 @end
-#define labelWidth JSFrame.size.width*.4
+#define labelWidth JSFrame.size.width*.5
 
 
 @implementation AttentionSpanTest
@@ -86,10 +86,11 @@
         label.width = labelWidth;
         label.centerX = JSFrame.size.width *.5;
         label.centerY = JSFrame.size.height *.5;
-        [label setFont:[UIFont boldSystemFontOfSize:38]];
+        [label setFont:[UIFont boldSystemFontOfSize:58]];
         label.textAlignment = NSTextAlignmentCenter;
         [label setBackgroundColor:[UIColor clearColor]];
         [self.control.view addSubview:label];
+        label.adjustsFontSizeToFitWidth = YES;
         self.labelFocus = label;
     }
     return _labelFocus;
@@ -239,8 +240,6 @@
     
     [self.control.view addGestureRecognizer:tap];
     
-    [self.labelFocus setTextColor:[UIColor whiteColor]];
-    
     self.tap = tap;
 
     self.timeCountTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(secondTestBegan:) userInfo:nil repeats:YES];
@@ -264,6 +263,8 @@
     
     [self rollNighgNum];
     
+    
+    [self.labelFocus setTextColor:[UIColor whiteColor]];
     
     [self.testInfoAry addObject:self.labelFocus.text];
     
@@ -346,7 +347,7 @@
     [self.control.view setBackgroundColor:color];
     
     
-    [self.labelFocus setTextColor:[UIColor blackColor]];
+//    [self.labelFocus setTextColor:[UIColor Color]];
     
     self.testCount = 0;
     self.timeCount = 0;
