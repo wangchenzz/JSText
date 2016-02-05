@@ -23,13 +23,11 @@ const CGFloat kStatusBarHeight = 20;
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) UIColor *backColor;
 @property (nonatomic, assign) CGFloat headerHeight;
-
 @property (nonatomic, strong) UIView *headerContentView;
 @property (nonatomic, strong) UIImageView *headerImageView;
 @property (nonatomic, strong) UIImageView *icon;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, assign) CGFloat scale;
-
 @end
 
 @implementation JSPersonFileController
@@ -93,18 +91,11 @@ const CGFloat kStatusBarHeight = 20;
 
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-    
     NSArray *cellarray = self.tableView.visibleCells;
 
     for (mycell *cell in cellarray) {
-        
-        [UIView animateWithDuration:0.005 animations:^{
-            
             [cell cellOffset];
-        }];
     }
-    
     CGFloat offset_Y = scrollView.contentOffset.y;
     
     CGFloat alpha = (offset_Y + 40)/300.0f;
@@ -133,9 +124,7 @@ const CGFloat kStatusBarHeight = 20;
         self.icon.frame = icon_frame;
         
         self.label.frame = CGRectMake(108, self.headerContentView.bounds.size.height-60-12, kScreenWith-108-12, 50);
-        
     }
-    
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -153,7 +142,7 @@ const CGFloat kStatusBarHeight = 20;
     if (!cell) {
         cell = [[mycell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    NSString *imagestr = [NSString stringWithFormat:@"span%ld",indexPath.row % 5 +1];
+    NSString *imagestr = [NSString stringWithFormat:@"span%ld",indexPath.row % 5 + 1];
     
     cell.imageMyView.image = [UIImage imageNamed:imagestr];
     

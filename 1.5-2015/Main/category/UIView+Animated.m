@@ -226,7 +226,7 @@ static void * JSFakeLabelAnimationIsAnimatingKey = &JSFakeLabelAnimationIsAnimat
 
 - (void)setSt_isAnimating:(BOOL)st_isAnimating {
     objc_setAssociatedObject(self, JSFakeLabelAnimationIsAnimatingKey, @(st_isAnimating), OBJC_ASSOCIATION_ASSIGN);
-}
+}                    
 
 -(void)addEffectView{
 

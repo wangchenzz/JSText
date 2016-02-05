@@ -30,7 +30,6 @@
     [self.view addSubview:test];
     
     [test setClipsToBounds:YES];
-    
 }
                                      
 @end

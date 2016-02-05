@@ -13,6 +13,7 @@
 
 
 typedef void(^wrong)();
+
 static INetworking *network;
 
 static BOOL isNetWorking = YES;
@@ -181,6 +182,7 @@ static BOOL isNetWorking = YES;
         
         
         todo(returnObject);
+            
         }else{
             
         

@@ -93,7 +93,7 @@
 }
 
 /**
- *  外部接口
+ *  外部接口 每一样测试几次;
  */
 
 -(void)beginTest:(NSInteger)count{
@@ -105,6 +105,8 @@
     self.currentCount = 0;
     
     [[timerTool tool]fireInTheHoll:self.actionTimer];
+
+    
 }
 
 /**

@@ -34,10 +34,6 @@
     self.tableView.scrollEnabled = NO;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"确定" andImage:nil targat:self action:@selector(Regist) forControlEvents:UIControlEventTouchUpInside];
     
-  //  self.tabBarController.tabBar.hidden = YES;
-    
-   
-    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(showKeyBoard) name:UIKeyboardWillShowNotification object:nil];
 }
 
