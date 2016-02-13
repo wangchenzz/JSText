@@ -10,7 +10,7 @@
 
 #import "StroopTest.h"
 
-@interface StroopTestController ()
+@interface StroopTestController ()<StroopTestDelegate>
 
 
 
@@ -27,9 +27,27 @@
     
     StroopTest *test = [[StroopTest alloc] initWithFrame:self.view.bounds];
     
+    test.delegate = self;
+    
     [self.view addSubview:test];
     
     [test setClipsToBounds:YES];
+
+    [test showTestWithCount:6];
+//    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSArray *languages = [defaults objectForKey:@"AppleLanguages"];
+//    NSLog(@"%@", languages);
+    
 }
-                                     
+
+
+#pragma mark - stroopTestDelegate
+
+-(void)stroopTestDidFinsih:(NSMutableArray *)array{
+
+    
+
+}
+
 @end

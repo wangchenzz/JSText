@@ -29,6 +29,10 @@ static const NSTimeInterval JSFakeLabelAnimationDuration = 0.7;
 -(void)JSLabel_StarAnimationWithDirection:(JSFakeAnimationDirection)direction toText:(NSString *)toText;
 
 
+
+-(void)JSLabel_StarAnimationWithDirection:(JSFakeAnimationDirection)direction toText:(NSString *)toText andToColor:(UIColor *)tocolor;
+
+
 /**
  *  imageview 滚动动画
  *
@@ -42,7 +46,7 @@ static const NSTimeInterval JSFakeLabelAnimationDuration = 0.7;
  *
  *  @param toText 滚动完后的字
  */
--(void)jsLabel_AnimatgionRollDirctionToText:(NSString *)toText;
+-(void)jsLabel_AnimatgionRollDirctionToText:(NSString *)toText andColor:(UIColor *)tocolor;
 
 /**
  *  image 随机滚动动画

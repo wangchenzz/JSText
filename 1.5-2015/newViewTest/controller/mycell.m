@@ -64,6 +64,12 @@
     
 }
 
+/**
+ *  transform 动画是 基于 frame 的动画
+ *
+ *  @return <#return value description#>
+ */
+
 - (CGFloat)cellOffset {
     
     CGRect centerToWindow = [self convertRect:self.bounds toView:self.window];

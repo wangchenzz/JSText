@@ -29,6 +29,7 @@
 		04361F531C50ACD500E5A9E8 /* ErrorProofingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04361F4E1C50ACD500E5A9E8 /* ErrorProofingTest.m */; settings = {ASSET_TAGS = (); }; };
 		0460B64B1C5F39A3008FD98D /* StroopTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460B64A1C5F39A3008FD98D /* StroopTestController.m */; settings = {ASSET_TAGS = (); }; };
 		0460B64E1C5F3AD1008FD98D /* StroopTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460B64D1C5F3AD1008FD98D /* StroopTest.m */; settings = {ASSET_TAGS = (); }; };
+		04668DBF1C6EDD3E00218995 /* StroopTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04668DBE1C6EDD3E00218995 /* StroopTestModel.m */; settings = {ASSET_TAGS = (); }; };
 		046A6B011C48C50700DACD7C /* JSRoundGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A6B001C48C50700DACD7C /* JSRoundGesture.m */; settings = {ASSET_TAGS = (); }; };
 		046A6B071C48C71300DACD7C /* JSLineGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A6B061C48C71300DACD7C /* JSLineGesture.m */; settings = {ASSET_TAGS = (); }; };
 		046A6B0D1C48CB7100DACD7C /* AttensionTransferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A6B0C1C48CB7100DACD7C /* AttensionTransferModel.m */; settings = {ASSET_TAGS = (); }; };
@@ -195,6 +196,8 @@
 		0460B64A1C5F39A3008FD98D /* StroopTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StroopTestController.m; sourceTree = "<group>"; };
 		0460B64C1C5F3AD1008FD98D /* StroopTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StroopTest.h; sourceTree = "<group>"; };
 		0460B64D1C5F3AD1008FD98D /* StroopTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StroopTest.m; sourceTree = "<group>"; };
+		04668DBD1C6EDD3E00218995 /* StroopTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StroopTestModel.h; sourceTree = "<group>"; };
+		04668DBE1C6EDD3E00218995 /* StroopTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StroopTestModel.m; sourceTree = "<group>"; };
 		046A6AFF1C48C50700DACD7C /* JSRoundGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSRoundGesture.h; sourceTree = "<group>"; };
 		046A6B001C48C50700DACD7C /* JSRoundGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSRoundGesture.m; sourceTree = "<group>"; };
 		046A6B051C48C71300DACD7C /* JSLineGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSLineGesture.h; sourceTree = "<group>"; };
@@ -525,6 +528,8 @@
 			children = (
 				0409B4DB1C58AA990037E744 /* AttentionDistributionModel.h */,
 				0409B4DC1C58AA990037E744 /* AttentionDistributionModel.m */,
+				04668DBD1C6EDD3E00218995 /* StroopTestModel.h */,
+				04668DBE1C6EDD3E00218995 /* StroopTestModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1170,6 +1175,7 @@
 				04C99CB51C4E1F5100FFF3E6 /* AttensionTranSideDiff.m in Sources */,
 				047758071C4CC7AE0095086D /* MJRefreshConst.m in Sources */,
 				047A05FB1C3B1C3B000C6821 /* MJConst.m in Sources */,
+				04668DBF1C6EDD3E00218995 /* StroopTestModel.m in Sources */,
 				047A05E81C3B1C3B000C6821 /* AFHTTPRequestOperationManager.m in Sources */,
 				047A06101C3B1C3B000C6821 /* UIImageView+WebCache.m in Sources */,
 				04361F511C50ACD500E5A9E8 /* errorHeader.m in Sources */,

@@ -8,6 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
+#import "StroopTestModel.h"
+
+@class StroopTest;
+
+@protocol StroopTestDelegate <NSObject>
+
+@optional
+
+-(void)stroopTestDidFinsih:(NSMutableArray *)array;
+
+@end
+
 @interface StroopTest : UIView
+
+@property (nonatomic,assign) NSInteger totalCounts;
+
+@property (nonatomic,weak) id<StroopTestDelegate>delegate;
+
+
+-(void)showTestWithCount:(NSInteger)count;
+
 
 @end

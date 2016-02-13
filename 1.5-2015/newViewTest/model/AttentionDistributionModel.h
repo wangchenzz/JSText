@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger,soundType) {
-    soundTypeHight = 0,
+    soundTypeHight = 1,
     soundTypeMid ,
     soundTypeLow,
     soundtypeNone

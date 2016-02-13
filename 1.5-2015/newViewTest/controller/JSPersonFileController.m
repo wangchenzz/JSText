@@ -164,6 +164,7 @@ const CGFloat kStatusBarHeight = 20;
 }
 -(UITableView *)tableView{
     if (_tableView == nil) {
+        
         CGRect tableView_frame = CGRectMake(0, -64, kScreenWith, kScreenHeight+kNavigationBarHeight+kStatusBarHeight);
         _tableView = [[UITableView alloc] initWithFrame:tableView_frame style:UITableViewStylePlain];
         

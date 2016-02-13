@@ -24,11 +24,6 @@
     [super viewDidLoad];
     
     [self setUpTest];
-    
-    
-
-
-    
 }
 
 - (void)didReceiveMemoryWarning {

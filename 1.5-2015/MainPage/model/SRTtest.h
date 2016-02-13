@@ -12,10 +12,10 @@
 
 typedef NS_ENUM(NSInteger , LevelState) {
 
-    LevelStateLow = 0,
-    LevelStateMe = 1,
-    LevelStateHi = 2,
-    LevelStateNone = 3
+    LevelStateLow = 1,
+    LevelStateMe = 2,
+    LevelStateHi = 3,
+    LevelStateNone = 4
 
 };
 

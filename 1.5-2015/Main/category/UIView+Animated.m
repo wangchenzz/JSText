@@ -20,78 +20,79 @@ static void * JSFakeLabelAnimationIsAnimatingKey = &JSFakeLabelAnimationIsAnimat
 
 @implementation UIView (Animated)
 
-- (void)st_startAnimationWithDirection:(JSFakeAnimationDirection)direction toText:(NSString *)toText andImage:(UIImage *)image{
-
+- (void)st_startAnimationWithDirection:(JSFakeAnimationDirection)direction toText:(NSString *)toText andImage:(UIImage *)image andColor:(UIColor *)tocolor{
+    
     if (self.st_isAnimating) {
         return;
     }
     
-   
+    
     
     if ([self isKindOfClass:[UILabel class]]) {
         
-    if (![toText respondsToSelector:@selector(length)]) {
-        return;
-    }
+        if (![toText respondsToSelector:@selector(length)]) {
+            return;
+        }
         
-    UILabel *selfLabel = (UILabel *)self;
-
+        UILabel *selfLabel = (UILabel *)self;
+        
         if (!(selfLabel.text)) {
             
             selfLabel.text = toText;
-            
-//            [selfLabel sizeToFit];
-            
+            selfLabel.textColor = tocolor;
             return;
         }
         
         
-    self.st_isAnimating = YES;
+        self.st_isAnimating = YES;
         
-    UILabel *fakeLabel = [UILabel new];
-        
-
-    fakeLabel.frame = self.frame;
-    fakeLabel.textAlignment = selfLabel.textAlignment;
-    fakeLabel.layer.cornerRadius = selfLabel.layer.cornerRadius;
-    fakeLabel.layer.masksToBounds = YES;
-    fakeLabel.font = selfLabel.font;
-    fakeLabel.textColor = selfLabel.textColor;
-    fakeLabel.adjustsFontSizeToFitWidth = selfLabel.adjustsFontSizeToFitWidth;
-    fakeLabel.text = selfLabel.text;
-        
-    selfLabel.text = toText;
+        UILabel *fakeLabel = [UILabel new];
         
         
-//    [selfLabel sizeToFit];
-
-    fakeLabel.backgroundColor = self.backgroundColor;
-
-    [self.superview addSubview:fakeLabel];
+        fakeLabel.frame = self.frame;
+        fakeLabel.textAlignment = selfLabel.textAlignment;
+        fakeLabel.layer.cornerRadius = selfLabel.layer.cornerRadius;
+        fakeLabel.layer.masksToBounds = YES;
+        fakeLabel.font = selfLabel.font;
+        fakeLabel.textColor = selfLabel.textColor;
+        fakeLabel.adjustsFontSizeToFitWidth = selfLabel.adjustsFontSizeToFitWidth;
+        fakeLabel.text = selfLabel.text;
+        selfLabel.text = toText;
+        selfLabel.textColor = tocolor;
         
-    CGFloat labelOffsetX = 0.0;
-    CGFloat labelOffsetY = 0.0;
-    CGFloat labelScaleX = 0.1;
-    CGFloat labelScaleY = 0.1;
-    
-    if (direction == JSFakeAnimationDown || direction == JSFakeAnimationUp) {
-        labelOffsetY = direction * CGRectGetHeight(self.bounds) / 4;
-        labelScaleX = 1.0;
-    }
-    if (direction == JSFakeAnimationLeft || direction == JSFakeAnimationRight) {
-        labelOffsetX = direction * CGRectGetWidth(self.bounds) / 2;
-        labelScaleY = 1.0;
-    }
-    selfLabel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(labelScaleX, labelScaleY), CGAffineTransformMakeTranslation(labelOffsetX, labelOffsetY));
-    
-    [UIView animateWithDuration:JSFakeLabelAnimationDuration animations:^{
-        selfLabel.transform = CGAffineTransformIdentity;
-        fakeLabel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(labelScaleX, labelScaleY), CGAffineTransformMakeTranslation(-labelOffsetX, -labelOffsetY));
-    } completion:^(BOOL finished) {
-        fakeLabel.transform = CGAffineTransformIdentity;
-        [fakeLabel removeFromSuperview];
-        self.st_isAnimating = NO;
-    }];
+        fakeLabel.backgroundColor = self.backgroundColor;
+        
+        [self.superview addSubview:fakeLabel];
+        
+        CGFloat labelOffsetX = 0.0;
+        CGFloat labelOffsetY = 0.0;
+        CGFloat labelScaleX = 0.1;
+        CGFloat labelScaleY = 0.1;
+        
+        
+        
+        
+        if (direction == JSFakeAnimationDown || direction == JSFakeAnimationUp) {
+            
+            labelOffsetY = direction * CGRectGetHeight(self.bounds) / 4;
+            labelScaleX = 1.0;
+            
+        }
+        
+        if (direction == JSFakeAnimationLeft || direction == JSFakeAnimationRight) {
+            labelOffsetX = direction * CGRectGetWidth(self.bounds) / 2;
+            labelScaleY = 1.0;
+        }
+        selfLabel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(labelScaleX, labelScaleY), CGAffineTransformMakeTranslation(labelOffsetX, labelOffsetY));
+        
+        [UIView animateWithDuration:JSFakeLabelAnimationDuration animations:^{
+            selfLabel.transform = CGAffineTransformIdentity;
+            fakeLabel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(labelScaleX, labelScaleY), CGAffineTransformMakeTranslation(-labelOffsetX, -labelOffsetY));
+        } completion:^(BOOL finished) {
+            fakeLabel.transform = CGAffineTransformIdentity;
+            [fakeLabel removeFromSuperview];
+            self.st_isAnimating = NO;
+        }];
     }
     
     
@@ -102,7 +103,6 @@ static void * JSFakeLabelAnimationIsAnimatingKey = &JSFakeLabelAnimationIsAnimat
             selfImage.image = image;
             
             return;
-        
         }
         
         
@@ -156,9 +156,20 @@ static void * JSFakeLabelAnimationIsAnimatingKey = &JSFakeLabelAnimationIsAnimat
  *  @param toText    改变后的字
  */
 -(void)JSLabel_StarAnimationWithDirection:(JSFakeAnimationDirection)direction toText:(NSString *)toText{
-
-    [self st_startAnimationWithDirection:direction toText:toText andImage:nil];
     
+    [self st_startAnimationWithDirection:direction toText:toText andImage:nil andColor:nil];
+}
+
+/**
+ *  label 的动画接口
+ *
+ *  @param direction 方向
+ *  @param toText    改变后的字
+ *  @param tocolor   改变后的字颜色
+ */
+-(void)JSLabel_StarAnimationWithDirection:(JSFakeAnimationDirection)direction toText:(NSString *)toText andToColor:(UIColor *)tocolor{
+    
+    [self st_startAnimationWithDirection:direction toText:toText andImage:nil andColor:tocolor];
 }
 
 /**
@@ -169,33 +180,33 @@ static void * JSFakeLabelAnimationIsAnimatingKey = &JSFakeLabelAnimationIsAnimat
  */
 
 -(void)JSImage_StarAnimationWithDirection:(JSFakeAnimationDirection)direction toImage:(UIImage *)toImage{
-
-    [self st_startAnimationWithDirection:direction toText:nil andImage:toImage];
-
+    
+    [self st_startAnimationWithDirection:direction toText:nil andImage:toImage andColor:nil];
+    
 }
 
--(void)jsLabel_AnimatgionRollDirctionToText:(NSString *)toText{
-
+-(void)jsLabel_AnimatgionRollDirctionToText:(NSString *)toText andColor:(UIColor *)tocolor{
+    
     int rol = arc4random()%4;
     switch (rol) {
         case 0:
-            [self JSLabel_StarAnimationWithDirection:JSFakeAnimationDown toText:toText];
+            [self JSLabel_StarAnimationWithDirection:JSFakeAnimationDown toText:toText andToColor:tocolor];
             break;
         case 1:
-            [self JSLabel_StarAnimationWithDirection:JSFakeAnimationLeft toText:toText];
+            [self JSLabel_StarAnimationWithDirection:JSFakeAnimationLeft toText:toText andToColor:tocolor];
             break;
         case 2:
-            [self JSLabel_StarAnimationWithDirection:JSFakeAnimationRight toText:toText];
+            [self JSLabel_StarAnimationWithDirection:JSFakeAnimationRight toText:toText andToColor:tocolor];
             break;
         case 3:
-            [self JSLabel_StarAnimationWithDirection:JSFakeAnimationUp toText:toText];
+            [self JSLabel_StarAnimationWithDirection:JSFakeAnimationUp toText:toText andToColor:tocolor];
             break;
             
         default:
             break;
     }
-
-
+    
+    
 }
 
 -(void)jsImage_AnimatgionRollDirctionToImage:(UIImage *)Image{
@@ -226,10 +237,10 @@ static void * JSFakeLabelAnimationIsAnimatingKey = &JSFakeLabelAnimationIsAnimat
 
 - (void)setSt_isAnimating:(BOOL)st_isAnimating {
     objc_setAssociatedObject(self, JSFakeLabelAnimationIsAnimatingKey, @(st_isAnimating), OBJC_ASSOCIATION_ASSIGN);
-}                    
+}
 
 -(void)addEffectView{
-
+    
     UIVisualEffectView *backVisual = [[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
     //将模糊视图的大小等同于自身
     backVisual.frame = self.bounds;

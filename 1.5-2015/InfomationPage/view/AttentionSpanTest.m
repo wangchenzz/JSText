@@ -156,7 +156,6 @@
     [tool fireInTheHoll:self.actionTimer];
     
     
-    [self.labelFocus setTextColor:[UIColor whiteColor]];
 }
 /**
  *  每过一段时间就会赋值label
@@ -165,10 +164,13 @@
  */
 -(void)calculateFirstTest:(NSTimer*)timer{
     
+    
+    [self.labelFocus setTextColor:[UIColor whiteColor]];
     [self rollLabel];
     
     [self.testInfoAry addObject:self.labelFocus.text];
 
+    
 }
 
 /**
@@ -345,9 +347,6 @@
     UIColor *color = [image imageToColor];
     
     [self.control.view setBackgroundColor:color];
-    
-    
-//    [self.labelFocus setTextColor:[UIColor Color]];
     
     self.testCount = 0;
     self.timeCount = 0;
@@ -527,19 +526,8 @@
 }
 
 -(void)setLabelTitle:(NSString *)string{
-//    self.labelFocus.text = string;
-//    self.labelFocus.hidden = NO;
-//    [UIView animateWithDuration:1.5 animations:^{
-//        self.labelFocus.transform = CGAffineTransformMakeScale(1.3, 1.3);
-//        ;}
-//                     completion:^(BOOL finished){
-//                         
-//                         self.labelFocus.transform = CGAffineTransformIdentity;
-//                         
-//                         [self.labelFocus setHidden:YES];
-//                     }];
     
-    [self.labelFocus jsLabel_AnimatgionRollDirctionToText:string];
+    [self.labelFocus jsLabel_AnimatgionRollDirctionToText:string andColor:nil];
 }
 
 /**
