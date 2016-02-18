@@ -9,6 +9,8 @@
 #import "animationFlashLabel.h"
 @interface animationFlashLabel ()
 
+
+
 @property (nonatomic,retain) NSMutableArray *textArray;
 
 @property (nonatomic,retain) NSTimer *acitonTimer;
@@ -19,47 +21,71 @@
 
 @property (nonatomic,copy)void(^conpletion)(BOOL finsih) ;
 
+@property (nonatomic,assign) NSInteger currentCount;
+
+
+
+@property (nonatomic,retain) CADisplayLink *cad;
+
 @end
 
 @implementation animationFlashLabel
 -(instancetype)init{
     if (self = [super init]) {
         
-        self.isAnimation = NO;
-        
-        self.inputString = [NSString string];
+        [self setUpNew];
         
     }
     return self;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame{
-
+    
     if (self = [super initWithFrame:frame]) {
         
-        self.isAnimation = NO;
-        
-        self.inputString = [NSString string];
+        [self setUpNew];
         
     }
     return self;
 }
 
--(void)setText:(NSString *)text{
+-(void)setUpNew{
     
-    if (_isAnimation) {
-        [super setText:text];
-    }
-    else{
-        NSInteger count = text.length;
+    self.isAnimation = NO;
+    
+    self.inputString = [NSString string];
+    
+    
+    self.adjustsFontSizeToFitWidth = YES;//调整基线位置需将此属性设置为YES
+    
+    self.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
+    
+    _cad = [CADisplayLink displayLinkWithTarget:self selector:@selector(writeT)];
+    
+    [_cad addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
+    _cad.paused = YES;
+    
+    
+}
+
+-(void)setWillShowText:(NSString *)willShowText{
+    
+    self.textArray = nil;
+    
+    if (_willShowText != willShowText) {
+        _willShowText = willShowText;
+        NSInteger count = _willShowText.length;
         
         for (int i = 0 ; i < count; i ++) {
-            NSRange range = NSMakeRange(i, 1);
-            NSString *oneStering = [text substringWithRange:range];
+            
+            NSRange range = NSMakeRange(0, i+1);
+            NSString *oneStering = [_willShowText substringWithRange:range];
             [self.textArray addObject:oneStering];
         }
     }
 }
+
 
 -(NSMutableArray *)textArray{
     
@@ -70,30 +96,72 @@
 }
 
 -(void)showAnimation:(float)animationSpace completion:(void (^)(BOOL))completion{
-    
     _isAnimation = YES;
-    _acitonTimer = [NSTimer scheduledTimerWithTimeInterval:animationSpace target:self selector:@selector(writeT) userInfo:nil repeats:YES];
-    
+    self.currentCount = 0;
+    self.inputString = @"";
     self.conpletion = completion;
+    
+    _cad.frameInterval = 1;
+    
+    _cad.paused = NO;
 }
 
 -(void)writeT{
-    static NSInteger count = 0;
-    if (count == _textArray.count) {
+    
+    if (self.currentCount >= _textArray.count) {
         
-        _isAnimation = NO;
+        _cad.paused = YES;
         
-        [self.acitonTimer invalidate];
+        if (self.conpletion) {
+            self.conpletion(_isAnimation);
+        }
+    }else{
         
-        self.conpletion(_isAnimation);
         
-        return;
+        self.inputString = self.textArray[self.currentCount];
+        
+        
+        [self setText:self.inputString];
+        
+        
+        self.currentCount ++;
+        
     }
-    self.inputString = [self.inputString stringByAppendingString:_textArray[count]];
+}
+
+- (void)setVerticalAlignment:(VerticalAlignment)verticalAlignment {
+    _verticalAlignment = verticalAlignment;
+    //    [self setNeedsDisplay];
+}
+
+- (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines {
     
-    [self setText:self.inputString];
+    /**
+     *  这个方法得到 字的 的位置;
+     */
     
-    count ++;
+    CGRect textRect = [super textRectForBounds:bounds limitedToNumberOfLines:numberOfLines];
+    
+    
+    switch (self.verticalAlignment) {
+        case VerticalAlignmentTop:
+            textRect.origin.y = bounds.origin.y;
+            break;
+        case VerticalAlignmentBottom:
+            textRect.origin.y = bounds.origin.y + bounds.size.height - textRect.size.height;
+            break;
+        case VerticalAlignmentMiddle:
+            // Fall through.
+        default:
+            textRect.origin.y = bounds.origin.y + (bounds.size.height - textRect.size.height) / 2.0;
+    }
+    return textRect;
+}
+
+-(void)drawTextInRect:(CGRect)requestedRect {
+    CGRect actualRect = [self textRectForBounds:requestedRect limitedToNumberOfLines:self.numberOfLines];
+    
+    [super drawTextInRect:actualRect];
 }
 
 @end

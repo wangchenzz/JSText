@@ -21,7 +21,7 @@
 @implementation eyeView
 
 /**
- *  必须用这个方法来创建. 而且一旦单边 frame 会出问题 ;
+ *  必须用这个方法来创建. 而且一旦改变 frame 会出问题 ;
  *
  *  @param frame <#frame description#>
  *

@@ -168,7 +168,11 @@
 //    [self.labelFocus setTextColor:[UIColor whiteColor]];
     [self rollLabel];
     
-    [self.testInfoAry addObject:self.labelFocus.text];
+    if (self.labelFocus.text) {
+        
+        [self.testInfoAry addObject:self.labelFocus.text];
+    }
+    
 
     
 }
@@ -269,11 +273,10 @@
     
     [self rollNighgNum];
     
-    
-//    [self.labelFocus setTextColor:[UIColor whiteColor]];
-    
-    [self.testInfoAry addObject:self.labelFocus.text];
-    
+    if (self.labelFocus.text) {
+        
+        [self.testInfoAry addObject:self.labelFocus.text];
+    }
     
     self.testCount ++;
 
