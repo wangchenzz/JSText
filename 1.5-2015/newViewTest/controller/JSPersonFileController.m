@@ -10,6 +10,8 @@
 
 #import "mycell.h"
 
+#import "handEyeGameController.h"
+
 #define kScreenWith [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
@@ -76,7 +78,7 @@ const CGFloat kStatusBarHeight = 20;
     self.icon = icon;
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(108, self.headerContentView.bounds.size.height-60-12, kScreenWith-108-12, 50)];
-    label.text = @"真羡慕羡慕你们这些人, 年纪轻轻的就认识了才华横溢的我!";
+    label.text = @"提高学员注意力和读写能力，是我们所有竞思人的使命！!";
     label.textColor = [UIColor whiteColor];
     label.font = [UIFont systemFontOfSize:15];
     label.numberOfLines = 0;
@@ -142,9 +144,14 @@ const CGFloat kStatusBarHeight = 20;
     if (!cell) {
         cell = [[mycell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    
     NSString *imagestr = [NSString stringWithFormat:@"span%ld",indexPath.row % 5 + 1];
     
     cell.imageMyView.image = [UIImage imageNamed:imagestr];
+    
+    if (indexPath.row == 1) {
+        cell.imageMyView.image = [UIImage imageNamed:@"handeyegamebackround"];
+    }
     
     return cell;
 }
@@ -180,6 +187,16 @@ const CGFloat kStatusBarHeight = 20;
     return _tableView;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    handEyeGameController *egc = [[handEyeGameController alloc] init];
+    
+    [self.navigationController pushViewController:egc animated:YES];
+    
+    egc.navigationController.navigationBarHidden = YES;
+    
+    egc.navigationController.toolbarHidden = YES;
+}
 
 
 @end

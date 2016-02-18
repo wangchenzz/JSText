@@ -133,7 +133,7 @@
     self.testInfoAry = nil;
     
     
-    UIImage *image1 =[UIImage imageNamed:@"span1"];
+    UIImage *image1 =[UIImage imageNamed:@"span2"];
     
     UIColor *color1 = [image1 imageToColor];
     
@@ -165,7 +165,7 @@
 -(void)calculateFirstTest:(NSTimer*)timer{
     
     
-    [self.labelFocus setTextColor:[UIColor whiteColor]];
+//    [self.labelFocus setTextColor:[UIColor whiteColor]];
     [self rollLabel];
     
     [self.testInfoAry addObject:self.labelFocus.text];
@@ -193,13 +193,17 @@
     self.timeCount = self.timeCount + 0.01;
     
     if (self.timeCount >= 10){
+
         [self.actionTimer invalidate];
         [self.timeCountTimer invalidate];
         [self.control.view removeGestureRecognizer:self.tap];
         [self.labelFocus removeFromSuperview];
         if ([self.delegate respondsToSelector:@selector(AttentionSpanTestFinishFirstTest:testArray:)]) {
-            [self.delegate AttentionSpanTestFinishFirstTest:self testArray:self.testInfoAry];
+            
+            NSMutableArray *ary = [NSMutableArray arrayWithArray:self.testInfoAry];
+            [self.delegate AttentionSpanTestFinishFirstTest:self testArray:ary];
         }
+
     }
 }
 
@@ -266,7 +270,7 @@
     [self rollNighgNum];
     
     
-    [self.labelFocus setTextColor:[UIColor whiteColor]];
+//    [self.labelFocus setTextColor:[UIColor whiteColor]];
     
     [self.testInfoAry addObject:self.labelFocus.text];
     

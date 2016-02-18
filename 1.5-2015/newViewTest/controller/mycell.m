@@ -61,7 +61,6 @@
     CGAffineTransform picTransform = CGAffineTransformMakeTranslation(0, -offset);
 
     self.imageMyView.transform = picTransform;
-    
 }
 
 /**
