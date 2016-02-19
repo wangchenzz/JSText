@@ -30,16 +30,21 @@ const CGFloat kStatusBarHeight = 20;
 @property (nonatomic, strong) UIImageView *icon;
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, assign) CGFloat scale;
+
+@property (nonatomic, retain) NSMutableArray *ary;
 @end
 
 @implementation JSPersonFileController
 - (void)viewDidLoad {
     
+    
+    self.ary = [NSMutableArray array];
+    
     [super viewDidLoad];
     self.headerHeight = 260;
     [self.view addSubview:self.tableView];
     
-    [self.navigationController.navigationBar setHidden: YES];
+//    [self.navigationController.navigationBar setHidden: YES];
     
     [self.tabBarController.tabBar setHidden: YES];
     
@@ -161,6 +166,23 @@ const CGFloat kStatusBarHeight = 20;
     mycell *selfcell = (mycell *)cell;
     
     [selfcell cellOffset];
+    
+    if (![_ary containsObject:@(indexPath.row)]) {
+        
+        cell.transform = CGAffineTransformMakeScale(0.8, 0.8);
+        [UIView animateWithDuration:0.6 animations:^{
+            cell.layer.shadowColor = [[UIColor blackColor]CGColor];
+            cell.layer.shadowOffset = CGSizeMake(10, 10);
+            cell.alpha = 1;
+            cell.layer.shadowOffset = CGSizeMake(0, 0);
+            cell.transform = CGAffineTransformMakeScale(1, 1);
+        }];
+    }
+    
+    [_ary addObject:@(indexPath.row)];
+
+    
+    
 
 }
 

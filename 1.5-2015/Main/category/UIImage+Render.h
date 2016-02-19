@@ -3,7 +3,7 @@
 //  1.5-2015
 //
 //  Created by Mac on 16/1/8.
-//  Copyright © 2016年 竟思. All rights reserved.
+//  Copyright © 2016年 竞思. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -37,7 +37,7 @@
 -(UIColor*)imageToColor;
 
 /**
- *  将图片进行缩放
+ *  将图片进行缩放 改变图片的 size; 可是好像没卵用
  *
  *  @param size  缩放后的 size
  *

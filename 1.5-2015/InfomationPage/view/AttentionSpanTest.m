@@ -3,7 +3,7 @@
 //  1.1-2015
 //
 //  Created by Mac on 16/1/11.
-//  Copyright © 2016年 竟思. All rights reserved.
+//  Copyright © 2016年 竞思. All rights reserved.
 //
 
 #import "AttentionSpanTest.h"

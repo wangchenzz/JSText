@@ -3,7 +3,7 @@
 //  1.5-2015
 //
 //  Created by Mac on 16/2/18.
-//  Copyright © 2016年 竟思. All rights reserved.
+//  Copyright © 2016年 竞思. All rights reserved.
 //
 
 #import "animationFlashLabel.h"
@@ -145,6 +145,9 @@
     
     switch (self.verticalAlignment) {
         case VerticalAlignmentTop:
+            /**
+             *  上对齐
+             */
             textRect.origin.y = bounds.origin.y;
             break;
         case VerticalAlignmentBottom:

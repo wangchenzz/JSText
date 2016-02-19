@@ -3,7 +3,7 @@
 //  1.5-2015
 //
 //  Created by Mac on 16/1/29.
-//  Copyright © 2016年 竟思. All rights reserved.
+//  Copyright © 2016年 竞思. All rights reserved.
 //
 
 #import "UIView+Animated.h"
@@ -265,6 +265,8 @@ static void * JSFakeLabelAnimationIsAnimatingKey = &JSFakeLabelAnimationIsAnimat
     [self.layer addAnimation:contentsAnimation forKey:nil];
     UIImageView *imageSelf = (UIImageView *)self;
     imageSelf.image = image;
+    
+    
 }
 
 @end
