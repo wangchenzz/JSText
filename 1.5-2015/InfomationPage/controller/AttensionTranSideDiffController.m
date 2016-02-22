@@ -18,18 +18,20 @@
 @implementation AttensionTranSideDiffController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
     [self.tabBarController.tabBar setHidden:YES];
-
+    
     [self setUpTest];
+    
 }
 
 -(void)setUpTest{
     
     CGFloat navih = CGRectGetMaxY(JSNavigationBounds);
-    
 
     AttensionTranSideDiff *deft = [[AttensionTranSideDiff alloc]initWithFrame:CGRectMake(0, navih, self.view.width, self.view.height - navih)];
     

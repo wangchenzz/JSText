@@ -4,7 +4,7 @@
 //
 //  Created by Mac on 16/1/4.
 //  Copyright © 2016年 竞思. All rights reserved.
-//                   竞思
+//
 
 #import <UIKit/UIKit.h>
 

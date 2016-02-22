@@ -8,6 +8,10 @@
 
 #import "handEyeGameController.h"
 
+#import "JSPageController.h"
+
+#import "JSPresentBut.h"
+
 @implementation handEyeGameController
 
 
@@ -15,13 +19,49 @@
 
     [super viewDidLoad];
     
-    handEyeCoordinationView *view = [[handEyeCoordinationView alloc] initWithFrame:self.view.bounds];
+//    handEyeCoordinationView *view = [[handEyeCoordinationView alloc] initWithFrame:self.view.bounds];
+//    
+//    [self.view addSubview:view];
+//    
+//    view.delegate = self;
+//    
+//    [view start];
+    [self.view setBackgroundColor:[UIColor blackColor]];
     
-    [self.view addSubview:view];
+    JSPageController *pa = [[JSPageController alloc] initWithFrame:CGRectMake(0, 20, 300, 38)];
     
-    view.delegate = self;
+    [pa setNumberOfPages: 5];
     
-    [view start];
+    [pa setCurrentPage:3];
+    
+    [self.view addSubview:pa];
+    
+    [pa setTag:1];
+
+    self.bu = [[JSPresentBut alloc] init];
+    
+    [self.view addSubview:self.bu];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+
+    static int i = 1;
+    
+    if (i == 5) {
+        i = 1;
+    }
+    
+    UIView *tt= [self.view viewWithTag:1];
+    
+    JSPageController *js = (JSPageController *)tt;
+    
+    [js setCurrentPage:i];
+
+    i++;
+    
+    [self.bu
+    show
+     ];
 }
 
 -(void)handEyeCoordinationView:(handEyeCoordinationView *)handeye didFinsihGameWithTime:(float)timetravel{

@@ -335,7 +335,7 @@
 /**
  *  如果不设置测试几次, 就将进行默认次数的测试 就是6次;
  *
- *  @param count <#count description#>
+ *  @param count ...
  */
 -(void)rollSomeTestwith{
     
