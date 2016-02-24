@@ -11,6 +11,7 @@
 		0409B4DD1C58AA990037E744 /* AttentionDistributionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0409B4DC1C58AA990037E744 /* AttentionDistributionModel.m */; };
 		0409B4E01C58AAAD0037E744 /* attentionDistributionTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0409B4DF1C58AAAD0037E744 /* attentionDistributionTestController.m */; };
 		0409B4E31C58AAB80037E744 /* AttentionDistributionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0409B4E21C58AAB80037E744 /* AttentionDistributionTest.m */; };
+		040AFBEA1C7C350D00A78026 /* AttentionConcentrationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040AFBE91C7C350D00A78026 /* AttentionConcentrationView.m */; };
 		0412C9091C5B6CA30071E5A0 /* UIView+Animated.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412C9081C5B6CA30071E5A0 /* UIView+Animated.m */; };
 		0413037E1C6091850082FCE2 /* JSPersonFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413037B1C6091850082FCE2 /* JSPersonFileController.m */; };
 		0424BFC61C4344A7007F24AB /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424BFC51C4344A7007F24AB /* NSDate+Extension.m */; };
@@ -134,6 +135,10 @@
 		04EFF8EA1C51D0BC00230A30 /* PictureAndPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFF8E91C51D0BC00230A30 /* PictureAndPointModel.m */; };
 		04EFF8ED1C51D0D500230A30 /* PictureAndPointTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFF8EC1C51D0D500230A30 /* PictureAndPointTest.m */; };
 		04EFF8FB1C52027B00230A30 /* pointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EFF8FA1C52027B00230A30 /* pointView.m */; };
+		04F03A6D1C7D957200D6A2B3 /* JSWriteAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F03A6C1C7D957200D6A2B3 /* JSWriteAnimationView.m */; };
+		04F03A6F1C7D95D500D6A2B3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F03A6E1C7D95D500D6A2B3 /* CoreText.framework */; };
+		04F03A711C7D95DC00D6A2B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F03A701C7D95DC00D6A2B3 /* QuartzCore.framework */; };
+		04F03A731C7D95EA00D6A2B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F03A721C7D95EA00D6A2B3 /* CoreGraphics.framework */; };
 		04F6F1691C75946E00366D27 /* animationFlashLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F6F1661C75946E00366D27 /* animationFlashLabel.m */; };
 		04F6F16A1C75946E00366D27 /* eyeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F6F1681C75946E00366D27 /* eyeView.m */; };
 		04F6F1751C7596F700366D27 /* handEyeGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F6F1701C7596F700366D27 /* handEyeGameController.m */; };
@@ -166,6 +171,8 @@
 		0409B4DF1C58AAAD0037E744 /* attentionDistributionTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = attentionDistributionTestController.m; sourceTree = "<group>"; };
 		0409B4E11C58AAB80037E744 /* AttentionDistributionTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDistributionTest.h; sourceTree = "<group>"; };
 		0409B4E21C58AAB80037E744 /* AttentionDistributionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDistributionTest.m; sourceTree = "<group>"; };
+		040AFBE81C7C350D00A78026 /* AttentionConcentrationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionConcentrationView.h; sourceTree = "<group>"; };
+		040AFBE91C7C350D00A78026 /* AttentionConcentrationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionConcentrationView.m; sourceTree = "<group>"; };
 		0412C9071C5B6CA30071E5A0 /* UIView+Animated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animated.h"; sourceTree = "<group>"; };
 		0412C9081C5B6CA30071E5A0 /* UIView+Animated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animated.m"; sourceTree = "<group>"; };
 		0413037A1C6091850082FCE2 /* JSPersonFileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSPersonFileController.h; sourceTree = "<group>"; };
@@ -406,6 +413,11 @@
 		04EFF8EC1C51D0D500230A30 /* PictureAndPointTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureAndPointTest.m; sourceTree = "<group>"; };
 		04EFF8F91C52027B00230A30 /* pointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pointView.h; sourceTree = "<group>"; };
 		04EFF8FA1C52027B00230A30 /* pointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pointView.m; sourceTree = "<group>"; };
+		04F03A6B1C7D957200D6A2B3 /* JSWriteAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSWriteAnimationView.h; sourceTree = "<group>"; };
+		04F03A6C1C7D957200D6A2B3 /* JSWriteAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSWriteAnimationView.m; sourceTree = "<group>"; };
+		04F03A6E1C7D95D500D6A2B3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		04F03A701C7D95DC00D6A2B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		04F03A721C7D95EA00D6A2B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		04F6F1651C75946E00366D27 /* animationFlashLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = animationFlashLabel.h; sourceTree = "<group>"; };
 		04F6F1661C75946E00366D27 /* animationFlashLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = animationFlashLabel.m; sourceTree = "<group>"; };
 		04F6F1671C75946E00366D27 /* eyeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eyeView.h; sourceTree = "<group>"; };
@@ -421,6 +433,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F03A731C7D95EA00D6A2B3 /* CoreGraphics.framework in Frameworks */,
+				04F03A711C7D95DC00D6A2B3 /* QuartzCore.framework in Frameworks */,
+				04F03A6F1C7D95D500D6A2B3 /* CoreText.framework in Frameworks */,
 				04D3F68B1C45E46D00BFC3E3 /* AudioToolbox.framework in Frameworks */,
 				04932E9B1C3FA2300013631D /* libstdc++.tbd in Frameworks */,
 				04932E971C3FA20D0013631D /* MessageUI.framework in Frameworks */,
@@ -725,6 +740,9 @@
 			isa = PBXGroup;
 			children = (
 				04932E9A1C3FA2300013631D /* libstdc++.tbd */,
+				04F03A721C7D95EA00D6A2B3 /* CoreGraphics.framework */,
+				04F03A701C7D95DC00D6A2B3 /* QuartzCore.framework */,
+				04F03A6E1C7D95D500D6A2B3 /* CoreText.framework */,
 				04D3F68A1C45E46D00BFC3E3 /* AudioToolbox.framework */,
 				04932E961C3FA20D0013631D /* MessageUI.framework */,
 				04932E941C3FA2040013631D /* libicucore.tbd */,
@@ -827,6 +845,8 @@
 				04EE15CC1C77199900C12D7F /* JSPageController.m */,
 				0405D6C41C7ADCA40079DFAD /* JSPresentBut.h */,
 				0405D6C51C7ADCA40079DFAD /* JSPresentBut.m */,
+				04F03A6B1C7D957200D6A2B3 /* JSWriteAnimationView.h */,
+				04F03A6C1C7D957200D6A2B3 /* JSWriteAnimationView.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1025,6 +1045,8 @@
 			children = (
 				04F6F1731C7596F700366D27 /* handEyeCoordinationView.h */,
 				04F6F1741C7596F700366D27 /* handEyeCoordinationView.m */,
+				040AFBE81C7C350D00A78026 /* AttentionConcentrationView.h */,
+				040AFBE91C7C350D00A78026 /* AttentionConcentrationView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1241,6 +1263,7 @@
 				047758071C4CC7AE0095086D /* MJRefreshConst.m in Sources */,
 				047A05FB1C3B1C3B000C6821 /* MJConst.m in Sources */,
 				04F6F1691C75946E00366D27 /* animationFlashLabel.m in Sources */,
+				040AFBEA1C7C350D00A78026 /* AttentionConcentrationView.m in Sources */,
 				04668DBF1C6EDD3E00218995 /* StroopTestModel.m in Sources */,
 				047A05E81C3B1C3B000C6821 /* AFHTTPRequestOperationManager.m in Sources */,
 				047A06101C3B1C3B000C6821 /* UIImageView+WebCache.m in Sources */,
@@ -1272,6 +1295,7 @@
 				04361F531C50ACD500E5A9E8 /* ErrorProofingTest.m in Sources */,
 				04E986111C3B574F002E8F7C /* ClickTest.m in Sources */,
 				04EECCB11C4743A400C690A5 /* AttentionSpanModel.m in Sources */,
+				04F03A6D1C7D957200D6A2B3 /* JSWriteAnimationView.m in Sources */,
 				0424BFC61C4344A7007F24AB /* NSDate+Extension.m in Sources */,
 				047A06031C3B1C3B000C6821 /* NSData+ImageContentType.m in Sources */,
 				04315F5F1C5F580A004FA20F /* UIButton+Extension.m in Sources */,

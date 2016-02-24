@@ -17,5 +17,11 @@
 
 -(void)show;
 
+/**
+ *  初始化的类方法
+ *
+ *  @return 一个实例
+ */
++(instancetype)flash;
 
 @end

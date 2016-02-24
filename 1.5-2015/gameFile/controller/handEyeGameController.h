@@ -12,6 +12,5 @@
 #import "JSPresentBut.h"
 @interface handEyeGameController : UIViewController<handEyeCoordinationViewDelegate>
 
-@property (nonatomic,retain) JSPresentBut *bu;
 
 @end

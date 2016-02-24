@@ -10,6 +10,12 @@
 
 @implementation JSPresentBut
 
++(instancetype)flash{
+
+    return [[self alloc]init];
+    
+}
+
 -(instancetype)init{
     
     if (self = [super init]) {
@@ -72,6 +78,12 @@
     self.rightButton = but2;
 
     self.alpha = 0;
+    
+    /**
+     *  如何制作视屏播放器
+     *
+     *  @return ..
+     */
 }
 
 -(void)show{
@@ -98,7 +110,7 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     [self hide];
-    
+
 }
 
 -(void)hide{
