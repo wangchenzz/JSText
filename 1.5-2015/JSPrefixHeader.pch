@@ -33,6 +33,8 @@
 
 #import "UIView+Animated.h"
 
+#import "JSLoading.h"
+
 #import <UIKit/UIKit.h>
 
 #define JSFrame [UIScreen mainScreen].bounds

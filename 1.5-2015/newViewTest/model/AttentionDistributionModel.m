@@ -15,7 +15,7 @@
 
 +(instancetype)modelWithType:(soundType)type andColor:(UIColor*)color{
 
-    AttentionDistributionModel *model = [[self alloc]init];
+    AttentionDistributionModel *model = [[self alloc] init];
     model.soundType = type;
     model.color = color;
     return model;

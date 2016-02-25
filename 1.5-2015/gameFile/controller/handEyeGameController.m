@@ -33,7 +33,7 @@
 //    JSPageController *pa = [[JSPageController alloc] initWithFrame:CGRectMake(0, 20, 300, 38)];
 //    
 //    [pa setNumberOfPages: 5];
-//    
+//
 //    [pa setCurrentPage:3];
 //    
 //    [self.view addSubview:pa];
@@ -50,19 +50,7 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    static int i = 1;
-    
-    if (i == 5) {
-        i = 1;
-    }
-    
-    UIView *tt= [self.view viewWithTag:1];
-    
-    JSPageController *js = (JSPageController *)tt;
-    
-    [js setCurrentPage:i];
-
-    i++;
+    [JSLoading loadSuccess];
     
 }
 

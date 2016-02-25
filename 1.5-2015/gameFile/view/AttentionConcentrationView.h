@@ -14,6 +14,9 @@ typedef NS_ENUM(NSInteger,JSTouchState){
     JSTouchStateMoveOut ,
     JSTouchStateStop
 };
+/**
+ *  这里就直接变成了一个笑话
+ */
 
 @interface AttentionConcentrationView : UIView
 
