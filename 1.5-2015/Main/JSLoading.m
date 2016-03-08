@@ -83,6 +83,7 @@ static CGFloat const kVerticalFatLayerWidth = 6;
     /**
      *  外围转圈的 layer
      */
+    
     [self.JSLoadLayer removeFromSuperlayer];
     
     /**
@@ -111,7 +112,7 @@ static CGFloat const kVerticalFatLayerWidth = 6;
     self.JSLoadLayer = [JSLoadLayer layer];
     self.JSLoadLayer.color = self.likeBlackColor;
     self.JSLoadLayer.lineWidth = kLineWidth;
-    self.JSLoadLayer.bounds = CGRectMake(0,0, kRadius * 2 + kLineWidth, kRadius * 2 + kLineWidth);
+    self.JSLoadLayer.bounds = CGRectMake(0,00, kRadius * 2 + kLineWidth, kRadius * 2 + kLineWidth);
     self.JSLoadLayer.position = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     
     
@@ -141,7 +142,7 @@ static CGFloat const kVerticalFatLayerWidth = 6;
     self.moveArcLayer.frame = self.bounds;
     // 弧的path
     UIBezierPath *moveArcPath = [UIBezierPath bezierPath];
-    // 小圆圆心
+    // 小圆圆心 变态英雄到
     CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     // d（x轴上弧圆心与小圆左边缘的距离）
     CGFloat d = kRadius / 2;
@@ -517,7 +518,7 @@ static CGFloat const kVerticalFatLayerWidth = 6;
     self.leftAppearLayer.path = path.CGPath;
     self.leftAppearLayer.strokeColor = [self.likeBlackColor CGColor];
     self.leftAppearLayer.fillColor = nil;
-    self.leftAppearLayer.lineWidth = 2;
+    self.leftAppearLayer.lineWidth = 3;
     self.leftAppearLayer.lineJoin = kCALineJoinBevel;
     
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];

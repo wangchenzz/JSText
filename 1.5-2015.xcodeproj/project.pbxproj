@@ -29,6 +29,7 @@
 		04361F511C50ACD500E5A9E8 /* errorHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 04361F4A1C50ACD500E5A9E8 /* errorHeader.m */; };
 		04361F521C50ACD500E5A9E8 /* ErrorProfingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04361F4C1C50ACD500E5A9E8 /* ErrorProfingCell.m */; };
 		04361F531C50ACD500E5A9E8 /* ErrorProofingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04361F4E1C50ACD500E5A9E8 /* ErrorProofingTest.m */; };
+		04382E231C8E8352001AF1BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04382E221C8E8352001AF1BA /* Default-568h@2x.png */; };
 		0460B64B1C5F39A3008FD98D /* StroopTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460B64A1C5F39A3008FD98D /* StroopTestController.m */; };
 		0460B64E1C5F3AD1008FD98D /* StroopTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0460B64D1C5F3AD1008FD98D /* StroopTest.m */; };
 		04668DBF1C6EDD3E00218995 /* StroopTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04668DBE1C6EDD3E00218995 /* StroopTestModel.m */; };
@@ -209,6 +210,7 @@
 		04361F4C1C50ACD500E5A9E8 /* ErrorProfingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorProfingCell.m; sourceTree = "<group>"; };
 		04361F4D1C50ACD500E5A9E8 /* ErrorProofingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorProofingTest.h; sourceTree = "<group>"; };
 		04361F4E1C50ACD500E5A9E8 /* ErrorProofingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorProofingTest.m; sourceTree = "<group>"; };
+		04382E221C8E8352001AF1BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0460B6491C5F39A3008FD98D /* StroopTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StroopTestController.h; sourceTree = "<group>"; };
 		0460B64A1C5F39A3008FD98D /* StroopTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StroopTestController.m; sourceTree = "<group>"; };
 		0460B64C1C5F3AD1008FD98D /* StroopTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StroopTest.h; sourceTree = "<group>"; };
@@ -680,6 +682,7 @@
 		047A05331C3B16DE000C6821 = {
 			isa = PBXGroup;
 			children = (
+				04382E221C8E8352001AF1BA /* Default-568h@2x.png */,
 				047A053E1C3B16DF000C6821 /* 1.5-2015 */,
 				047A05581C3B16DF000C6821 /* 1.5-2015Tests */,
 				047A05631C3B16DF000C6821 /* 1.5-2015UITests */,
@@ -1167,6 +1170,7 @@
 			files = (
 				04D3F6AF1C46294300BFC3E3 /* 3.caf in Resources */,
 				04D3F6AE1C46294300BFC3E3 /* 2.caf in Resources */,
+				04382E231C8E8352001AF1BA /* Default-568h@2x.png in Resources */,
 				04D3F6AD1C46294300BFC3E3 /* 1.caf in Resources */,
 				047A054F1C3B16DF000C6821 /* LaunchScreen.storyboard in Resources */,
 				047A05F91C3B1C3B000C6821 /* MBProgressHUD.bundle in Resources */,
@@ -1463,6 +1467,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/1.5-2015/JSPrefixHeader.pch";
 				INFOPLIST_FILE = "1.5-2015/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TALEGENES.JS.--5-2015";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1481,6 +1486,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/1.5-2015/JSPrefixHeader.pch";
 				INFOPLIST_FILE = "1.5-2015/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TALEGENES.JS.--5-2015";
 				PRODUCT_NAME = "$(TARGET_NAME)";

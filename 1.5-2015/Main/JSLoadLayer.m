@@ -28,7 +28,6 @@
     else if ([key isEqualToString:@"lineWidth"]) {
         return YES;
     }
-    
     return [super needsDisplayForKey:key];
 }
 

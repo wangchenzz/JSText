@@ -63,7 +63,37 @@
 #endif
 
 
+#ifdef __OBJC__
+// 如果这个全局的头文件或者宏只需要在.m或者.mm文件中使用,
+// 请把该头文件或宏写到#ifdef __OBJC__ 中
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
 
+/**
+ *  角度和弧度的转换
+ *
+ */
+#define degreesToRadian(x) (M_PI * (x) / 180.0)
+#define radianToDegrees(radian) (radian*180.0)/(M_PI)
+
+
+//单例化一个类
+#define SYNTHESIZE_SINGLETON_FOR_CLASS(classname) \
+\
+static classname *shared##classname = nil; \
+\
++ (classname *)shared##classname \
+{ \
+    @synchronized(self) \
+    { \
+        if (shared##classname == nil) \
+        { \
+            shared##classname = [[self alloc] init]; \
+        } \
+    } \
+    \
+    return shared##classname; \
+} \
 
 
 #endif /* JSPrefixHeader_pch */

@@ -174,7 +174,8 @@ const CGFloat kStatusBarHeight = 20;
             cell.layer.shadowColor = [[UIColor blackColor]CGColor];
             cell.layer.shadowOffset = CGSizeMake(10, 10);
             cell.alpha = 1;
-            cell.layer.shadowOffset = CGSizeMake(0, 0);
+            cell.layer.shadowOffset = CGSizeMake(5, 5);
+            cell.layer.shadowOpacity = 0.8;
             cell.transform = CGAffineTransformMakeScale(1, 1);
         }];
     }
@@ -214,7 +215,6 @@ const CGFloat kStatusBarHeight = 20;
     handEyeGameController *egc = [[handEyeGameController alloc] init];
     
     [self.navigationController pushViewController:egc animated:YES];
-    
     egc.navigationController.navigationBarHidden = YES;
     
     egc.navigationController.toolbarHidden = YES;

@@ -33,7 +33,7 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-
+    
 }
 
 
@@ -59,7 +59,9 @@
 
 
 -(void)AttentionDistributionDidFinish:(AttentionDistributionTest *)test andArray:(NSMutableArray *)array{
+    
     JSLog(@"312");
+
 }
 
 

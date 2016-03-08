@@ -11,6 +11,4 @@
 
 @implementation StroopTestModel
 
-
-
 @end

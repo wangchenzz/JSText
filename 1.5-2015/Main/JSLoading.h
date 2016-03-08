@@ -10,6 +10,16 @@
 
 @interface JSLoading : UIView
 
+/**
+ *  成功的 load;
+ */
 + (void)loadSuccess;
+
+/**
+ *  失败的 load;
+ */
+
 + (void)loadFail;
+
+
 @end

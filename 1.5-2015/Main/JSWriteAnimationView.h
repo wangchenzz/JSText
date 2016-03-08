@@ -11,7 +11,12 @@
 #import <CoreText/CoreText.h>
 
 
+/**
+ *  未封装 的 view. 可以展示写字动画
+ */
+
 @interface JSWriteAnimationView : UIView
+
 
 
 - (void)startAnimation;

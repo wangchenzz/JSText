@@ -10,15 +10,13 @@
 
 @implementation AttentionDistributionModel
 
-
-
-
 +(instancetype)modelWithType:(soundType)type andColor:(UIColor*)color{
 
     AttentionDistributionModel *model = [[self alloc] init];
     model.soundType = type;
     model.color = color;
     return model;
+    
 }
 
 @end

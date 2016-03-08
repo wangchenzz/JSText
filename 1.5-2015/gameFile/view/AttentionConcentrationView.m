@@ -84,10 +84,13 @@
         self.backgroundColor = [UIColor whiteColor];
     }
     return self;
+    
+    
 
 }
 
 -(void)setUpInit{
+
     
     self.moveView = [[UIView alloc] init];
     self.moveView.height = self.moveView.width = JSFrame.size.width * .13;
@@ -289,6 +292,7 @@
     BOOL isIn = CGRectIntersectsRect(ss, self.moveView.frame);
     return isIn;
 }
+
 
 
 

@@ -291,25 +291,31 @@
         self.colorArray = @[[UIColor redColor],[UIColor blueColor],[UIColor yellowColor],[UIColor greenColor]];
     }
     return _colorArray;
+
 }
 
 -(NSArray *)rightTextArray{
+    
     if (!_rightTextArray) {
         self.rightTextArray = @[@"红",@"蓝",@"黄",@"绿"];
     }
     return _rightTextArray;
+
 }
 
 -(NSArray *)chaosTextArray{
 
     if (!_chaosTextArray) {
+        
         _chaosTextArray = @[@"绿",@"黄",@"蓝",@"红"];
     }
     return _chaosTextArray;
 }
 
 -(NSArray *)wrongTextArray{
+    
     if (!_wrongTextArray) {
+    
         self.wrongTextArray = @[@"我",@"爱",@"中",@"华"];
     }
     return _wrongTextArray;

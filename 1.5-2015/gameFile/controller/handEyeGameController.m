@@ -57,13 +57,13 @@
 -(void)handEyeCoordinationView:(handEyeCoordinationView *)handeye didFinsihGameWithTime:(float)timetravel{
 
     /**
-     *  这个代理可能会调用多次, 不要做太多的操作;
+     *  这个代理会调多次, 不要做太多的操作; 最好只是在这里辅助,然后寻找时间传输;
      */
     
     NSLog(@"%f",timetravel);
     
     [self.navigationController popViewControllerAnimated:YES];
-
+    
 }
 
 @end
